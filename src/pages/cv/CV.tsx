@@ -1,18 +1,21 @@
 import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent, type ReactElement, type ReactNode } from "react";
 import "./CV.scss";
-import { CURRICULUM_VITAE, loadCV, type CurriculumVitae, type CurriculumVitaeDownloadItem, type CurriculumVitaeEntry } from "../../data/Data";
+import { CURRICULUM_VITAE, loadCV, type CurriculumVitae, type CurriculumVitaeDownloadItem, type CurriculumVitaeEntry, type LanguageString } from "../../data/Data";
 import { useAchievements, useLoadingAnimation } from "../../components";
 import dayjs from "dayjs";
 import StringOdometer from "../../components/statistics/StringOdometer";
 import { useNavigate } from "react-router";
 import { ImageLoadManager, Statics } from "../../utils";
 import { useTitle } from "../../components/titleManager/TitleManager";
+import { LangElement, useLanguage } from "../../lang";
+import type { LanguageCode } from "../../lang/LanguageManager";
 
 let countUps: (() => void)[] = [];
 let hasAllLoaded = false;
 export default function CV() {
     useTitle().setTitle(Statics.TITLE_SUFFIX + "CV");
     const achievements = useAchievements();
+    const [language,] = useLanguage();
 
     useEffect(() => achievements.achievementFinished().visitedPage("cv"));
 
@@ -38,11 +41,19 @@ export default function CV() {
     const documentViewer = useRef<HTMLDivElement>(null);
 
     const filterRef = useRef<HTMLDivElement>(null);
-    const [currentFilters, setCurrentFilters] = useState<string[]>([...(new Set(cv.entrys.map(e => e.category)))]);
+    const [currentFilters, setCurrentFilters] = useState<string[]>([...(new Set(cv.entrys.map(e => e.category.en)))]);
+
+    const categoryLanguageMap: {
+        [key: string]: LanguageString;
+    } = {};
+
+    cv.entrys.forEach(e => {
+        categoryLanguageMap[e.category.en] = e.category;
+    });
 
     const currentEntrys = cv.entrys.filter(e => {
         if (currentFilters.length == 0) return true;
-        return currentFilters.includes(e.category);
+        return currentFilters.includes(e.category.en);
     });
 
     const handleOnDocumentClick = (entry: CurriculumVitaeEntry, download: CurriculumVitaeDownloadItem) => {
@@ -55,7 +66,7 @@ export default function CV() {
 
         const downloadA = docViewer.querySelector(".downloadBtn") as HTMLAnchorElement;
         if (!downloadA) return;
-        downloadA.download = `${entry.title.replaceAll(" ", "-")}_${download.name}_${dayjs(entry.from, "DD.MM.YYYY").format("YYYY-MM-DD")}_${dayjs().format("YYYY-MM-DD")}${download.extension ?? ""}`;
+        downloadA.download = `${entry.title[language].replaceAll(" ", "-")}_${download.name}_${dayjs(entry.from, "DD.MM.YYYY").format("YYYY-MM-DD")}_${dayjs().format("YYYY-MM-DD")}${download.extension ?? ""}`;
         downloadA.href = download.downloadLink;
 
     };
@@ -136,33 +147,33 @@ export default function CV() {
                 return element.references.find(e => e.classList.contains(refClass));
             },
             timeGraphElement: (
-                <div key={entry.title + "timeGraphElement"} className="graphEntry indexPositionedElement timeGraphElement from-graph-entry" style={{ "--index": index } as any} data-date={convertDateToDisplayDate(entry.from)} ref={addReference}></div>
+                <div key={entry.title.en + "timeGraphElement"} className="graphEntry indexPositionedElement timeGraphElement from-graph-entry" style={{ "--index": index } as any} data-date={convertDateToDisplayDate(entry.from, language)} ref={addReference}></div>
             ),
             entrys: (
-                <div key={entry.title + "entrys"} className={`cv-entry cvEntry ${entry.image ? "" : "no-image"}`} style={{ "--index": index } as any} data-date={convertDateToDisplayDate(entry.from)} ref={addReference}>
-                    <h2 className="title">{entry.title}</h2>
-                    <span className="description">{convertLinks(entry.description)}</span>
+                <div key={entry.title.en + "entrys"} className={`cv-entry cvEntry ${entry.image ? "" : "no-image"}`} style={{ "--index": index } as any} data-date={convertDateToDisplayDate(entry.from, language)} ref={addReference}>
+                    <h2 className="title">{entry.title[language]}</h2>
+                    <span className="description">{convertLinks(entry.description[language])}</span>
                     {
                         entry.image &&
-                        <img src={typeof entry.image == "string" ? entry.image : entry.image?.link} alt={typeof entry.image == "string" ? entry.description : entry.image?.description} className="image" onLoad={imageLoader.current.onLoad} onError={imageLoader.current.onError} ref={imageLoader.current.onRefAdd} />
+                        <img src={typeof entry.image == "string" ? entry.image : entry.image?.link} alt={typeof entry.image == "string" ? entry.description[language] : entry.image?.description[language]} className="image" onLoad={imageLoader.current.onLoad} onError={imageLoader.current.onError} ref={imageLoader.current.onRefAdd} />
                     }
                     {
                         entry.downloadItems && entry.downloadItems.length > 0 && <div className="downloadButtons">
                             {
                                 entry.downloadItems.map(downloadItem => {
-                                    return <button key={downloadItem.name} className="downloadBtn" onClick={() => handleOnDocumentClick(entry, downloadItem)}>{downloadItem.name}</button>
+                                    return <button key={downloadItem.name.en} className="downloadBtn" onClick={() => handleOnDocumentClick(entry, downloadItem)}>{downloadItem.name[language]}</button>
                                 })
                             }
                         </div>
                     }
                     <div className="fromToDate">
-                        <span className="from">From: {entry.from == "today" ? "Today" : entry.from}</span>
-                        <span className="until">Until: {(entry.to == "today" ? "Today" : entry.to) ?? "Today"}</span>
+                        <span className="from">From: {(entry.from == "today" || entry.from == "Today") ? (language == "en" ? "Today" : "Heute") : entry.from}</span>
+                        <span className="until">Until: {((entry.to == "today" || entry.to == "Today") ? (language == "en" ? "Today" : "Heute") : entry.to) ?? (language == "en" ? "Today" : "Heute")}</span>
                     </div>
                 </div>
             ),
             endTimeTag: (
-                <div key={entry.title + "endTimeTag"} className="graphEntry indexPositionedElement endTimeTag to-graph-entry" style={{ "--index": index } as any} data-date={convertDateToDisplayDate(entry.to)} ref={addReference}></div>
+                <div key={entry.title.en + "endTimeTag"} className="graphEntry indexPositionedElement endTimeTag to-graph-entry" style={{ "--index": index } as any} data-date={convertDateToDisplayDate(entry.to, language)} ref={addReference}></div>
             )
         } as {
             entry: CurriculumVitaeEntry;
@@ -201,27 +212,27 @@ export default function CV() {
 
     const elementsFiltered = elements.filter(e => {
         if (currentFilters.length == 0) return true;
-        return currentFilters.includes(e.entry.category);
+        return currentFilters.includes(e.entry.category.en);
     });;
 
     return cv && <div className="cv-wrapper">
-        <h1 className="title">Curriculum Vitae - {`${cv.name?.firstName} ${cv.name?.lastName}`}</h1>
+        <h1 className="title"><LangElement en="Curriculum Vitae" de="Lebenslauf" /> - {`${cv.name?.firstName} ${cv.name?.lastName}`}</h1>
 
         <h2>Info</h2>
         <div className="infos-wrapper">
             {
-                cv.infos.map(info => <InfoElement key={info.title} info={info}></InfoElement>)
+                cv.infos.map(info => <InfoElement key={info.title.en} info={info} language={language}></InfoElement>)
             }
         </div>
 
-        <h2>Entries</h2>
+        <h2><LangElement en="Entries" de="Einträge" /></h2>
         <div className="filter-wrapper">
             <div className="filter" ref={filterRef}>
-                <h3>Filters</h3>
+                <h3><LangElement en="Filters" de="Filter" /></h3>
                 <div className="filterButtons">
                     {
-                        [...(new Set(elements.map(e => e.entry.category)))].map(category => (
-                            <button key={category} className="filterButton" onClick={(e) => handleFilterApply(e, category)}>{category}</button>
+                        [...(new Set(elements.map(e => e.entry.category.en)))].map(category => (
+                            <button key={category} className="filterButton" onClick={(e) => handleFilterApply(e, category)}>{categoryLanguageMap[category][language]}</button>
                         ))
                     }
                     <button className="clearButton" onClick={(e) => handleFilterApply(e, "x")}>+</button>
@@ -249,7 +260,7 @@ export default function CV() {
             {/* All Span elements inbetween */}
             {
                 currentEntrys.map((entry, index) => {
-                    return currentEntrys.length - 1 >= index + 1 && <div key={entry.title + "diff"} style={{ "--index": index } as any} className="timeSpan indexPositionedElement">{Math.abs(dayjs(currentEntrys[index + 1].from, "DD.MM.YYYY").diff(dayjs(entry.from, "DD.MM.YYYY"), "days")) + " days"}</div>
+                    return currentEntrys.length - 1 >= index + 1 && <div key={entry.title.en + "diff"} style={{ "--index": index } as any} className="timeSpan indexPositionedElement">{Math.abs(dayjs(currentEntrys[index + 1].from, "DD.MM.YYYY").diff(dayjs(entry.from, "DD.MM.YYYY"), "days")) + " days"}</div>
                 })
             }
             {/* Dots To */}
@@ -262,6 +273,10 @@ export default function CV() {
             <div className="to-graph time-graph">
                 <div className="to-label label"></div>
             </div>
+        </div>
+
+        <div className="download-wrapper">
+            <button className="download-btn"><LangElement en="Download CV" de="Download Lebenslauf" /></button>
         </div>
 
         <div className="documentViewerWrapper">
@@ -419,7 +434,7 @@ export default function CV() {
 //     return themeGradientColors[index - 1];
 // }
 
-const InfoElement = ({ info }: { info: Info }) => {
+const InfoElement = ({ info, language }: { info: Info; language: LanguageCode }) => {
     const ref = useRef<HTMLDivElement>(null);
 
     const handleClick = () => {
@@ -432,9 +447,9 @@ const InfoElement = ({ info }: { info: Info }) => {
 
     console.log(info.value, hasAllLoaded);
 
-    return <div className="info-card" key={info.title} ref={ref}>
+    return <div className="info-card" key={info.title.en} ref={ref}>
         <div className="icon">{info.icon}</div>
-        <span className="title">{info.title}</span>
+        <span className="title">{info.title[language]}</span>
         <StringOdometer value={info.value} duration={500} onClick={handleClick} hasAllreadyLoaded={hasAllLoaded} className="value" setOnLoad={func => { countUps.push(func); }}></StringOdometer>
     </div>;
 };
@@ -442,7 +457,7 @@ const InfoElement = ({ info }: { info: Info }) => {
 type Info = {
     icon: string;
     value: string;
-    title: string;
+    title: LanguageString;
 }
 
 
@@ -460,7 +475,7 @@ function convertLineBreaks(text: string) {
     return text;
 }
 
-function convertDateToDisplayDate(date: string) {
-    if (!date) return "Today";
-    return date.toLowerCase() == "today" ? "Today" : date;
+function convertDateToDisplayDate(date: string, lang: LanguageCode) {
+    if (!date) return lang == "en" ? "Today" : "Heute";
+    return date.toLowerCase() == "today" ? (lang == "en" ? "Today" : "Heute") : date;
 }

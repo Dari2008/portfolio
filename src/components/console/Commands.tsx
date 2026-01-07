@@ -832,6 +832,33 @@ export const SOCIALS: Command = {
     },
 };
 
+export const LANGUAGE: Command = {
+    shortName: "lang",
+    name: "language",
+    arguments: [
+        {
+            name: "language",
+            alias: "-l",
+            inputType: ["en", "de"],
+            defaultIndex: 0
+        }
+    ],
+    description: "Changes the language of the website",
+    callback: async (args) => {
+        const language = args.language?.value ?? "en";
+
+        return {
+            outValue: <span>
+                Language is not supported!
+                If you want you can help me translate the website into {language}
+                by translating the en.json file into {language} and creating a
+                pull request on github or contacting me via email.
+            </span>,
+            status: "success"
+        }
+    }
+};
+
 export const SNAKE: Command = {
     shortName: "snake",
     name: "snake",

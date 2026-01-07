@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <images>
+        <images>
+            <folder>/specials/stemRacing/pitDisplay/</folder>
+            <baseName>pitDisplay</baseName>
+            <extension>jpeg</extension>
+            <description>Pit display at the World Finals in Singapore</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/cars/</folder>
+            <baseName>cars</baseName>
+            <extension>jpeg</extension>
+            <description>All Cars that participated in the World Finals</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/pitDisplayCad/</folder>
+            <baseName>pitDisplayCad_full</baseName>
+            <extension>jpg</extension>
+            <description>Complete CAD rendering of the pit display designed in Fusion 360</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/pitDisplayCad/</folder>
+            <baseName>pitDisplayCad_constructionGame</baseName>
+            <extension>jpg</extension>
+            <description>CAD rendering of the pit display highlighting the construction game module,
+                designed in Fusion 360</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/ballBearingTest/</folder>
+            <baseName>airTestsystem</baseName>
+            <extension>jpeg</extension>
+            <description>Ball bearing test system measuring RPM and deceleration</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/rpmGraph/</folder>
+            <baseName>rpmGraph</baseName>
+            <extension>png</extension>
+            <description>RPM measurement plotted over time from the air impulse test system</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/reactionGame/</folder>
+            <baseName>reactionGame</baseName>
+            <extension>jpg</extension>
+            <description>Reaction game developed for the pit display used by visitors</description>
+        </images>
+        <images>
+            <folder>/specials/stemRacing/websiteTouchscreen/</folder>
+            <baseName>websiteTouchscreen</baseName>
+            <extension>jpg</extension>
+            <description>Custom website used for live display, portfolios, and car reveal</description>
+        </images>
+    </images>
+    <whatILearned>
+        <whatILearned>
+            <title>Measurement &amp; Test Systems</title>
+            <items>
+                <items>Building repeatable and comparable test setups</items>
+                <items>Measuring RPM and acceleration with millisecond resolution</items>
+                <items>Simulating race conditions to evaluate component wear</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>Software Development</title>
+            <items>
+                <items>Developing large-scale web applications</items>
+                <items>Writing structured frontend code in TypeScript</items>
+                <items>Building complex desktop applications in C#</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>Data &amp; Analysis</title>
+            <items>
+                <items>Processing high-frequency measurement data</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>UX &amp; Interaction</title>
+            <items>
+                <items>Designing interactive systems for public use</items>
+                <items>Creating intuitive interfaces for non-technical users</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>Project &amp; Problem Solving</title>
+            <items>
+                <items>Managing complex projects under tight deadlines</items>
+                <items>Debugging and fixing systems on-site</items>
+                <items>Solving problems with limited documentation</items>
+                <items>Designing systems for live public demonstrations</items>
+                <items>Adapting setups to real-world event constraints</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>Hardware &amp; Electronics</title>
+            <items>
+                <items>Integrating sensors, motors, and actuators into test systems</items>
+                <items>Working with precise timing and signal measurement</items>
+                <items>Building reliable hardware for continuous operation</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>System Integration</title>
+            <items>
+                <items>Connecting hardware, software, and backend services</items>
+                <items>Ensuring data consistency across multiple subsystems</items>
+                <items>Debugging issues across system boundaries</items>
+            </items>
+        </whatILearned>
+        <whatILearned>
+            <title>Professional Engineering Practices</title>
+            <items>
+                <items>Working with incomplete or missing documentation</items>
+                <items>Validating solutions through testing rather than assumptions</items>
+                <items>Balancing innovation with reliability</items>
+            </items>
+        </whatILearned>
+    </whatILearned>
+    <whatIDid>
+
+        <whatIDid>
+            <title>Website for HM</title>
+            <elements>
+                <element>
+                    <type>text</type>
+                    <value>I developed a website for the Hamburger Championship with approximately
+                        20,000
+                        lines of code. It was implemented using HTML, SCSS, CSS, JavaScript, and
+                        TypeScript,
+                        with Python and batch files used as auxiliary tools.</value>
+                </element>
+                <element>
+                    <type>link</type>
+                    <link>https://ascent-racing.com/oldWebsites/HM/</link>
+                    <text>Live View</text>
+                </element>
+            </elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Car Test System</title>
+            <elements>I built a test system that measures the speed of cars at specific positions on
+                the
+                track. The system generates graphs visualizing acceleration behavior. I also
+                authored
+                the portfolio texts describing this system.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Reaction Game</title>
+            <elements>I programmed a reaction game for the team stand, simulating a race start and
+                allowing
+                visitors to measure and compare their own reaction times.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Website for DM</title>
+            <elements>
+                <element>
+                    <type>text</type>
+                    <value>I developed a website for the German Championship with around 30,000
+                        lines of
+                        code. The site was programmed using HTML, SCSS, CSS, JavaScript, and
+                        TypeScript,
+                        with Python and batch files used as additional tools.</value>
+                </element>
+                <element>
+                    <type>link</type>
+                    <link>https://ascent-racing.com/oldWebsites/DM/</link>
+                    <text>Live View</text>
+                </element>
+            </elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Pit Display for DM</title>
+            <elements>
+                <element>
+                    <type>text</type>
+                    <value>I designed and built the complete pit display for the German
+                        Championship.
+                        The
+                        entire structure was constructed from MDF and fully manufactured by our
+                        team,
+                        with
+                        the full mechanical design created by me in Fusion 360. The pit display
+                        integrated
+                        the following components:</value>
+                </element>
+                <element>
+                    <type>list</type>
+                    <value>An improved reaction game originally developed for the Hamburger
+                        Championship</value>
+                    <value>Custom mounts for cars at twice the original scale</value>
+                    <value>A showcase for car presentation</value>
+                    <value>A screen displaying our website and the car reveal</value>
+                </element>
+            </elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Website for WM</title>
+            <elements>
+                <element>
+                    <type>text</type>
+                    <value>I developed a fully functional website for the World Championship. The
+                        project
+                        consists of approximately 40,000 lines of code and received over 2,300
+                        visitors.
+                        It
+                        was implemented using HTML, SCSS, CSS, JavaScript, and TypeScript, with
+                        Python
+                        and
+                        batch files as additional tools.</value>
+                </element>
+                <element>
+                    <type>link</type>
+                    <link>https://ascent-racing.com/</link>
+                    <text>Live View</text>
+                </element>
+            </elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Ball Bearing Test System (Air Impulse)</title>
+            <elements>I constructed and programmed a test system that accelerates wheels using a
+                precisely
+                timed air impulse. The air burst is timed with an accuracy of hundredths of a
+                millisecond, while RPM values are measured every millisecond and plotted over time.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Ball Bearing Wear Test System</title>
+            <elements>I developed a test system simulating wheel wear across 20 races, representing
+                the
+                full
+                lifecycle of a car. The wheels are accelerated using a predefined acceleration curve
+                and
+                abruptly decelerated at the end, similar to the track stop system.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Track Measurement System</title>
+            <elements>I further developed the track measurement system used to precisely measure car
+                position and acceleration during runs.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Pit Display Construction for WM</title>
+            <elements>I designed the pit display construction using the item engineering system. The
+                aluminum profiles were precision-cut and delivered directly by item.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Custom Mounts and Holders</title>
+            <elements>I designed and manufactured custom holders for mounting Scharlau plates, as
+                well
+                as
+                additional holders for posters that were constructed on-site.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Miniature Race Track</title>
+            <elements>I built a miniature race track featuring scaled model cars based on our real
+                race
+                car,
+                allowing visitors to compete against each other.</elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Interactive Exhibition Display</title>
+            <elements>
+                <element>
+                    <type>text</type>
+                    <value>I created an interactive exhibition setup centered around a screen that
+                        displayed</value>
+                </element>
+                <element>
+                    <type>list</type>
+                    <value>Our website</value>
+                    <value>The car reveal</value>
+                    <value>Access to our three portfolios</value>
+                </element>
+            </elements>
+            <elements>
+                <type>text</type>
+                <value>All content was controlled through a dedicated control website. Where you
+                    could
+                    swipe through the elements.</value>
+            </elements>
+        </whatIDid>
+        <whatIDid>
+            <title>Engineering Construction Game</title>
+            <elements>I developed an interactive construction game where participants had to design
+                a
+                wheel in Solid Edge as quickly as possible based on a predefined sketch. The system
+                automatically validated correctness and stored highscores. The application is
+                written in
+                C# with approximately 7,000 lines of code and communicates with my backend server to
+                persist game data.</elements>
+        </whatIDid>
+    </whatIDid>
+</root>

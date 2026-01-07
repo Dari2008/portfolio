@@ -4,6 +4,7 @@ import { loadProjects } from '../../data/Data'
 import './Home.scss'
 import { type Project as ProjectType } from '../../components/project/Project';
 import { useTitle } from '../../components/titleManager/TitleManager';
+import { LangElement, useLanguage } from '../../lang';
 
 export default function Home() {
     useTitle().setTitle("Darius Portfolio");
@@ -29,7 +30,7 @@ export default function Home() {
             <AboutMeSmall />
             <Statistics />
             <div id="projects" className='section'>
-                <h1>Projects</h1>
+                <h1><LangElement en="Projects" de="Projekte" /></h1>
                 <div className="projects-wrapper">
                     {
                         projects.map(project => {

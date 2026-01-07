@@ -6,6 +6,7 @@ import { useAchievements, useLoadingAnimation } from "../../components";
 import gsap from "gsap";
 import { Statics } from "../../utils";
 import { useTitle } from "../../components/titleManager/TitleManager";
+import { LangElement, useLanguage } from "../../lang";
 
 export default function Contact() {
     const achievements = useAchievements();
@@ -15,6 +16,7 @@ export default function Contact() {
 
     const loadingAnimation = useLoadingAnimation();
     const [contact, setContact] = useState<Contact>(CONTACT);
+    const [language,] = useLanguage();
 
 
     const contactFormRef = useRef<HTMLDivElement>(null);
@@ -157,8 +159,18 @@ export default function Contact() {
     ]
 
     return (<>
-        <h1 className="title">Contact</h1>
-        <span className="contact-text">Let's talk! Whether it's a project, a collaboration, or just a question, I'm happy to hear from you.</span>
+        <h1 className="title">
+            <LangElement
+                en="Contact"
+                de="Kontakt"
+            />
+        </h1>
+        <span className="contact-text">
+            <LangElement
+                en="Let's talk! Whether it's a project, a collaboration, or just a question, I'm happy to hear from you."
+                de="Lass uns reden! Egal, ob es um ein Projekt, eine Zusammenarbeit oder einfach nur eine Frage geht, ich freue mich, von dir zu hören."
+            />
+        </span>
         <div className="contact-wrapper">
 
             <div className="info-wrapper">
@@ -200,21 +212,29 @@ export default function Contact() {
             </div>
 
             <div className="contact-form-wrapper">
-                <h2 className="title">Contact Form</h2>
+                <h2 className="title">
+                    <LangElement
+                        en="Contact Form"
+                        de="Kontakt Formular"
+                    />
+                </h2>
                 <div className="contact-form" ref={contactFormRef}>
                     <span className="default">
-                        <input type="text" className="name" placeholder="Your Name" ref={nameRef} onInput={typingInName} />
+                        <input type="text" className="name" placeholder={language == "en" ? "Your Name" : "Dein Name"} ref={nameRef} onInput={typingInName} />
                         <span className="error error-name" ref={errorName}></span>
-                        <input type="email" className="email" placeholder="Your E-mail adresse" ref={emailElement} onInput={typingInEmail} />
+                        <input type="email" className="email" placeholder={language == "en" ? "Your E-mail adresse" : "Dein Email Addresse"} ref={emailElement} onInput={typingInEmail} />
                         <span className="error error-email" ref={errorEmail}></span>
-                        <textarea className="message" placeholder="Message" ref={messageElement} onInput={typingInMessage}></textarea>
+                        <textarea className="message" placeholder={language == "en" ? "Message" : "Nachicht"} ref={messageElement} onInput={typingInMessage}></textarea>
                         <span className="error error-message" ref={errorMessage}></span>
                         <button className="sendMessage" onClick={handleMessageSendClick}>
-                            Send
+                            <LangElement
+                                en="Send"
+                                de="Senden"
+                            />
                         </button>
                     </span>
                     <span className="success">
-                        <span className="mark">&#10003;</span><span >Sent</span>
+                        <span className="mark">&#10003;</span><span ><LangElement en="Sent" de="Gesendet" /></span>
                     </span>
                     <svg className="trails" viewBox="0 0 33 64">
                         <path d="M26,4 C28,13.3333333 29,22.6666667 29,32 C29,41.3333333 28,50.6666667 26,60"></path>

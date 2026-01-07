@@ -3,6 +3,7 @@ import "./Header.scss";
 import { MENU_ITEMS } from "../../app/Menu";
 import { NavLink, useNavigate } from "react-router";
 import { useLoadingAnimation } from "../backgroundAnimation/LoadingAnimationContext";
+import { LangElement } from "../../lang";
 
 
 export default function Header(): JSX.Element {
@@ -39,14 +40,22 @@ export default function Header(): JSX.Element {
                                 return (
                                     <li key={menuItem.name + menuItem.path}>
                                         {
-                                            menuItem.name == "Curriculum Vitae"
+                                            menuItem.name.en == "Curriculum Vitae"
                                                 ?
                                                 <NavLink key={menuItem.name + menuItem.path + "button"} to={menuItem.path}>
-                                                    <span className="normal">{menuItem.name}</span>
+
+                                                    <LangElement en={
+                                                        <span className="normal">{menuItem.name.en}</span>
+                                                    }
+                                                        de={
+                                                            <span className="normal">{menuItem.name.de}</span>
+                                                        } />
                                                     <span className="short">CV</span>
                                                 </NavLink>
                                                 :
-                                                <NavLink key={menuItem.name + menuItem.path + "button"} to={menuItem.path}>{menuItem.name}</NavLink>
+                                                <NavLink key={menuItem.name + menuItem.path + "button"} to={menuItem.path}>
+                                                    <LangElement {...menuItem.name} />
+                                                </NavLink>
                                         }
                                     </li>);
                             })

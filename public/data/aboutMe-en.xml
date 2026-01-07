@@ -1,16 +1,28 @@
 <aboutMe>
-    <name>Darius</name>
-    <role>Developer &amp; Engineer</role>
-    <location>Germany - Hamburg</location>
-    <currentlyWorkingOn>Portfolio Website</currentlyWorkingOn>
-    <hi>Hi, I'm Darius</hi>
-    <hero>
-        <hi>Hi, I'm Darius</hi>
-        <slogan>Code. Hardware. Performance.</slogan>
-        <subline>Full-stack Web &amp; Java developer – I create efficient, scalable, and
-            maintainable applications for the web and desktop.</subline>
-    </hero>
-    <whatIAm>a Web-Developer &amp; Embedded Systems Engineer</whatIAm>
+    <name>
+        Darius
+    </name>
+
+    <role>
+        <en>Developer &amp; Engineer</en>
+        <de>Entwickler &amp; Ingenieur</de>
+    </role>
+
+    <location>
+        <en>Germany - Hamburg</en>
+        <de>Deutschland – Hamburg</de>
+    </location>
+
+    <currentlyWorkingOn>
+        <en>Portfolio Website</en>
+        <de>Portfolio-Website</de>
+    </currentlyWorkingOn>
+
+    <hi>
+        <en>Hi, I'm Darius</en>
+        <de>Hi, ich bin Darius</de>
+    </hi>
+    
     <technologies>
         <technologies>
             <category>Fullstack</category>
@@ -50,61 +62,159 @@
             </tech>
         </technologies>
     </technologies>
-    <motiviation></motiviation>
-    <whatILearnCurrently></whatILearnCurrently>
+
+    <hero>
+        <hi>
+            <en>Hi, I'm Darius</en>
+            <de>Hi, ich bin Darius</de>
+        </hi>
+        <slogan>
+            <en>Code. Hardware. Performance.</en>
+            <de>Code. Hardware. Performance.</de>
+        </slogan>
+        <subline>
+            <en>Full-stack Web &amp; Java developer – I create efficient, scalable, and maintainable applications for the web and desktop.</en>
+            <de>Full-Stack-Web- &amp; Java-Entwickler – ich entwickle effiziente, skalierbare und wartbare Anwendungen für Web und Desktop.</de>
+        </subline>
+    </hero>
+
+    <whatIAm>
+        <en>a Web-Developer &amp; Embedded Systems Engineer</en>
+        <de>Webentwickler &amp; Embedded-Systems-Ingenieur</de>
+    </whatIAm>
+
     <texts>
         <intro>
-            I’m a developer with a strong interest in building clean,
-            interactive, and technically well-structured applications.
-            My main focus is modern web development and Java-based
-            projects, with an emphasis on performance and maintainability.
+            <en>
+                <p>
+                    I’m a developer with a strong interest in building clean,
+                    interactive, and technically well-structured applications.
+                    My main focus is modern web development and Java-based
+                    projects, with an emphasis on performance and maintainability.
+                </p>
+            </en>
+            <de>
+                <p>
+                    Ich bin Entwickler mit einem starken Interesse an der Entwicklung
+                    sauberer, interaktiver und technisch gut strukturierter Anwendungen.
+                    Mein Schwerpunkt liegt auf moderner Webentwicklung und
+                    Java-basierten Projekten, mit Fokus auf Performance und Wartbarkeit.
+                </p>
+            </de>
         </intro>
+
         <techStack>
-            I primarily work with these technologies:
+            <en>I primarily work with these technologies:</en>
+            <de>Ich arbeite hauptsächlich mit folgenden Technologien:</de>
         </techStack>
+
         <origin>
-            <p>
-                I started programming with Fischertechnik at the age of ten. 
-                When the COVID pandemic began, my interest deepened further. 
-                Since my mother is a teacher and attended various online training 
-                sessions, one of which introduced the programming language Java, I 
-                followed along out of curiosity. I found the topic fascinating and 
-                soon began exploring Java on my own. Over time, this foundation led 
-                me to broaden my skill set, and I went on to learn HTML, CSS, JavaScript, 
-                and later TypeScript, with a growing focus on web development and interactive applications.
-            </p>
+            <en>
+                <p>
+                    I started programming with Fischertechnik at the age of ten.
+                    When the COVID pandemic began, my interest deepened further.
+                    Since my mother is a teacher and attended various online training
+                    sessions, one of which introduced the programming language Java,
+                    I followed along out of curiosity. I found the topic fascinating and
+                    soon began exploring Java on my own. Over time, this foundation led
+                    me to broaden my skill set, and I went on to learn HTML, CSS,
+                    JavaScript, and later TypeScript, with a growing focus on web
+                    development and interactive applications.
+                </p>
+            </en>
+            <de>
+                <p>
+                    Mit zehn Jahren begann ich mit dem Programmieren mithilfe von
+                    Fischertechnik. Mit Beginn der COVID-Pandemie vertiefte sich
+                    mein Interesse weiter. Da meine Mutter Lehrerin ist und an
+                    verschiedenen Online-Fortbildungen teilnahm, in denen unter
+                    anderem die Programmiersprache Java vorgestellt wurde, schaute
+                    ich aus Neugier mit. Das Thema faszinierte mich, und ich begann
+                    schnell, mich selbstständig mit Java zu beschäftigen. Diese
+                    Grundlage führte dazu, dass ich mein Wissen kontinuierlich
+                    erweiterte und anschließend HTML, CSS, JavaScript und später
+                    TypeScript lernte, mit einem wachsenden Fokus auf Webentwicklung
+                    und interaktive Anwendungen.
+                </p>
+            </de>
         </origin>
+
         <interests>
-            <p>
-                I enjoy working on projects where logic and creativity meet.
-                This includes canvas-based applications, small games, tools,
-                and systems that require thoughtful architecture rather than
-                just visual polish.
-            </p>
-            <p>
-                I particularly like projects where I can control the full
-                stack or the full rendering pipeline, as it allows me to
-                optimize performance and understand every part of the system.
-            </p>
+            <en>
+                <p>
+                    I enjoy working on projects where logic and creativity meet.
+                    This includes canvas-based applications, small games, tools,
+                    and systems that require thoughtful architecture rather than
+                    just visual polish.
+                </p>
+                <p>
+                    I particularly like projects where I can control the full
+                    stack or the full rendering pipeline, as it allows me to
+                    optimize performance and understand every part of the system.
+                </p>
+            </en>
+            <de>
+                <p>
+                    Ich arbeite gerne an Projekten, bei denen Logik und Kreativität
+                    zusammenkommen. Dazu zählen Canvas-basierte Anwendungen,
+                    kleinere Spiele, Tools und Systeme, die eine durchdachte
+                    Architektur erfordern und nicht nur visuelle Gestaltung.
+                </p>
+                <p>
+                    Besonders gefallen mir Projekte, bei denen ich den gesamten
+                    Stack oder die komplette Rendering-Pipeline kontrollieren
+                    kann, da ich so die Performance optimieren und jedes Detail
+                    des Systems verstehen kann.
+                </p>
+            </de>
         </interests>
+
         <learning>
-            <p>
-                I learn primarily by building real projects. Instead of
-                following tutorials step by step, I prefer to experiment,
-                research problems as they arise, and refine my solutions
-                through iteration.
-            </p>
-            <p>
-                I actively explore new technologies, read documentation,
-                analyze existing implementations, and apply what I learn
-                directly to my own projects.
-            </p>
+            <en>
+                <p>
+                    I learn primarily by building real projects. Instead of
+                    following tutorials step by step, I prefer to experiment,
+                    research problems as they arise, and refine my solutions
+                    through iteration.
+                </p>
+                <p>
+                    I actively explore new technologies, read documentation,
+                    analyze existing implementations, and apply what I learn
+                    directly to my own projects.
+                </p>
+            </en>
+            <de>
+                <p>
+                    Ich lerne hauptsächlich durch die Umsetzung realer Projekte.
+                    Anstatt Tutorials Schritt für Schritt zu folgen, experimentiere
+                    ich lieber, recherchiere auftretende Probleme und verbessere
+                    meine Lösungen iterativ.
+                </p>
+                <p>
+                    Ich beschäftige mich aktiv mit neuen Technologien, lese
+                    Dokumentationen, analysiere bestehende Implementierungen
+                    und setze das Gelernte direkt in eigenen Projekten um.
+                </p>
+            </de>
         </learning>
+
         <goals>
-            My goal is to continue growing as a developer by working on
-            technically challenging projects and deepening my understanding
-            of software architecture, performance optimization, and
-            low-level concepts.
+            <en>
+                <p>
+                    My goal is to continue growing as a developer by working on
+                    technically challenging projects and deepening my understanding
+                    of software architecture, performance optimization, and
+                    low-level concepts.
+                </p>
+            </en>
+            <de>
+                <p>
+                    Mein Ziel ist es, mich als Entwickler kontinuierlich
+                    weiterzuentwickeln, indem ich an technisch anspruchsvollen
+                    Projekten arbeite und mein Verständnis für Softwarearchitektur,
+                    Performance-Optimierung und Low-Level-Konzepte vertiefe.
+                </p>
+            </de>
         </goals>
     </texts>
 </aboutMe>

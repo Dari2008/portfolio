@@ -116,6 +116,20 @@ $cvTimeSpanWidth: calc($cvRestWidthPerSide - 6rem / 1.7);
         }
     }
 
+    .download-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        .download-btn {
+            margin-inline: auto;
+            font-size: clampW(0.6em, 1.5em, 200px, 2000px);
+
+        }
+    }
+
 
     .filter-wrapper {
         width: 100%;

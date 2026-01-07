@@ -6,6 +6,7 @@ import { type Project as ProjectType } from '../../components/project/Project';
 import { ProjectBig } from "../../components";
 import { Statics } from "../../utils";
 import { useTitle } from "../../components/titleManager/TitleManager";
+import { LangElement } from "../../lang";
 
 export default function Projects() {
     useTitle().setTitle(Statics.TITLE_SUFFIX + "Projects");
@@ -24,7 +25,7 @@ export default function Projects() {
     }, [projects, bg]);
 
     return (<>
-        <h1 className="title">Projects</h1>
+        <h1 className="title"><LangElement en="Projects" de="Projekte" /></h1>
         {
             projects.map(project => {
                 return <ProjectBig key={project.id} project={project} />

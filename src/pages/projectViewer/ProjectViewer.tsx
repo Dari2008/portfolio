@@ -8,6 +8,7 @@ import { ImageViewer, useAchievements, useLoadingAnimation } from "../../compone
 import { ImageLoadManager, Statics } from "../../utils";
 import TechnologyList from "../../components/technologies/TechnologyList";
 import { useTitle } from "../../components/titleManager/TitleManager";
+import { LangElement, useLanguage } from "../../lang";
 dayjs.extend(customParseFormat);
 
 
@@ -25,6 +26,7 @@ export default function ProjectViewer(params: { project: Project }) {
 
     const loadingAnimation = useLoadingAnimation();
 
+    const [language,] = useLanguage();
     const projectImage = project.projectImage;
     const allImages = [projectImage, ...(project.otherImages ?? [])];
     const daysSince = Math.abs(dayjs(project.date, "DD.MM.YYYY").diff(dayjs(), "days"));
@@ -66,28 +68,27 @@ export default function ProjectViewer(params: { project: Project }) {
     });
 
     const totalCharCount = Object.values(codePercentages).reduce((a, b) => a + b, 0);
-    console.log("project", project);
     return (
         <>
-            <h1 className="project-title title">{project.title}</h1>
+            <h1 className="project-title title">{project.title[language]}</h1>
 
             <ImageViewer className="project-images" imageLoader={imageLoader.current} images={allImages.map(e => {
                 return {
                     defaultPath: typeof e == "string" ? e : e.link,
-                    description: typeof e == "string" ? "" : e.description,
+                    description: typeof e == "string" ? { en: "", de: "" } : e.description,
                     paths: []
                 }
             })}></ImageViewer>
 
             <div className="detailsWrapper">
                 <div className="project-description grid-item">
-                    <h3 className="title">Description</h3>
-                    <div className="description">{project.description}</div>
+                    <h3 className="title"><LangElement en="Description" de="Beschreibung" /></h3>
+                    <div className="description">{project.description[language]}</div>
                 </div>
                 {
                     project.sourceCodeLink && Object.keys(codePercentages).length > 0 && (
                         <div className="codePercentages grid-item">
-                            <h3 className="title">Languages Used</h3>
+                            <h3 className="title"><LangElement en="Languages Used" de="Benutzte Sprachen" /></h3>
                             <div className="visualPercentages">
                                 {
                                     Object.keys(codePercentages).map((language, index) => {
@@ -114,20 +115,20 @@ export default function ProjectViewer(params: { project: Project }) {
                     )
                 }
                 <div className="timeStats grid-item">
-                    <h3 className="title">Time Stats</h3>
-                    <div className="lastWorkedDays">Last Worked: {daysSince == 0 ? "just today" : daysSince + " " + (daysSince == 1 ? "day" : "days")} ago</div>
-                    <div className="timeTaken">Time Taken: {`${project.timeTakenToCreate.time} ${project.timeTakenToCreate.unit}`}</div>
+                    <h3 className="title"><LangElement en="Time Stats" de="Zeit Stats" /></h3>
+                    <div className="lastWorkedDays"><LangElement en="Last Worked" de="Zuletzt dran gearbeitet" />: {daysSince == 0 ? "just today" : daysSince + " " + (daysSince == 1 ? "day" : "days")} ago</div>
+                    <div className="timeTaken"><LangElement en="Time Taken" de="Zeit gebraucht" />: {`${project.timeTakenToCreate.time} ${project.timeTakenToCreate.unit[language]}`}</div>
                 </div>
                 <div className="project-technologies grid-item">
-                    <h3 className="title">Technologies</h3>
+                    <h3 className="title"><LangElement en="Technologies" de="Technologien" /></h3>
                     <TechnologyList className="technologies" technologies={project.technologies} showThemeColoredImage={false}></TechnologyList>
                 </div>
                 <ul className="project-features grid-item">
-                    <h3 className="title">Features</h3>
+                    <h3 className="title"><LangElement en="Features" de="Features" /></h3>
                     <div className="features">
                         {
                             project.features.map((feature, index) => (
-                                <li key={index} className="feature">{feature}</li>
+                                <li key={index} className="feature">{feature[language]}</li>
                             ))
                         }
                     </div>

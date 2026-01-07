@@ -5,6 +5,7 @@ import type { CountUpApi } from "react-countup/build/types";
 import { useLoadingAnimation } from "../backgroundAnimation/LoadingAnimationContext";
 import StringOdometer from "./StringOdometer";
 import { loadStatistics, STATISTICS, type Statistic, type Statistics } from "../../data/Data";
+import { useLanguage } from "../../lang";
 
 
 let countUps: (CountUpApi | (() => void))[] = [];
@@ -40,7 +41,7 @@ export default function Statistics() {
         <div className="statistics">
             <div className="statistics-container">
                 {
-                    statistics.map(s => <StatisticElement key={s.title} statistic={s}></StatisticElement>)
+                    statistics.map(s => <StatisticElement key={s.title.en} statistic={s}></StatisticElement>)
                 }
             </div>
         </div>
@@ -49,6 +50,7 @@ export default function Statistics() {
 
 const StatisticElement = ({ statistic }: { statistic: Statistic }) => {
     const ref = useRef<HTMLDivElement>(document.createElement("div"));
+    const [language,] = useLanguage();
     if (typeof statistic.value == "number") {
         let countUp = useCountUp({
             end: statistic.value,
@@ -60,9 +62,9 @@ const StatisticElement = ({ statistic }: { statistic: Statistic }) => {
         countUps.push(countUp);
     }
 
-    return <div className="statistic" key={statistic.title} data-importance={statistic.importance}>
+    return <div className="statistic" key={statistic.title.en} data-importance={statistic.importance}>
         <div className="icon">{statistic.icon}</div>
-        <span className="title">{statistic.title}</span>
+        <span className="title">{statistic.title[language]}</span>
         {
             typeof statistic.value == "number" && (
                 <span ref={ref} className="value"></span>

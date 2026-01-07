@@ -2,11 +2,13 @@ import { useState, type ReactNode } from "react";
 import { AchievementContext } from "./AchievementContext";
 import AchievementManager, { type Achievement } from "./AchievementManager";
 import "./AchievementWrapper.scss";
+import { LangElement, useLanguage } from "../../lang";
 
 let manager = (globalThis as any).sdfsldjfsd;
 
 export default function AchievementWrapper({ children }: { children: ReactNode }) {
     const [achievements, setAchievements] = useState<RecentAchievement[]>([]);
+    const [language,] = useLanguage();
 
     if (!manager) {
         manager = new AchievementManager();
@@ -38,11 +40,16 @@ export default function AchievementWrapper({ children }: { children: ReactNode }
         <div className="achievement-wrapper">
             {
                 achievements.map(achievement => {
-                    return <div key={achievement.title} className={"achievement" + (achievement.isRemoving ? " removing" : "")}>
-                        <h3 className="genericTitle">Achievement Unlocked</h3>
-                        <h3 className="atitle">{achievement.title}</h3>
+                    return <div key={achievement.title.en} className={"achievement" + (achievement.isRemoving ? " removing" : "")}>
+                        <h3 className="genericTitle">
+                            <LangElement
+                                en="Achievement Unlocked"
+                                de="Achievement Freigeschaltet"
+                            />
+                        </h3>
+                        <h3 className="atitle">{achievement.title[language]}</h3>
                         <div className="icon">{achievement.icon}</div>
-                        <div className="info">{achievement.info}</div>
+                        <div className="info">{achievement.info[language]}</div>
                     </div>
                 })
             }

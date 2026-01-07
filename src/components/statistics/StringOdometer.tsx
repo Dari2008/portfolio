@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./string-odometer.scss";
 import { randomBetween } from "../backgroundAnimation/Utils";
 
@@ -19,103 +19,84 @@ export default function StringOdometer({
     hasAllreadyLoaded: boolean;
     onClick?: () => void;
 }) {
-    const containerRef = useRef<(HTMLSpanElement | null)[]>([]);
-    const indexes = useRef<number[]>([]);
-    const tickerSpeed = useRef<number[]>([]);
-    const charactersToRun = useRef<number[]>([]);
-    const timePassed = useRef<number>(0);
-    const hasLoaded = useRef<boolean>(false);
+    const [displayChars, setDisplayChars] = useState<string[]>(() =>
+        value.split("").map(() => "\u00A0") // start with non-breaking spaces
+    );
+
+    const indexes = useState<number[]>(() =>
+        value.split("").map(() => 0)
+    )[0];
+    const tickerSpeed = useState<number[]>(() =>
+        value.split("").map(() => 0)
+    )[0];
+    const charactersToRun = useState<number[]>(() =>
+        value.split("").map(() => 0)
+    )[0];
 
     const TICKER_SPEED = 10;
     const NUMBER_OF_LOOPS = duration / TICKER_SPEED;
-
-    if (hasLoaded.current || hasAllreadyLoaded) {
-        indexes.current = charactersToRun.current;
-        indexes.current.forEach((v, i) => {
-            const el = containerRef.current[i];
-            if (el) el.innerHTML = CHARSET[v] == " " ? "&nbsp;" : CHARSET[v];
-        });
-    }
+    let interval: number;
 
     const onLoad = () => {
-        hasLoaded.current = true;
+        // initialize characters
         const chars = value.split("");
-
-        charactersToRun.current = chars.map((char) => {
+        chars.forEach((char, i) => {
             const idx = CHARSET.indexOf(char);
-            return idx === -1 ? 0 : idx;
-        });
-
-        indexes.current = chars.map(() => randomBetween(0, CHARSET.length - 1));
-
-        tickerSpeed.current = charactersToRun.current.map((targetIndex, i) => {
-            const startIndex = indexes.current[i];
+            charactersToRun[i] = idx === -1 ? 0 : idx;
+            indexes[i] = randomBetween(0, CHARSET.length - 1);
 
             let toSkip;
-            if (targetIndex > startIndex) {
-                toSkip = targetIndex - startIndex;
-            } else if (targetIndex < startIndex) {
-                toSkip = CHARSET.length - startIndex + targetIndex;
+            if (charactersToRun[i] > indexes[i]) {
+                toSkip = charactersToRun[i] - indexes[i];
+            } else if (charactersToRun[i] < indexes[i]) {
+                toSkip = CHARSET.length - indexes[i] + charactersToRun[i];
             } else {
                 toSkip = CHARSET.length;
             }
-
             toSkip += CHARSET.length * 2;
-
-            return toSkip / NUMBER_OF_LOOPS;
+            tickerSpeed[i] = toSkip / NUMBER_OF_LOOPS;
         });
 
-        timePassed.current = 0;
+        let timePassed = 0;
 
-        const interval = setInterval(() => {
-            if (timePassed.current >= duration) {
+        interval = setInterval(() => {
+            timePassed += TICKER_SPEED;
+            if (timePassed >= duration) {
                 clearInterval(interval);
-
                 // snap final characters
-                indexes.current = charactersToRun.current;
-                indexes.current.forEach((v, i) => {
-                    const el = containerRef.current[i];
-                    if (el) el.innerHTML = CHARSET[v] == " " ? "&nbsp;" : CHARSET[v];
-                });
+                setDisplayChars(chars.map((c) => (c === " " ? "\u00A0" : c)));
                 return;
             }
 
-            timePassed.current += TICKER_SPEED;
-
-            indexes.current = indexes.current.map((v, i) => {
-                const el = containerRef.current[i];
-                if (!el) return v;
-
-                const speed = tickerSpeed.current[i];
-                const newVal = (v + speed) % CHARSET.length;
-
-                el.innerHTML = CHARSET[Math.floor(newVal)] == " " ? "&nbsp;" : CHARSET[Math.floor(newVal)];
-                return newVal;
-            });
+            setDisplayChars((prev) =>
+                prev.map((_, i) => {
+                    indexes[i] = (indexes[i] + tickerSpeed[i]) % CHARSET.length;
+                    return CHARSET[Math.floor(indexes[i])] === " " ? "\u00A0" : CHARSET[Math.floor(indexes[i])];
+                })
+            );
         }, TICKER_SPEED);
     };
 
-    // register onLoad only once
     useEffect(() => {
         setOnLoad(onLoad);
-    });
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
+    // If already loaded, display final value
+    useEffect(() => {
+        if (hasAllreadyLoaded) {
+            setDisplayChars(value.split("").map((c) => (c === " " ? "\u00A0" : c)));
+        }
+    }, [hasAllreadyLoaded]);
 
     return (
         <div className={"string-odometer " + className} onClick={onClick}>
-            {value.split("").map((_, i) => (
-                <span
-                    key={i}
-                    className="character-odometer"
-                    ref={(el) => {
-                        containerRef.current[i] = el;
-                    }}
-                >
-                    {
-                        (hasLoaded.current || hasAllreadyLoaded) &&
-                        <>{value.at(i) == " " ? <>&nbsp;</> : value.at(i)}</>
-                        ||
-                        <>&nbsp;</>
-                    }
+            {displayChars.map((char, i) => (
+                <span key={i} className="character-odometer">
+                    {char}
                 </span>
             ))}
         </div>

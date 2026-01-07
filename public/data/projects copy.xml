@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects>
+    <projects>
+        <id>untiscombiner</id>
+        <title>Untis Combiner</title>
+        <date>10.11.2025</date>
+        <description>A web application that combines multiple Untis schedules into one unified
+            schedule, allowing users to view all their classes in a single interface. It also
+            offers
+            features like grade tracking.</description>
+        <timeTakenToCreate>
+            <time>63</time>
+            <unit>hours</unit>
+        </timeTakenToCreate>
+        <technologies>
+            <technologies>typescript</technologies>
+            <technologies>sass</technologies>
+            <technologies>html5</technologies>
+            <technologies>php</technologies>
+            <technologies>mysql</technologies>
+            <technologies>vite</technologies>
+            <technologies>python</technologies>
+        </technologies>
+        <features>
+            <features>Notifications</features>
+            <features>Accounts</features>
+            <features>Mobile Web App</features>
+            <features>Multi-schedule merging</features>
+            <features>Grade tracking</features>
+            <features>Exam schedule management</features>
+            <features>Excuse system</features>
+            <features>Customizable appearance</features>
+            <features>Print-friendly schedule export</features>
+            <features>Responsive design</features>
+        </features>
+        <liveLink>https://untis.frobeen.com</liveLink>
+        <sourceCodeLink>https://github.com/Dari2008/WebUntis</sourceCodeLink>
+        <projectImage>/project-images/untis-combiner/preview.png</projectImage>
+        <otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_multi-lesson.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_1.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_2.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_appearance.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_exams.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_excuse-system.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_excuse-system-print.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_notifications.png</otherImages>
+            <otherImages>/project-images/untis-combiner/UntisCombiner_schedule.png</otherImages>
+        </otherImages>
+    </projects>
+    <projects>
+        <id>ascentwebsite</id>
+        <title>Ascent Website</title>
+        <date>20.09.2025</date>
+        <description>A website I developed and programmed for our team competing at the World
+            Finals
+            in Singapore, showcasing our team identity, news, and our car.</description>
+        <timeTakenToCreate>
+            <time>50</time>
+            <unit>hours</unit>
+        </timeTakenToCreate>
+        <technologies>
+            <technologies>typescript</technologies>
+            <technologies>sass</technologies>
+            <technologies>html5</technologies>
+            <technologies>php</technologies>
+            <technologies>vite</technologies>
+            <technologies>python</technologies>
+        </technologies>
+        <features>
+            <features>News updates</features>
+            <features>Car showcase with animations</features>
+            <features>Image gallery</features>
+            <features>Contact form</features>
+            <features>Multiple informational pages</features>
+            <features>Responsive design</features>
+            <features>Easy navigation</features>
+        </features>
+        <liveLink>https://ascent-racing.com</liveLink>
+        <sourceCodeLink>https://github.com/Dari2008/Ascent-Website</sourceCodeLink>
+        <projectImage>/project-images/ascent-racing/preview.png</projectImage>
+        <otherImages>
+            <otherImages>/project-images/ascent-racing/ascentRacing_car-animation.png</otherImages>
+            <otherImages>/project-images/ascent-racing/ascentRacing_contact.png</otherImages>
+            <otherImages>/project-images/ascent-racing/ascentRacing_gallery.png</otherImages>
+            <otherImages>/project-images/ascent-racing/ascentRacing_news.png</otherImages>
+            <otherImages>/project-images/ascent-racing/ascentRacing_pages.png</otherImages>
+        </otherImages>
+    </projects>
+    <projects>
+        <id>led-matrix</id>
+        <title>LED Matrix</title>
+        <date>15.08.2022</date>
+        <description>A programmable LED matrix display controlled by a microcontroller, capable of
+            displaying
+            animations, text, and graphics.</description>
+        <timeTakenToCreate>
+            <time>60</time>
+            <unit>hours</unit>
+        </timeTakenToCreate>
+        <technologies>
+            <technologies>php</technologies>
+            <technologies>python</technologies>
+            <technologies>html5</technologies>
+            <technologies>css3</technologies>
+            <technologies>javascript</technologies>
+        </technologies>
+        <features>
+            <features>Custom animations</features>
+            <features>Text display</features>
+            <features>Graphics rendering</features>
+            <features>Remote control via web interface</features>
+            <features>Plugins</features>
+            <features>Games</features>
+        </features>
+        <liveLink>https://led-matrix.frobeen.com</liveLink>
+        <sourceCodeLink>https://github.com/Dari2008/Led-Matrix</sourceCodeLink>
+        <projectImage>/project-images/led-matrix/preview.png</projectImage>
+        <otherImages>
+            <otherImages>/project-images/led-matrix/led-matrix_1.png</otherImages>
+            <otherImages>/project-images/led-matrix/led-matrix_2.png</otherImages>
+            <otherImages>/project-images/led-matrix/led-matrix_2_1.png</otherImages>
+            <otherImages>/project-images/led-matrix/led-matrix_2_2.png</otherImages>
+            <otherImages>/project-images/led-matrix/led-matrix_3.png</otherImages>
+        </otherImages>
+    </projects>
+</projects>

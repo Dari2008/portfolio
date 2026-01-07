@@ -1,0 +1,64 @@
+@use "../../utils/Variables.scss" as *;
+
+.language-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 5vw;
+
+    .language-change-btn {
+        font-family: "Fontawesome";
+        box-shadow: 0 0 2px 2px $themeColor2;
+        transition: transform 0.3s ease-in-out;
+        aspect-ratio: 1 / 1;
+        width: 1em;
+        height: 1em;
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.open {
+            transform: rotate(180deg);
+            @include glass-themeColor-opacity-w-color($themeColor4, 20);
+            border-radius: 8px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+    }
+
+    .language-dropdown {
+        @include glass-themeColor-opacity-w-color($themeColor4, 20);
+        width: calc(100% - 20px);
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 10px;
+        padding: 10px;
+        border-bottom-left-radius: 0px;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            filter: grayscale(50%) brightness(50%);
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(75%);
+            }
+
+            &.selected {
+                filter: none;
+            }
+        }
+
+        &.open {
+            opacity: 1;
+
+        }
+    }
+}

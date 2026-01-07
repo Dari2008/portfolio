@@ -1,3 +1,5 @@
+import type { LanguageString } from "../../data/Data";
+
 export default class AchievementManager {
 
     private achievements: AchievementType[] = [];
@@ -264,8 +266,8 @@ type URL = string;
 
 export type Achievement = {
     icon: string | URL;
-    title: string;
-    info: string;
+    title: LanguageString;
+    info: LanguageString;
 }
 
 const ALL_PROJECTS: string[] = [
@@ -279,79 +281,157 @@ export const ACHIEVEMENT_REGISTRY: {
 } = {
     scrolledToBottomOfPage: {
         icon: "\uf70e",
-        title: "Completionist",
-        info: "Scrolled all the way to the bottom of the page."
+        title: {
+            en: "Completionist",
+            de: "Vollender"
+        },
+        info: {
+            en: "Scrolled all the way to the bottom of the page.",
+            de: "Bis ganz nach unten auf der Seite gescrollt."
+        }
     },
 
     openedDeveloperTools: {
         icon: "\uf121",
-        title: "Inspector",
-        info: "Opened developer tools to explore the site."
+        title: {
+            en: "Inspector",
+            de: "Inspektor"
+        },
+        info: {
+            en: "Opened developer tools to explore the site.",
+            de: "Die Entwicklerwerkzeuge geöffnet, um die Seite zu erkunden."
+        }
     },
 
     visitedAllProjects: {
         icon: "\uf542",
-        title: "Full Tour",
-        info: "Visited every project in the portfolio."
+        title: {
+            en: "Full Tour",
+            de: "Kompletttour"
+        },
+        info: {
+            en: "Visited every project in the portfolio.",
+            de: "Alle Projekte im Portfolio besucht."
+        }
     },
 
     triggeredEasterEgg: {
         icon: "\uf7fb",
-        title: "You Found It",
-        info: "Discovered a hidden feature on the site."
+        title: {
+            en: "You Found It",
+            de: "Gefunden"
+        },
+        info: {
+            en: "Discovered a hidden feature on the site.",
+            de: "Ein verstecktes Feature der Seite entdeckt."
+        }
     },
 
     spentFiveMinutes: {
         icon: "\uf251",
-        title: "Taking Your Time",
-        info: "Spent at least five minutes exploring the site."
+        title: {
+            en: "Taking Your Time",
+            de: "Zeit genommen"
+        },
+        info: {
+            en: "Spent at least five minutes exploring the site.",
+            de: "Mindestens fünf Minuten auf der Seite verbracht."
+        }
     },
 
     visitedHomePage: {
         icon: "\uf015",
-        title: "Welcome Explorer",
-        info: "Visited the home page."
+        title: {
+            en: "Welcome, Explorer",
+            de: "Willkommen, Entdecker"
+        },
+        info: {
+            en: "Visited the home page.",
+            de: "Die Startseite besucht."
+        }
     },
 
     visitedAboutMePage: {
         icon: "\uf406",
-        title: "Getting Personal",
-        info: "Opened the About Me page."
+        title: {
+            en: "Getting Personal",
+            de: "Persönlich geworden"
+        },
+        info: {
+            en: "Opened the About Me page.",
+            de: "Die „Über mich“-Seite geöffnet."
+        }
     },
 
     visitedCVPage: {
         icon: "\uf02d",
-        title: "Career Scout",
-        info: "Visited the CV / Resume page."
+        title: {
+            en: "Career Scout",
+            de: "Karriere-Scout"
+        },
+        info: {
+            en: "Visited the CV / Resume page.",
+            de: "Die Lebenslauf- bzw. CV-Seite besucht."
+        }
     },
 
     visitedContactPage: {
         icon: "\uf2b6",
-        title: "Say Hello",
-        info: "Visited the Contact page."
+        title: {
+            en: "Say Hello",
+            de: "Sag Hallo"
+        },
+        info: {
+            en: "Visited the Contact page.",
+            de: "Die Kontaktseite besucht."
+        }
     },
 
     usedConsole: {
         icon: "\uf120",
-        title: "Curious Coder",
-        info: "Opened or used the console feature."
+        title: {
+            en: "Curious Coder",
+            de: "Neugieriger Coder"
+        },
+        info: {
+            en: "Opened or used the console feature.",
+            de: "Die Konsolenfunktion geöffnet oder verwendet."
+        }
     },
 
     submittedContactForm: {
         icon: "\uf1d8",
-        title: "Reacher",
-        info: "Submitted a message through the contact form."
+        title: {
+            en: "Reacher",
+            de: "Kontakt aufgenommen"
+        },
+        info: {
+            en: "Submitted a message through the contact form.",
+            de: "Eine Nachricht über das Kontaktformular gesendet."
+        }
     },
 
     finishedAllAchievements: {
-        icon: "\uf005", // fa-star
-        title: "Master Explorer",
-        info: "Unlocked all achievements! You’ve seen everything the site has to offer."
+        icon: "\uf005",
+        title: {
+            en: "Master Explorer",
+            de: "Meister-Entdecker"
+        },
+        info: {
+            en: "Unlocked all achievements! You’ve seen everything the site has to offer.",
+            de: "Alle Erfolge freigeschaltet! Du hast alles gesehen, was die Seite zu bieten hat."
+        }
     },
 
     visitedPageAt00_00: {
         icon: "\uf017",
-        title: "Midnight Visitor",
-        info: "Visited the site at exactly midnight!"
+        title: {
+            en: "Midnight Visitor",
+            de: "Mitternachtsbesucher"
+        },
+        info: {
+            en: "Visited the site at exactly midnight!",
+            de: "Die Seite exakt um Mitternacht besucht!"
+        }
     },
 };

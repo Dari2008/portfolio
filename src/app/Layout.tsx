@@ -4,6 +4,7 @@ import { Outlet } from "react-router";
 import { Console, ConsoleButton } from "../components/console/Console";
 import { KonamiCode } from "../easterEggs";
 import { ScrollRestoration } from "./ScrollRestoration";
+import LanguageChangeButton from "../components/languageChange/LanguageChangeButton";
 
 const Layout: React.FC = () => {
     return (
@@ -19,6 +20,7 @@ const Layout: React.FC = () => {
             <ConsoleButton />
             <BackgroundAnimation />
             <IntitalLoadingAnimation />
+            <LanguageChangeButton />
         </>
     );
 };

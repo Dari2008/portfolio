@@ -5,28 +5,30 @@ import { useLoadingAnimation } from "../backgroundAnimation/LoadingAnimationCont
 import { ImageLoadManager } from "../../utils";
 import { NavLink } from "react-router";
 import TechnologyList from "../technologies/TechnologyList";
+import { useLanguage } from "../../lang";
 
 
 export default function ProjectBig({ project }: { project: Project }) {
 
     const loadingAnimation = useLoadingAnimation();
     const imageLoader = useRef(new ImageLoadManager(loadingAnimation, "loadingProjectBigImages"));
+    const [language,] = useLanguage();
 
     return <div className="project-card-big">
 
         <div className="project-previewImage">
-            <img src={typeof project.projectImage == "string" ? project.projectImage : project.projectImage.link} alt={typeof project.projectImage == "string" ? "" : project.projectImage.description} onLoad={imageLoader.current.onLoad} onError={imageLoader.current.onError} ref={imageLoader.current.onRefAdd} />
+            <img src={typeof project.projectImage == "string" ? project.projectImage : project.projectImage.link} alt={typeof project.projectImage == "string" ? "" : project.projectImage.description[language]} onLoad={imageLoader.current.onLoad} onError={imageLoader.current.onError} ref={imageLoader.current.onRefAdd} />
         </div>
 
         <h2 className="project-title">
             {
-                project.title
+                project.title[language]
             }
         </h2>
 
         <div className="project-description">
             {
-                project.description
+                project.description[language]
             }
         </div>
 

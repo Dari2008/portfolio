@@ -1,76 +1,112 @@
 [
     {
-        "title": "Lines Coded",
+        "title": {
+            "en": "Lines Coded",
+            "de": "Geschriebene Codezeilen"
+        },
         "value": 312900,
         "icon": "\uf1c9",
         "importance": 1
     },
     {
-        "title": "Hours Coded",
+        "title": {
+            "en": "Hours Coded",
+            "de": "Programmierstunden"
+        },
         "value": 7680,
         "unit": "h",
         "icon": "\uf2f2",
         "importance": 1
     },
     {
-        "title": "Longest Coding Session",
+        "title": {
+            "en": "Longest Coding Session",
+            "de": "Längste Programmiersession"
+        },
         "value": 15,
         "unit": "h",
         "icon": "\uf186",
         "importance": 3
     },
     {
-        "title": "Languages used",
+        "title": {
+            "en": "Languages Used",
+            "de": "Verwendete Programmiersprachen"
+        },
         "value": 7,
         "icon": "\uf1ab",
         "importance": 4
     },
     {
-        "title": "Project count",
+        "title": {
+            "en": "Project Count",
+            "de": "Projektanzahl"
+        },
         "value": 5,
         "icon": "\uf1b3",
         "importance": 2
     },
     {
-        "title": "Coding Streak",
+        "title": {
+            "en": "Coding Streak",
+            "de": "Coding-Streak"
+        },
         "value": 42,
         "unit": "d",
         "icon": "\uf06d",
         "importance": 4
     },
     {
-        "title": "Average Session Length",
+        "title": {
+            "en": "Average Session Length",
+            "de": "Durchschnittliche Sitzungsdauer"
+        },
         "value": 3,
         "unit": "h",
         "icon": "\uf017",
         "importance": 3
     },
     {
-        "title": "Most used IDE",
+        "title": {
+            "en": "Most Used IDE",
+            "de": "Meistgenutzte IDE"
+        },
         "value": "VS Code",
         "icon": "\uf303",
         "importance": 2
     },
     {
-        "title": "Skill Level",
+        "title": {
+            "en": "Skill Level",
+            "de": "Skill-Level"
+        },
         "value": 8,
         "icon": "\uf091",
         "importance": 2
     },
     {
-        "title": "Average Tabs Open",
+        "title": {
+            "en": "Average Tabs Open",
+            "de": "Durchschnittlich geöffnete Tabs"
+        },
         "value": 10,
         "icon": "\uf24d",
         "importance": 4
     },
     {
-        "title": "Bugs created",
+        "title": {
+            "en": "Bugs Created",
+            "de": "Erzeugte Bugs"
+        },
         "value": 3952,
         "icon": "\uf188",
         "importance": 4
     },
     {
-        "title": "Hours Listening to Music",
+        "title": {
+            "en": "Hours Listening to Music",
+            "de": "Zeit mit Musik gehört"
+        },
         "value": 67410,
         "unit": "min",
         "icon": "\uf001",

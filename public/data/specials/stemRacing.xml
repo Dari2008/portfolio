@@ -5,287 +5,558 @@
             <folder>/specials/stemRacing/pitDisplay/</folder>
             <baseName>pitDisplay</baseName>
             <extension>jpeg</extension>
-            <description>Pit display at the World Finals in Singapore</description>
+            <description>
+                <en>Pit display at the World Finals in Singapore</en>
+                <de>Pit-Display beim Weltfinale in Singapur</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/cars/</folder>
             <baseName>cars</baseName>
             <extension>jpeg</extension>
-            <description>All Cars that participated in the World Finals</description>
+            <description>
+                <en>All cars that participated in the World Finals</en>
+                <de>Alle Fahrzeuge, die am Weltfinale teilgenommen haben</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/pitDisplayCad/</folder>
             <baseName>pitDisplayCad_full</baseName>
             <extension>jpg</extension>
-            <description>Complete CAD rendering of the pit display designed in Fusion 360</description>
+            <description>
+                <en>Complete CAD rendering of the pit display designed in Fusion 360</en>
+                <de>Vollständiges CAD-Rendering des in Fusion 360 entworfenen Pit-Displays</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/pitDisplayCad/</folder>
             <baseName>pitDisplayCad_constructionGame</baseName>
             <extension>jpg</extension>
-            <description>CAD rendering of the pit display highlighting the construction game module,
-                designed in Fusion 360</description>
+            <description>
+                <en>CAD rendering of the pit display highlighting the construction game module,
+                    designed in Fusion 360</en>
+                <de>CAD-Rendering des Pit-Displays mit Hervorhebung des Konstruktionsspiel-Moduls,
+                    entworfen in Fusion 360</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/ballBearingTest/</folder>
             <baseName>airTestsystem</baseName>
             <extension>jpeg</extension>
-            <description>Ball bearing test system measuring RPM and deceleration</description>
+            <description>
+                <en>Ball bearing test system measuring RPM and deceleration</en>
+                <de>Kugellager-Testsystem zur Messung von Drehzahl und Verzögerung</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/rpmGraph/</folder>
             <baseName>rpmGraph</baseName>
             <extension>png</extension>
-            <description>RPM measurement plotted over time from the air impulse test system</description>
+            <description>
+                <en>RPM measurement plotted over time from the air impulse test system</en>
+                <de>Über die Zeit dargestellte Drehzahlmessung aus dem Luftimpuls-Testsystem</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/reactionGame/</folder>
             <baseName>reactionGame</baseName>
             <extension>jpg</extension>
-            <description>Reaction game developed for the pit display used by visitors</description>
+            <description>
+                <en>Reaction game developed for the pit display used by visitors</en>
+                <de>Für das Pit-Display entwickeltes Reaktionsspiel, das von Besuchern genutzt wurde</de>
+            </description>
         </images>
         <images>
             <folder>/specials/stemRacing/websiteTouchscreen/</folder>
             <baseName>websiteTouchscreen</baseName>
             <extension>jpg</extension>
-            <description>Custom website used for live display, portfolios, and car reveal</description>
+            <description>
+                <en>Custom website used for live display, portfolios, and car reveal</en>
+                <de>Custom Website für Live-Anzeige, Portfolios und Fahrzeugenthüllung</de>
+            </description>
         </images>
     </images>
+
     <whatILearned>
         <whatILearned>
-            <title>Measurement &amp; Test Systems</title>
+            <title>
+                <en>Measurement &amp; Test Systems</en>
+                <de>Mess- und Testsysteme</de>
+            </title>
             <items>
-                <items>Building repeatable and comparable test setups</items>
-                <items>Measuring RPM and acceleration with millisecond resolution</items>
-                <items>Simulating race conditions to evaluate component wear</items>
+                <items>
+                    <en>Building repeatable and comparable test setups</en>
+                    <de>Aufbau reproduzierbarer und vergleichbarer Testaufbauten</de>
+                </items>
+                <items>
+                    <en>Measuring RPM and acceleration with millisecond resolution</en>
+                    <de>Messung von Drehzahl und Beschleunigung mit Millisekundenauflösung</de>
+                </items>
+                <items>
+                    <en>Simulating race conditions to evaluate component wear</en>
+                    <de>Simulation von Rennbedingungen zur Bewertung des Komponentenverschleißes</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>Software Development</title>
+            <title>
+                <en>Software Development</en>
+                <de>Softwareentwicklung</de>
+            </title>
             <items>
-                <items>Developing large-scale web applications</items>
-                <items>Writing structured frontend code in TypeScript</items>
-                <items>Building complex desktop applications in C#</items>
+                <items>
+                    <en>Developing large-scale web applications</en>
+                    <de>Entwicklung großskaliger Webanwendungen</de>
+                </items>
+                <items>
+                    <en>Writing structured frontend code in TypeScript</en>
+                    <de>Schreiben strukturierter Frontend-Logik in TypeScript</de>
+                </items>
+                <items>
+                    <en>Building complex desktop applications in C#</en>
+                    <de>Entwicklung komplexer Desktop-Anwendungen in C#</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>Data &amp; Analysis</title>
+            <title>
+                <en>Data &amp; Analysis</en>
+                <de>Daten &amp; Analyse</de>
+            </title>
             <items>
-                <items>Processing high-frequency measurement data</items>
+                <items>
+                    <en>Processing high-frequency measurement data</en>
+                    <de>Verarbeitung hochfrequenter Messdaten</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>UX &amp; Interaction</title>
+            <title>
+                <en>UX &amp; Interaction</en>
+                <de>UX &amp; Interaktion</de>
+            </title>
             <items>
-                <items>Designing interactive systems for public use</items>
-                <items>Creating intuitive interfaces for non-technical users</items>
+                <items>
+                    <en>Designing interactive systems for public use</en>
+                    <de>Entwurf interaktiver Systeme für den öffentlichen Einsatz</de>
+                </items>
+                <items>
+                    <en>Creating intuitive interfaces for non-technical users</en>
+                    <de>Gestaltung intuitiver Benutzeroberflächen für nicht-technische Nutzer</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>Project &amp; Problem Solving</title>
+            <title>
+                <en>Project &amp; Problem Solving</en>
+                <de>Projekt- &amp; Problemlösung</de>
+            </title>
             <items>
-                <items>Managing complex projects under tight deadlines</items>
-                <items>Debugging and fixing systems on-site</items>
-                <items>Solving problems with limited documentation</items>
-                <items>Designing systems for live public demonstrations</items>
-                <items>Adapting setups to real-world event constraints</items>
+                <items>
+                    <en>Managing complex projects under tight deadlines</en>
+                    <de>Management komplexer Projekte unter hohem Zeitdruck</de>
+                </items>
+                <items>
+                    <en>Debugging and fixing systems on-site</en>
+                    <de>Fehlersuche und Behebung von Systemen vor Ort</de>
+                </items>
+                <items>
+                    <en>Solving problems with limited documentation</en>
+                    <de>Lösen von Problemen bei unvollständiger Dokumentation</de>
+                </items>
+                <items>
+                    <en>Designing systems for live public demonstrations</en>
+                    <de>Entwurf von Systemen für Live-Demonstrationen</de>
+                </items>
+                <items>
+                    <en>Adapting setups to real-world event constraints</en>
+                    <de>Anpassung von Aufbauten an reale Veranstaltungsbedingungen</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>Hardware &amp; Electronics</title>
+            <title>
+                <en>Hardware &amp; Electronics</en>
+                <de>Hardware &amp; Elektronik</de>
+            </title>
             <items>
-                <items>Integrating sensors, motors, and actuators into test systems</items>
-                <items>Working with precise timing and signal measurement</items>
-                <items>Building reliable hardware for continuous operation</items>
+                <items>
+                    <en>Integrating sensors, motors, and actuators into test systems</en>
+                    <de>Integration von Sensoren, Motoren und Aktoren in Testsysteme</de>
+                </items>
+                <items>
+                    <en>Working with precise timing and signal measurement</en>
+                    <de>Arbeiten mit präziser Zeit- und Signalmessung</de>
+                </items>
+                <items>
+                    <en>Building reliable hardware for continuous operation</en>
+                    <de>Aufbau zuverlässiger Hardware für den Dauerbetrieb</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>System Integration</title>
+            <title>
+                <en>System Integration</en>
+                <de>Systemintegration</de>
+            </title>
             <items>
-                <items>Connecting hardware, software, and backend services</items>
-                <items>Ensuring data consistency across multiple subsystems</items>
-                <items>Debugging issues across system boundaries</items>
+                <items>
+                    <en>Connecting hardware, software, and backend services</en>
+                    <de>Verknüpfung von Hardware, Software und Backend-Diensten</de>
+                </items>
+                <items>
+                    <en>Ensuring data consistency across multiple subsystems</en>
+                    <de>Sicherstellung der Datenkonsistenz über mehrere Subsysteme hinweg</de>
+                </items>
+                <items>
+                    <en>Debugging issues across system boundaries</en>
+                    <de>Fehlersuche über Systemgrenzen hinweg</de>
+                </items>
             </items>
         </whatILearned>
+
         <whatILearned>
-            <title>Professional Engineering Practices</title>
+            <title>
+                <en>Professional Engineering Practices</en>
+                <de>Professionelle Ingenieurpraxis</de>
+            </title>
             <items>
-                <items>Working with incomplete or missing documentation</items>
-                <items>Validating solutions through testing rather than assumptions</items>
-                <items>Balancing innovation with reliability</items>
+                <items>
+                    <en>Working with incomplete or missing documentation</en>
+                    <de>Arbeiten mit unvollständiger oder fehlender Dokumentation</de>
+                </items>
+                <items>
+                    <en>Validating solutions through testing rather than assumptions</en>
+                    <de>Validierung von Lösungen durch Tests statt Annahmen</de>
+                </items>
+                <items>
+                    <en>Balancing innovation with reliability</en>
+                    <de>Ausbalancieren von Innovation und Zuverlässigkeit</de>
+                </items>
             </items>
         </whatILearned>
     </whatILearned>
     <whatIDid>
 
         <whatIDid>
-            <title>Website for HM</title>
+            <title>
+                <en>Website for HM</en>
+                <de>Website für HM</de>
+            </title>
             <elements>
                 <element>
                     <type>text</type>
-                    <value>I developed a website for the Hamburger Championship with approximately
-                        20,000
-                        lines of code. It was implemented using HTML, SCSS, CSS, JavaScript, and
-                        TypeScript,
-                        with Python and batch files used as auxiliary tools.</value>
+                    <value>
+                        <en>I developed a website for the Hamburger Championship with approximately
+                            20,000 lines of code. It was implemented using HTML, SCSS, CSS,
+                            JavaScript, and TypeScript, with Python and batch files used as
+                            auxiliary tools.</en>
+                        <de>Ich habe eine Website für die Hamburger Meisterschaft mit ungefähr
+                            20.000 Zeilen Code entwickelt. Sie wurde mit HTML, SCSS, CSS, JavaScript
+                            und TypeScript implementiert, mit Python und Batch-Dateien als
+                            Hilfstools.</de>
+                    </value>
                 </element>
                 <element>
                     <type>link</type>
                     <link>https://ascent-racing.com/oldWebsites/HM/</link>
-                    <text>Live View</text>
+                    <text>
+                        <en>Live View</en>
+                        <de>Live Ansicht</de>
+                    </text>
                 </element>
             </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Car Test System</title>
-            <elements>I built a test system that measures the speed of cars at specific positions on
-                the
-                track. The system generates graphs visualizing acceleration behavior. I also
-                authored
-                the portfolio texts describing this system.</elements>
+            <title>
+                <en>Car Test System</en>
+                <de>Autotest-System</de>
+            </title>
+            <elements>
+                <en>I built a test system that measures the speed of cars at specific positions on
+                    the track. The system generates graphs visualizing acceleration behavior. I also
+                    authored the portfolio texts describing this system.</en>
+                <de>Ich habe ein Testsystem gebaut, das die Geschwindigkeit von Autos an bestimmten
+                    Positionen auf der Strecke misst. Das System erzeugt Diagramme, die das
+                    Beschleunigungsverhalten visualisieren. Ich habe auch die Portfolio-Texte
+                    erstellt, die dieses System beschreiben.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Reaction Game</title>
-            <elements>I programmed a reaction game for the team stand, simulating a race start and
-                allowing
-                visitors to measure and compare their own reaction times.</elements>
+            <title>
+                <en>Reaction Game</en>
+                <de>Reaktionsspiel</de>
+            </title>
+            <elements>
+                <en>I programmed a reaction game for the team stand, simulating a race start and
+                    allowing visitors to measure and compare their own reaction times.</en>
+                <de>Ich habe ein Reaktionsspiel für den Teamstand programmiert, das einen Rennstart
+                    simuliert und Besuchern erlaubt, ihre eigenen Reaktionszeiten zu messen und zu
+                    vergleichen.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Website for DM</title>
+            <title>
+                <en>Website for DM</en>
+                <de>Website für DM</de>
+            </title>
             <elements>
                 <element>
                     <type>text</type>
-                    <value>I developed a website for the German Championship with around 30,000
-                        lines of
-                        code. The site was programmed using HTML, SCSS, CSS, JavaScript, and
-                        TypeScript,
-                        with Python and batch files used as additional tools.</value>
+                    <value>
+                        <en>I developed a website for the German Championship with around 30,000
+                            lines of code. The site was programmed using HTML, SCSS, CSS,
+                            JavaScript, and TypeScript, with Python and batch files used as
+                            additional tools.</en>
+                        <de>Ich habe eine Website für die Deutsche Meisterschaft mit etwa 30.000
+                            Zeilen Code entwickelt. Die Seite wurde mit HTML, SCSS, CSS, JavaScript
+                            und TypeScript programmiert, mit Python und Batch-Dateien als
+                            zusätzliche Hilfsmittel.</de>
+                    </value>
                 </element>
                 <element>
                     <type>link</type>
                     <link>https://ascent-racing.com/oldWebsites/DM/</link>
-                    <text>Live View</text>
+                    <text>
+                        <en>Live View</en>
+                        <de>Live Ansicht</de>
+                    </text>
                 </element>
             </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Pit Display for DM</title>
+            <title>
+                <en>Pit Display for DM</en>
+                <de>Pit Display für DM</de>
+            </title>
             <elements>
                 <element>
                     <type>text</type>
-                    <value>I designed and built the complete pit display for the German
-                        Championship.
-                        The
-                        entire structure was constructed from MDF and fully manufactured by our
-                        team,
-                        with
-                        the full mechanical design created by me in Fusion 360. The pit display
-                        integrated
-                        the following components:</value>
+                    <value>
+                        <en>I designed and built the complete pit display for the German
+                            Championship. The entire structure was constructed from MDF and fully
+                            manufactured by our team, with the full mechanical design created by me
+                            in Fusion 360. The pit display integrated the following components:</en>
+                        <de>Ich habe das komplette Pit Display für die Deutsche Meisterschaft
+                            entworfen und gebaut. Die gesamte Struktur wurde aus MDF konstruiert und
+                            vollständig von unserem Team gefertigt, mit dem vollständigen
+                            mechanischen Design erstellt von mir in Fusion 360. Das Pit Display
+                            integrierte folgende Komponenten:</de>
+                    </value>
                 </element>
                 <element>
                     <type>list</type>
-                    <value>An improved reaction game originally developed for the Hamburger
-                        Championship</value>
-                    <value>Custom mounts for cars at twice the original scale</value>
-                    <value>A showcase for car presentation</value>
-                    <value>A screen displaying our website and the car reveal</value>
+                    <value>
+                        <en>An improved reaction game originally developed for the Hamburger
+                            Championship</en>
+                        <de>Ein verbessertes Reaktionsspiel, ursprünglich für die Hamburger
+                            Meisterschaft entwickelt</de>
+                    </value>
+                    <value>
+                        <en>Custom mounts for cars at twice the original scale</en>
+                        <de>Maßgeschneiderte Halterungen für Autos in doppelter Originalgröße</de>
+                    </value>
+                    <value>
+                        <en>A showcase for car presentation</en>
+                        <de>Eine Vitrine zur Autopräsentation</de>
+                    </value>
+                    <value>
+                        <en>A screen displaying our website and the car reveal</en>
+                        <de>Ein Bildschirm, der unsere Website und die Car Reveal zeigt</de>
+                    </value>
                 </element>
             </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Website for WM</title>
+            <title>
+                <en>Website for WM</en>
+                <de>Website für WM</de>
+            </title>
             <elements>
                 <element>
                     <type>text</type>
-                    <value>I developed a fully functional website for the World Championship. The
-                        project
-                        consists of approximately 40,000 lines of code and received over 2,300
-                        visitors.
-                        It
-                        was implemented using HTML, SCSS, CSS, JavaScript, and TypeScript, with
-                        Python
-                        and
-                        batch files as additional tools.</value>
+                    <value>
+                        <en>I developed a fully functional website for the World Championship. The
+                            project consists of approximately 40,000 lines of code and received over
+                            2,300 visitors. It was implemented using HTML, SCSS, CSS, JavaScript,
+                            and TypeScript, with Python and batch files as additional tools.</en>
+                        <de>Ich habe eine voll funktionsfähige Website für die Weltmeisterschaft
+                            entwickelt. Das Projekt besteht aus etwa 40.000 Zeilen Code und erhielt
+                            über 2.300 Besucher. Es wurde mit HTML, SCSS, CSS, JavaScript und
+                            TypeScript implementiert, mit Python und Batch-Dateien als zusätzliche
+                            Werkzeuge.</de>
+                    </value>
                 </element>
                 <element>
                     <type>link</type>
                     <link>https://ascent-racing.com/</link>
-                    <text>Live View</text>
+                    <text>
+                        <en>Live View</en>
+                        <de>Live Ansicht</de>
+                    </text>
                 </element>
             </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Ball Bearing Test System (Air Impulse)</title>
-            <elements>I constructed and programmed a test system that accelerates wheels using a
-                precisely
-                timed air impulse. The air burst is timed with an accuracy of hundredths of a
-                millisecond, while RPM values are measured every millisecond and plotted over time.</elements>
+            <title>
+                <en>Ball Bearing Test System (Air Impulse)</en>
+                <de>Kugellager-Testsystem (Luftimpuls)</de>
+            </title>
+            <elements>
+                <en>I constructed and programmed a test system that accelerates wheels using a
+                    precisely timed air impulse. The air burst is timed with an accuracy of
+                    hundredths of a millisecond, while RPM values are measured every millisecond and
+                    plotted over time.</en>
+                <de>Ich habe ein Testsystem gebaut und programmiert, das Räder mit einem präzise
+                    getimten Luftimpuls beschleunigt. Der Luftstoß wird mit einer Genauigkeit von
+                    Hundertstelsekunden getimt, während die Drehzahlen jede Millisekunde gemessen
+                    und über die Zeit aufgetragen werden.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Ball Bearing Wear Test System</title>
-            <elements>I developed a test system simulating wheel wear across 20 races, representing
-                the
-                full
-                lifecycle of a car. The wheels are accelerated using a predefined acceleration curve
-                and
-                abruptly decelerated at the end, similar to the track stop system.</elements>
+            <title>
+                <en>Ball Bearing Wear Test System</en>
+                <de>Kugellager-Verschleißtestsystem</de>
+            </title>
+            <elements>
+                <en>I developed a test system simulating wheel wear across 20 races, representing
+                    the full lifecycle of a car. The wheels are accelerated using a predefined
+                    acceleration curve and abruptly decelerated at the end, similar to the track
+                    stop system.</en>
+                <de>Ich habe ein Testsystem entwickelt, das den Radverschleiß über 20 Rennen
+                    simuliert und den gesamten Lebenszyklus eines Autos abbildet. Die Räder werden
+                    mit einer vorgegebenen Beschleunigungskurve beschleunigt und am Ende abrupt
+                    abgebremst, ähnlich wie beim Track-Stop-System.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Track Measurement System</title>
-            <elements>I further developed the track measurement system used to precisely measure car
-                position and acceleration during runs.</elements>
+            <title>
+                <en>Track Measurement System</en>
+                <de>Streckenmesssystem</de>
+            </title>
+            <elements>
+                <en>I further developed the track measurement system used to precisely measure car
+                    position and acceleration during runs.</en>
+                <de>Ich habe das Streckenmesssystem weiterentwickelt, um die Fahrzeugposition und
+                    Beschleunigung während der Läufe präzise zu messen.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Pit Display Construction for WM</title>
-            <elements>I designed the pit display construction using the item engineering system. The
-                aluminum profiles were precision-cut and delivered directly by item.</elements>
+            <title>
+                <en>Pit Display Construction for WM</en>
+                <de>Pit Display Konstruktion für WM</de>
+            </title>
+            <elements>
+                <en>I designed the pit display construction using the item engineering system. The
+                    aluminum profiles were precision-cut and delivered directly by item.</en>
+                <de>Ich habe den Pit Display-Aufbau mit dem item-Engineering-System entworfen. Die
+                    Aluminiumprofile wurden präzise zugeschnitten und direkt von item geliefert.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Custom Mounts and Holders</title>
-            <elements>I designed and manufactured custom holders for mounting Scharlau plates, as
-                well
-                as
-                additional holders for posters that were constructed on-site.</elements>
+            <title>
+                <en>Custom Mounts and Holders</en>
+                <de>Maßgeschneiderte Halterungen</de>
+            </title>
+            <elements>
+                <en>I designed and manufactured custom holders for mounting Scharlau plates, as well
+                    as additional holders for posters that were constructed on-site.</en>
+                <de>Ich habe maßgeschneiderte Halterungen für die Montage von Scharlau-Platten sowie
+                    zusätzliche Halterungen für Poster entworfen und vor Ort gebaut.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Miniature Race Track</title>
-            <elements>I built a miniature race track featuring scaled model cars based on our real
-                race
-                car,
-                allowing visitors to compete against each other.</elements>
+            <title>
+                <en>Miniature Race Track</en>
+                <de>Miniatur-Rennstrecke</de>
+            </title>
+            <elements>
+                <en>I built a miniature race track featuring scaled model cars based on our real
+                    race car, allowing visitors to compete against each other.</en>
+                <de>Ich habe eine Miniatur-Rennstrecke gebaut, die maßstabsgetreue Modellautos
+                    basierend auf unserem echten Rennwagen zeigt, sodass Besucher gegeneinander
+                    antreten können.</de>
+            </elements>
         </whatIDid>
+
         <whatIDid>
-            <title>Interactive Exhibition Display</title>
+            <title>
+                <en>Interactive Exhibition Display</en>
+                <de>Interaktives Ausstellung-Display</de>
+            </title>
             <elements>
                 <element>
                     <type>text</type>
-                    <value>I created an interactive exhibition setup centered around a screen that
-                        displayed</value>
+                    <value>
+                        <en>I created an interactive exhibition setup centered around a screen that
+                            displayed</en>
+                        <de>Ich habe einen interaktiven Ausstellungsaufbau erstellt, der sich um
+                            einen Bildschirm drehte, der folgendes zeigte</de>
+                    </value>
                 </element>
                 <element>
                     <type>list</type>
-                    <value>Our website</value>
-                    <value>The car reveal</value>
-                    <value>Access to our three portfolios</value>
+                    <value>
+                        <en>Our website</en>
+                        <de>Unsere Website</de>
+                    </value>
+                    <value>
+                        <en>The car reveal</en>
+                        <de>Die Auto-Präsentation</de>
+                    </value>
+                    <value>
+                        <en>Access to our three portfolios</en>
+                        <de>Zugang zu unseren drei Portfolios</de>
+                    </value>
+                </element>
+                <element>
+                    <type>text</type>
+                    <value>
+                        <en>All content was controlled through a dedicated control website, where
+                            visitors could swipe through the elements.</en>
+                        <de>Alle Inhalte wurden über eine dedizierte Steuerungs-Website
+                            kontrolliert, auf der Besucher durch die Elemente wischen konnten.</de>
+                    </value>
                 </element>
             </elements>
+        </whatIDid>
+
+        <whatIDid>
+            <title>
+                <en>Engineering Construction Game</en>
+                <de>Engineering-Bau-Spiel</de>
+            </title>
             <elements>
-                <type>text</type>
-                <value>All content was controlled through a dedicated control website. Where you
-                    could
-                    swipe through the elements.</value>
+                <en>I developed an interactive construction game where participants had to design a
+                    wheel in Solid Edge as quickly as possible based on a predefined sketch. The
+                    system automatically validated correctness and stored highscores. The
+                    application is written in C# with approximately 7,000 lines of code and
+                    communicates with my backend server to persist game data.</en>
+                <de>Ich habe ein interaktives Bau-Spiel entwickelt, bei dem Teilnehmer ein Rad in
+                    Solid Edge so schnell wie möglich anhand einer vorgegebenen Skizze entwerfen
+                    mussten. Das System prüfte automatisch die Korrektheit und speicherte
+                    Highscores. Die Anwendung ist in C# geschrieben, umfasst ca. 7.000 Zeilen Code
+                    und kommuniziert mit meinem Backend-Server, um Spieldaten zu speichern.</de>
             </elements>
         </whatIDid>
-        <whatIDid>
-            <title>Engineering Construction Game</title>
-            <elements>I developed an interactive construction game where participants had to design
-                a
-                wheel in Solid Edge as quickly as possible based on a predefined sketch. The system
-                automatically validated correctness and stored highscores. The application is
-                written in
-                C# with approximately 7,000 lines of code and communicates with my backend server to
-                persist game data.</elements>
-        </whatIDid>
+
     </whatIDid>
+
 </root>

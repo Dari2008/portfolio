@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import type { Project, PortfolioImage, Technology } from "../components/project/Project";
+import type { LanguageCode } from "../lang/LanguageManager";
 // import PROJECTS_RAW from "./projects.json";
 // import PROGRAMMING_LANGUAGE_LINKS_RAW from "./programmingLanguagesLinks.json";
 // import PROGRAMMING_LANGUAGE_COLORS_RAW from "./ProgrammingLanguagesColors.json";
@@ -32,23 +33,23 @@ export type AboutMe = {
     currentlyWorkingOn: string;
 
     hero: {
-        hi: string;
-        slogan: string;
-        subline: string;
+        hi: LanguageString;
+        slogan: LanguageString;
+        subline: LanguageString;
     },
     texts: {
-        intro: string | string[];
-        techStack: string | string[];
-        origin: string | string[];
-        interests: string | string[];
-        learning: string | string[];
-        goals: string | string[];
+        intro: LanguageObject<string | string[]>;
+        techStack: LanguageObject<string | string[]>;
+        origin: LanguageObject<string | string[]>;
+        interests: LanguageObject<string | string[]>;
+        learning: LanguageObject<string | string[]>;
+        goals: LanguageObject<string | string[]>;
     };
 
-    whatIAm: string;
+    whatIAm: LanguageString;
     technologies: AboutMeCategory[];
-    motiviation: string;
-    whatILearnCurrently: string;
+    motiviation: LanguageString;
+    whatILearnCurrently: LanguageString;
 }
 
 export type AboutMeCategory = {
@@ -82,17 +83,17 @@ export type CurriculumVitae = {
 export type CurriculumVitaeEntry = {
     from: string;
     to: string;
-    title: string;
+    title: LanguageString;
     image?: PortfolioImage;
-    description: string;
+    description: LanguageString;
     downloadItems?: CurriculumVitaeDownloadItem[];
     color: string;
-    category: string;
+    category: LanguageString;
 };
 
 export type CurriculumVitaeDownloadItem = {
     downloadLink: string;
-    name: string;
+    name: LanguageString;
     extension?: string;
 }
 
@@ -100,11 +101,11 @@ export type CurriculumVitaeDownloadItem = {
 type Info = {
     icon: string;
     value: string;
-    title: string;
+    title: LanguageString;
 }
 
 export type Statistic = {
-    title: string;
+    title: LanguageString;
     value: number | string;
     icon: string;
     unit?: string;
@@ -112,6 +113,14 @@ export type Statistic = {
 }
 
 export type Statistics = Statistic[];
+
+export type LanguageString = {
+    [key in LanguageCode]: string;
+}
+
+export type LanguageObject<T> = {
+    [key in LanguageCode]: T;
+}
 
 export async function load(url: string): Promise<any> {
     try {
@@ -311,38 +320,39 @@ export type SpecialsStemRacing = {
 }
 
 export type WhatIDidEntry = {
-    title: string;
-    elements: string | Elements;
+    title: LanguageString;
+    elements: LanguageString | Elements;
 }
 
-export type Elements = (LinkElement | TextElement | ListElement)[];
+export type Elements = Element[];
+export type Element = LinkElement | TextElement | ListElement;
 
-type TextElement = {
+export type TextElement = {
     type: "text";
-    value: string;
+    value: LanguageString;
 }
 
-type ListElement = {
+export type ListElement = {
     type: "list";
-    value: string[];
+    value: LanguageString[];
 }
 
-type LinkElement = {
+export type LinkElement = {
     type: "link";
     link: string;
-    text: string;
+    text: LanguageString;
 }
 
 export type Image = {
     folder: string;
     baseName: string;
     extension: string;
-    description: string;
+    description: LanguageString;
 }
 
 export type WhatILearned = {
-    title: string;
-    items: string[];
+    title: LanguageString;
+    items: LanguageString[];
 };
 
 

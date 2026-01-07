@@ -2,16 +2,36 @@
 <projects>
     <projects>
         <id>untiscombiner</id>
-        <title>Untis Combiner</title>
+
+        <title>
+            <en>Untis Combiner</en>
+            <de>Untis Combiner</de>
+        </title>
+
         <date>10.11.2025</date>
-        <description>A web application that combines multiple Untis schedules into one unified
-            schedule, allowing users to view all their classes in a single interface. It also
-            offers
-            features like grade tracking.</description>
+
+        <description>
+            <en>
+                A web application that combines multiple Untis schedules into one unified
+                schedule, allowing users to view all their classes in a single interface.
+                It also offers features like grade tracking.
+            </en>
+            <de>
+                Eine Webanwendung, die mehrere Untis-Stundenpläne zu einem einheitlichen
+                Stundenplan zusammenführt und es ermöglicht, alle Kurse in einer einzigen
+                Oberfläche anzuzeigen. Zusätzlich bietet sie Funktionen wie die
+                Notenverwaltung.
+            </de>
+        </description>
+
         <timeTakenToCreate>
             <time>63</time>
-            <unit>hours</unit>
+            <unit>
+                <en>hours</en>
+                <de>Stunden</de>
+            </unit>
         </timeTakenToCreate>
+
         <technologies>
             <technologies>typescript</technologies>
             <technologies>sass</technologies>
@@ -21,21 +41,54 @@
             <technologies>vite</technologies>
             <technologies>python</technologies>
         </technologies>
+
         <features>
-            <features>Notifications</features>
-            <features>Accounts</features>
-            <features>Mobile Web App</features>
-            <features>Multi-schedule merging</features>
-            <features>Grade tracking</features>
-            <features>Exam schedule management</features>
-            <features>Excuse system</features>
-            <features>Customizable appearance</features>
-            <features>Print-friendly schedule export</features>
-            <features>Responsive design</features>
+            <features>
+                <en>Notifications</en>
+                <de>Benachrichtigungen</de>
+            </features>
+            <features>
+                <en>Accounts</en>
+                <de>Benutzerkonten</de>
+            </features>
+            <features>
+                <en>Mobile Web App</en>
+                <de>Mobile Web-App</de>
+            </features>
+            <features>
+                <en>Multi-schedule merging</en>
+                <de>Zusammenführung mehrerer Stundenpläne</de>
+            </features>
+            <features>
+                <en>Grade tracking</en>
+                <de>Notenübersicht</de>
+            </features>
+            <features>
+                <en>Exam schedule management</en>
+                <de>Prüfungsplanverwaltung</de>
+            </features>
+            <features>
+                <en>Excuse system</en>
+                <de>Entschuldigungssystem</de>
+            </features>
+            <features>
+                <en>Customizable appearance</en>
+                <de>Anpassbares Erscheinungsbild</de>
+            </features>
+            <features>
+                <en>Print-friendly schedule export</en>
+                <de>Druckfreundlicher Stundenplan-Export</de>
+            </features>
+            <features>
+                <en>Responsive design</en>
+                <de>Responsives Design</de>
+            </features>
         </features>
+
         <liveLink>https://untis.frobeen.com</liveLink>
         <sourceCodeLink>https://github.com/Dari2008/WebUntis</sourceCodeLink>
         <projectImage>/project-images/untis-combiner/preview.png</projectImage>
+
         <otherImages>
             <otherImages>/project-images/untis-combiner/UntisCombiner_multi-lesson.png</otherImages>
             <otherImages>/project-images/untis-combiner/UntisCombiner_1.png</otherImages>
@@ -48,17 +101,37 @@
             <otherImages>/project-images/untis-combiner/UntisCombiner_schedule.png</otherImages>
         </otherImages>
     </projects>
+
     <projects>
         <id>ascentwebsite</id>
-        <title>Ascent Website</title>
+
+        <title>
+            <en>Ascent Website</en>
+            <de>Ascent Website</de>
+        </title>
+
         <date>20.09.2025</date>
-        <description>A website I developed and programmed for our team competing at the World
-            Finals
-            in Singapore, showcasing our team identity, news, and our car.</description>
+
+        <description>
+            <en>
+                A website I developed and programmed for our team competing at the World
+                Finals in Singapore, showcasing our team identity, news, and our car.
+            </en>
+            <de>
+                Eine Website, die ich für unser Team entwickelt und programmiert habe,
+                das an den Weltfinals in Singapur teilnahm. Sie präsentiert unsere
+                Teamidentität, Neuigkeiten und unser Fahrzeug.
+            </de>
+        </description>
+
         <timeTakenToCreate>
             <time>50</time>
-            <unit>hours</unit>
+            <unit>
+                <en>hours</en>
+                <de>Stunden</de>
+            </unit>
         </timeTakenToCreate>
+
         <technologies>
             <technologies>typescript</technologies>
             <technologies>sass</technologies>
@@ -67,18 +140,42 @@
             <technologies>vite</technologies>
             <technologies>python</technologies>
         </technologies>
+
         <features>
-            <features>News updates</features>
-            <features>Car showcase with animations</features>
-            <features>Image gallery</features>
-            <features>Contact form</features>
-            <features>Multiple informational pages</features>
-            <features>Responsive design</features>
-            <features>Easy navigation</features>
+            <features>
+                <en>News updates</en>
+                <de>Neuigkeiten</de>
+            </features>
+            <features>
+                <en>Car showcase with animations</en>
+                <de>Fahrzeugpräsentation mit Animationen</de>
+            </features>
+            <features>
+                <en>Image gallery</en>
+                <de>Bildergalerie</de>
+            </features>
+            <features>
+                <en>Contact form</en>
+                <de>Kontaktformular</de>
+            </features>
+            <features>
+                <en>Multiple informational pages</en>
+                <de>Mehrere Informationsseiten</de>
+            </features>
+            <features>
+                <en>Responsive design</en>
+                <de>Responsives Design</de>
+            </features>
+            <features>
+                <en>Easy navigation</en>
+                <de>Einfache Navigation</de>
+            </features>
         </features>
+
         <liveLink>https://ascent-racing.com</liveLink>
         <sourceCodeLink>https://github.com/Dari2008/Ascent-Website</sourceCodeLink>
         <projectImage>/project-images/ascent-racing/preview.png</projectImage>
+
         <otherImages>
             <otherImages>/project-images/ascent-racing/ascentRacing_car-animation.png</otherImages>
             <otherImages>/project-images/ascent-racing/ascentRacing_contact.png</otherImages>
@@ -87,17 +184,36 @@
             <otherImages>/project-images/ascent-racing/ascentRacing_pages.png</otherImages>
         </otherImages>
     </projects>
+
     <projects>
         <id>led-matrix</id>
-        <title>LED Matrix</title>
+
+        <title>
+            <en>LED Matrix</en>
+            <de>LED-Matrix</de>
+        </title>
+
         <date>15.08.2022</date>
-        <description>A programmable LED matrix display controlled by a microcontroller, capable of
-            displaying
-            animations, text, and graphics.</description>
+
+        <description>
+            <en>
+                A programmable LED matrix display controlled by a microcontroller,
+                capable of displaying animations, text, and graphics.
+            </en>
+            <de>
+                Eine programmierbare LED-Matrix-Anzeige, die von einem Mikrocontroller
+                gesteuert wird und Animationen, Text und Grafiken darstellen kann.
+            </de>
+        </description>
+
         <timeTakenToCreate>
             <time>60</time>
-            <unit>hours</unit>
+            <unit>
+                <en>hours</en>
+                <de>Stunden</de>
+            </unit>
         </timeTakenToCreate>
+
         <technologies>
             <technologies>php</technologies>
             <technologies>python</technologies>
@@ -105,17 +221,38 @@
             <technologies>css3</technologies>
             <technologies>javascript</technologies>
         </technologies>
+
         <features>
-            <features>Custom animations</features>
-            <features>Text display</features>
-            <features>Graphics rendering</features>
-            <features>Remote control via web interface</features>
-            <features>Plugins</features>
-            <features>Games</features>
+            <features>
+                <en>Custom animations</en>
+                <de>Eigene Animationen</de>
+            </features>
+            <features>
+                <en>Text display</en>
+                <de>Textanzeige</de>
+            </features>
+            <features>
+                <en>Graphics rendering</en>
+                <de>Grafikdarstellung</de>
+            </features>
+            <features>
+                <en>Remote control via web interface</en>
+                <de>Fernsteuerung über Weboberfläche</de>
+            </features>
+            <features>
+                <en>Plugins</en>
+                <de>Plugins</de>
+            </features>
+            <features>
+                <en>Games</en>
+                <de>Spiele</de>
+            </features>
         </features>
+
         <liveLink>https://led-matrix.frobeen.com</liveLink>
         <sourceCodeLink>https://github.com/Dari2008/Led-Matrix</sourceCodeLink>
         <projectImage>/project-images/led-matrix/preview.png</projectImage>
+
         <otherImages>
             <otherImages>/project-images/led-matrix/led-matrix_1.png</otherImages>
             <otherImages>/project-images/led-matrix/led-matrix_2.png</otherImages>

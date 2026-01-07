@@ -1,16 +1,18 @@
+import type { LanguageString } from "../../data/Data";
+
 export type Project = {
     id: string;
     projectImage: PortfolioImage;
     timeTakenToCreate: {
         time: number;
-        unit: string;
+        unit: LanguageString;
     };
-    title: string;
-    description: string;
+    title: LanguageString;
+    description: LanguageString;
     date: string;
-    features: string[];
+    features: LanguageString[];
     technologies: Technology[];
-    shortDescription?: string;
+    shortDescription?: LanguageString;
     liveLink?: string;
     sourceCodeLink?: string;
     otherImages?: PortfolioImage[];
@@ -21,7 +23,7 @@ export type Technology = "aarch64" | "adonisjs" | "aerospike" | "aframe" | "afte
 
 export type PortfolioImage = {
     link: string;
-    description: string;
+    description: LanguageString;
 } | string;
 
 

@@ -1,11 +1,14 @@
 import { useRef, useState } from "react";
 import { ImageLoadManager } from "../../utils";
 import "./ImageViewer.scss";
+import type { LanguageString } from "../../data/Data";
+import { useLanguage } from "../../lang";
 
 export default function ImageViewer({ images, className, imageLoader }: { images: Images, className?: string, imageLoader: ImageLoadManager }) {
     const [currentIndexVisible, setCurrentIndexVisible] = useState(0);
     const [lastIndex, setLastIndex] = useState(-1);
     const projectImagesElement: React.RefObject<null | HTMLDivElement> = useRef(null);
+    const [language,] = useLanguage();
 
 
     return <div className={"imageViewer-wrapper next show " + (className ? className : "")} data-numpictures={images.length} ref={projectImagesElement}>
@@ -25,8 +28,8 @@ export default function ImageViewer({ images, className, imageLoader }: { images
                                     return <source key={path.path} srcSet={path.path} media={`(width > ${path.minWidth}px) ${path.maxWidth ? `and (width <= ${path.maxWidth}px)` : ``}`} />
                                 })
                             }
-                            <img src={typeof image == "string" ? image : image.defaultPath} alt={typeof image != "string" ? image.description : ""} onLoad={imageLoader.onLoad} onError={imageLoader.onError} ref={imageLoader.onRefAdd} />
-                            {image.description && <span className="subtitle">{image.description}</span>}
+                            <img src={typeof image == "string" ? image : image.defaultPath} alt={typeof image != "string" ? image.description[language] : ""} onLoad={imageLoader.onLoad} onError={imageLoader.onError} ref={imageLoader.onRefAdd} />
+                            {image.description && <span className="subtitle">{image.description[language]}</span>}
                         </picture>
                     </div>
                 );
@@ -65,7 +68,7 @@ function clamp(val: number, min: number, max: number): number {
 export type Images = Image[];
 
 export type Image = {
-    description: string;
+    description: LanguageString;
     paths: Path[];
     defaultPath: string;
 }

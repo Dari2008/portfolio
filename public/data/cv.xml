@@ -4,110 +4,239 @@
         <firstName>Darius</firstName>
         <lastName>Frobeen</lastName>
     </name>
-    <location>Germany - Hamburg</location>
+
+    <location>
+        <en>Germany - Hamburg</en>
+        <de>Deutschland – Hamburg</de>
+    </location>
+
     <infos>
         <infos>
-            <title>Name</title>
+            <title>
+                <en>Name</en>
+                <de>Name</de>
+            </title>
             <value>Darius Frobeen</value>
             <icon></icon>
         </infos>
+
         <infos>
-            <title>Address</title>
+            <title>
+                <en>Address</en>
+                <de>Adresse</de>
+            </title>
             <value>Bramfelder Chaussee 373a</value>
             <icon></icon>
         </infos>
+
         <infos>
-            <title>Phone</title>
+            <title>
+                <en>Phone</en>
+                <de>Telefon</de>
+            </title>
             <value>+49 01724067376</value>
             <icon></icon>
         </infos>
+
         <infos>
-            <title>E-Mail</title>
+            <title>
+                <en>E-Mail</en>
+                <de>E-Mail</de>
+            </title>
             <value>darius@frobeen.com</value>
             <icon></icon>
         </infos>
+
         <infos>
-            <title>Birthday</title>
+            <title>
+                <en>Birthday</en>
+                <de>Geburtstag</de>
+            </title>
             <value>05.07.2025</value>
             <icon></icon>
         </infos>
+
         <infos>
-            <title>Place of Birth</title>
+            <title>
+                <en>Place of Birth</en>
+                <de>Geburtsort</de>
+            </title>
             <value>Hamburg</value>
             <icon></icon>
         </infos>
     </infos>
+
     <entrys>
         <entrys>
-            <title>STEM Racing World Finals</title>
+            <title>
+                <en>STEM Racing World Finals</en>
+                <de>STEM Racing Weltfinale</de>
+            </title>
             <description>
-                Participation at the world finals #(STEM Racing,https://stemracing.org/)# Championship
-                where our #(Team,https://ascent-racing.com)# won 17th Place out of 83
-                Teams.
-                #(More information,/specials/stemracing/)#</description>
-            <category>Competitions</category>
+                <en>
+                    Participation at the world finals #(STEM Racing,https://stemracing.org/)# Championship
+                    where our #(Team,https://ascent-racing.com)# won 17th Place out of 83 Teams.
+                    #(More information,/specials/stemracing/)#
+                </en>
+                <de>
+                    Teilnahme am Weltfinale der #(STEM Racing,https://stemracing.org/)# Championship,
+                    bei dem unser #(Team,https://ascent-racing.com)# den 17. Platz von 83 Teams belegte.
+                    #(Mehr Informationen,/specials/stemracing/)#
+                </de>
+            </description>
+            <category>
+                <en>Competitions</en>
+                <de>Wettbewerbe</de>
+            </category>
             <from>05.07.2025</from>
             <to>03.09.2025</to>
         </entrys>
+
         <entrys>
-            <title>STEM Racing National Championship</title>
+            <title>
+                <en>STEM Racing National Championship</en>
+                <de>STEM Racing Deutsche Meisterschaft</de>
+            </title>
             <description>
-                Participation in the 
-                national #(STEM Racing,https://stemracing.de/)# Championship 
-                where our #(Team,https://ascent-racing.com)# won 2nd Place
+                <en>
+                    Participation in the national #(STEM Racing,https://stemracing.de/)# Championship
+                    where our #(Team,https://ascent-racing.com)# won 2nd Place
+                </en>
+                <de>
+                    Teilnahme an der nationalen #(STEM Racing,https://stemracing.de/)# Championship,
+                    bei der unser #(Team,https://ascent-racing.com)# den 2. Platz erreichte
+                </de>
             </description>
-            <category>Competitions</category>
+            <category>
+                <en>Competitions</en>
+                <de>Wettbewerbe</de>
+            </category>
             <from>12.02.2025</from>
             <to>05.07.2025</to>
         </entrys>
+
         <entrys>
-            <title>STEM Racing Regional Championship</title>
-            <description>Participation in the regional #(STEM Racing,https://stemracing.de/)#
-                Championship where our #(Team,https://ascent-racing.com)# won 1st Place</description>
-            <category>Competitions</category>
+            <title>
+                <en>STEM Racing Regional Championship</en>
+                <de>STEM Racing Regionalmeisterschaft</de>
+            </title>
+            <description>
+                <en>
+                    Participation in the regional #(STEM Racing,https://stemracing.de/)# Championship
+                    where our #(Team,https://ascent-racing.com)# won 1st Place
+                </en>
+                <de>
+                    Teilnahme an der regionalen #(STEM Racing,https://stemracing.de/)# Championship,
+                    bei der unser #(Team,https://ascent-racing.com)# den 1. Platz belegte
+                </de>
+            </description>
+            <category>
+                <en>Competitions</en>
+                <de>Wettbewerbe</de>
+            </category>
             <from>29.08.2024</from>
             <to>12.02.2025</to>
         </entrys>
+
         <entrys>
-            <title>Secondary Education</title>
+            <title>
+                <en>Secondary Education</en>
+                <de>Sekundarstufe</de>
+            </title>
             <from>08.08.2019</from>
             <to>today</to>
-            <description>Gymnasium Grootmoor, Hamburg</description>
-            <category>School</category>
+            <description>
+                <en>Gymnasium Grootmoor, Hamburg</en>
+                <de>Gymnasium Grootmoor, Hamburg</de>
+            </description>
+            <category>
+                <en>School</en>
+                <de>Schule</de>
+            </category>
         </entrys>
+
         <entrys>
-            <title>Primary Education</title>
+            <title>
+                <en>Primary Education</en>
+                <de>Grundschule</de>
+            </title>
             <from>27.08.2015</from>
             <to>26.06.2019</to>
-            <description>Redder Primary School, Hamburg</description>
-            <category>School</category>
+            <description>
+                <en>Redder Primary School, Hamburg</en>
+                <de>Grundschule Redder, Hamburg</de>
+            </description>
+            <category>
+                <en>School</en>
+                <de>Schule</de>
+            </category>
         </entrys>
+
         <entrys>
-            <title>School Medical Service (SSD)</title>
+            <title>
+                <en>School Medical Service (SSD)</en>
+                <de>Schulsanitätsdienst (SSD)</de>
+            </title>
             <from>01.08.2023</from>
-            <description>Active member of the school medical emergency service</description>
-            <category>School Activities</category>
+            <description>
+                <en>Active member of the school medical emergency service</en>
+                <de>Aktives Mitglied des schulischen Sanitätsdienstes</de>
+            </description>
+            <category>
+                <en>School Activities</en>
+                <de>Schulische Aktivitäten</de>
+            </category>
         </entrys>
+
         <entrys>
-            <title>Event Technology Club</title>
+            <title>
+                <en>Event Technology Club</en>
+                <de>Veranstaltungstechnik-AG</de>
+            </title>
             <from>01.08.2022</from>
             <to>today</to>
-            <description>Member of the event technology working group</description>
-            <category>School Activities</category>
+            <description>
+                <en>Member of the event technology working group</en>
+                <de>Mitglied der Veranstaltungstechnik-Arbeitsgemeinschaft</de>
+            </description>
+            <category>
+                <en>School Activities</en>
+                <de>Schulische Aktivitäten</de>
+            </category>
         </entrys>
+
         <entrys>
-            <title>Computer Support Club (Admin AG)</title>
+            <title>
+                <en>Computer Support Club (Admin AG)</en>
+                <de>Computer-Support-AG (Admin AG)</de>
+            </title>
             <from>01.08.2020</from>
             <to>today</to>
-            <description>Providing IT support and system administration within the school</description>
-            <category>School Activities</category>
+            <description>
+                <en>Providing IT support and system administration within the school</en>
+                <de>IT-Support und Systemadministration innerhalb der Schule</de>
+            </description>
+            <category>
+                <en>School Activities</en>
+                <de>Schulische Aktivitäten</de>
+            </category>
         </entrys>
+
         <entrys>
-            <title>Acker AG</title>
+            <title>
+                <en>Acker AG</en>
+                <de>Acker AG</de>
+            </title>
             <from>01.08.2020</from>
             <to>01.06.2022</to>
-            <description>Participation in the school gardening and sustainability program</description>
-            <category>School Activities</category>
+            <description>
+                <en>Participation in the school gardening and sustainability program</en>
+                <de>Teilnahme am schulischen Garten- und Nachhaltigkeitsprogramm</de>
+            </description>
+            <category>
+                <en>School Activities</en>
+                <de>Schulische Aktivitäten</de>
+            </category>
         </entrys>
     </entrys>
 </cv>
