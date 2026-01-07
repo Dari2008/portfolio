@@ -1,0 +1,342 @@
+@use "../../utils/Variables.scss" as *;
+@use "sass:color";
+@use "../header/Header.scss" as header;
+@use "./Console-mobile.scss" as *;
+
+body:has(.consoleButton.hidden) {
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.consoleButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: $themeColor2;
+    color: $themeColor5;
+    width: max(2vw, 40px);
+    height: max(2vh, 20px);
+    transform: translate(0%, 0%);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0px 0px $themeColor1;
+    z-index: 100000;
+
+    &.hidden {
+        display: none;
+    }
+
+    &::before {
+        transition: all 0.3s ease-in-out;
+        font-size: 100%;
+    }
+
+    &.transitionToFullScreen {
+        bottom: 50%;
+        right: 50%;
+        width: 70vw;
+        height: 70vh;
+        transform: translate(50%, 50%);
+        box-shadow: 0 0 10px 10px $themeColor1;
+        background-color: $gray-900;
+
+        &::before {
+            font-size: 1000%;
+        }
+
+        &:hover {
+            scale: 1 !important;
+            outline: none;
+            border: none;
+            cursor: text;
+        }
+    }
+
+    &:hover {
+        scale: 1.1;
+    }
+
+}
+
+.consoleBackgroundWrapper {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+body:has(.consoleButton.hidden) .consoleBackgroundWrapper {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+
+.console {
+
+    transition: 0.3s ease-in-out;
+    transition-property: top, left, width, height, transform, border-radius;
+    $topBarHeight: 5%;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    box-shadow: 0 0 10px 10px $themeColor1;
+    border-radius: 20px;
+    $bgColor: $gray-900;
+    background-color: $bgColor;
+    z-index: 100000;
+
+    .topBar {
+        width: 100%;
+        height: $topBarHeight;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        border-bottom: 2px solid $themeColor2;
+        min-height: 40px;
+        z-index: 100;
+        background-color: $bgColor;
+
+        .controls {
+            display: flex;
+            gap: 5px;
+            margin: 10px;
+
+            .closeBtn::before,
+            .minimizeBtn::before,
+            .maximizeBtn::before {
+                font-family: "Fontawesome";
+                font-size: 75%;
+                color: $textColor;
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+
+            .closeBtn,
+            .minimizeBtn,
+            .maximizeBtn {
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                display: block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                scale: 0.8;
+                transition: scale 0.2s ease-in-out;
+                cursor: pointer;
+            }
+
+            .closeBtn:hover,
+            .minimizeBtn:hover,
+            .maximizeBtn:hover {
+                &::before {
+                    opacity: 1;
+                }
+
+                scale: 1;
+            }
+
+            .closeBtn {
+                &::before {
+                    content: "\f00d";
+                }
+
+                background-color: color.mix(red, $gray-500);
+            }
+
+            .minimizeBtn {
+                &::before {
+                    content: "\f422";
+                }
+
+                background-color: color.mix(yellow, $gray-500);
+            }
+
+            .maximizeBtn {
+                &::before {
+                    content: "\f424";
+                }
+
+                background-color: color.mix(green, $gray-500)
+            }
+        }
+
+        .title {
+            margin-inline: auto;
+            font-size: 120%;
+        }
+    }
+
+    .content {
+        height: calc(100% - $topBarHeight - 40px);
+        position: absolute;
+        top: $topBarHeight;
+        left: 0;
+        padding: 20px;
+        font-family: "Dejavu";
+        width: calc(100% - 40px);
+        max-height: calc(100% - $topBarHeight - 40px);
+        overflow-y: auto;
+        overflow-wrap: anywhere;
+
+        .keyboardOpener {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .outputLine {
+            margin-bottom: 2.5%;
+        }
+
+        .currentDirWrapper {
+            display: inline-flex;
+            margin-right: 3px;
+
+            .user {
+                color: $themeColor4;
+            }
+
+            .colun,
+            .dollar {
+                color: $gray-500;
+            }
+        }
+
+        .currentCursorPos {
+            height: 1em;
+            width: 2px;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                bottom: -2px;
+                font-weight: 900;
+                transform: translateX(-100%);
+                font-size: inherit;
+                height: 2px;
+                width: 100%;
+                background-color: $themeColor4;
+            }
+
+            &[data-currentselected=""] {
+                &::after {
+                    width: 0.75em;
+                    transform: translateX(0%);
+                }
+            }
+        }
+
+        .completions {
+            width: 100%;
+
+            ul {
+                list-style-type: none;
+                // display: flex;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                margin-block: 0;
+
+                li {
+                    .found {
+                        color: $themeColor4;
+                        text-decoration: underline $themeColor3 2px;
+                    }
+                }
+
+            }
+        }
+
+        .pastLine:has(~ .outputLine) {
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 0.75em;
+                height: 0.75em;
+                font-family: "Fontawesome";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+            }
+        }
+
+        .pastLine:has(~ .outputLine[data-status="error"])::after {
+            background-color: color.mix(red, $gray-700);
+        }
+
+        .pastLine:has(~ .outputLine[data-status="success"])::after {
+            background-color: color.mix(green, $gray-700);
+        }
+
+        .pastLine:has(~ .outputLine[data-status="pending"])::after {
+            background-color: color.mix(blue, $gray-700);
+        }
+
+        .commandWrapper {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        &:has(.outputLine[data-status="pending"]) .commandWrapper:has(.currentLine) {
+            opacity: 0;
+        }
+
+    }
+
+}
+
+.console[data-size-state="default-size"] {
+    top: 50%;
+    left: 50%;
+    width: 70vw;
+    height: 70vh;
+    transform: translate(-50%, -50%);
+}
+
+.console[data-size-state="maximal-size"] {
+    top: header.$headerHeight;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - header.$headerHeight);
+    border-radius: 0;
+
+    .title {
+        font-size: 150%;
+    }
+}
+
+// @keyframes flicker {
+
+//     0%,
+//     50% {
+//         background-color: $themeColor3;
+//     }
+
+//     51%,
+//     100% {
+//         background-color: rgba(0, 0, 0, 0);
+//     }
+// }

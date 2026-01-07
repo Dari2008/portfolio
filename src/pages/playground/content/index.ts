@@ -1,0 +1,1 @@
+export { default as NumberRecognizer } from "./numberRecongnizer/NumberRecognizer";

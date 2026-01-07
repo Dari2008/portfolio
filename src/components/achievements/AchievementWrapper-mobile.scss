@@ -1,0 +1,48 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+@use "sass:color";
+
+
+@media (width < 350px) {
+    .achievement-wrapper {
+        width: calc(100vw - 20px) !important;
+        position: fixed;
+        top: 20px;
+        right: unset !important;
+        left: 10px;
+        max-width: unset !important;
+
+        .achievement {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100% !important;
+            grid-template-rows: repeat(4 auto) !important;
+            grid-column-gap: 0px;
+            grid-row-gap: 10px;
+            margin-inline: auto;
+
+            .genericTitle {
+                grid-area: 1 / 1 / 2 / 2 !important;
+            }
+
+            .atitle {
+                grid-area: 2 / 1 / 3 / 2 !important;
+                padding-inline: 0 !important;
+                font-size: clampW(0.7em, 1.1em, 100px, 350px) !important;
+            }
+
+            .icon {
+                grid-area: 3 / 1 / 4 / 2 !important;
+                padding-inline: 0 !important;
+                font-size: clampW(1.5em, 2em, 100px, 350px) !important;
+            }
+
+            .info {
+                grid-area: 4 / 1 / 5 / 2 !important;
+                padding-inline: 0 !important;
+                font-size: clampW(0.4em, 0.6em, 100px, 350px) !important;
+            }
+
+        }
+    }
+}

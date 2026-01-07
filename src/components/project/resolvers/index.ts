@@ -1,0 +1,2 @@
+export { default as resolveProgrammingLanguageIcon } from "./ProgrammingLanguageResolver";
+export { resolveProgrammingLanguageThemeColorIcon, THEME_COLORED_IMAGES } from "./ProgrammingLanguageResolver";

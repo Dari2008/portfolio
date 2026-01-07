@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1536"
+   height="1024"
+   viewBox="0 0 1536 1024"
+   sodipodi:docname="ProjectNotFound-Foreground.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
+      id="defs1">
+      <rect
+         x="441.209"
+         y="254.62808"
+         width="629.985"
+         height="269.99357"
+         id="rect20" />
+      <clipPath
+         clipPathUnits="userSpaceOnUse"
+         id="clipPath23">
+         <g
+            inkscape:label="Clip"
+            id="use23" />
+      </clipPath>
+      <clipPath
+         clipPathUnits="userSpaceOnUse"
+         id="clipPath24">
+         <rect
+            style="fill:#f498b5;fill-opacity:1;stroke-width:25.9935"
+            id="rect24"
+            width="1536.7242"
+            height="1023.7391"
+            x="-0.38803717"
+            y="-0.67906505" />
+      </clipPath>
+   </defs>
+   <sodipodi:namedview
+      id="namedview1"
+      pagecolor="#FFD3D5"
+      bordercolor="#000000"
+      borderopacity="0.25"
+      inkscape:showpageshadow="2"
+      inkscape:pageopacity="0.0"
+      inkscape:pagecheckerboard="0"
+      inkscape:deskcolor="#d1d1d1"
+      inkscape:zoom="0.45556641"
+      inkscape:cx="958.1479"
+      inkscape:cy="624.49732"
+      inkscape:window-width="1920"
+      inkscape:window-height="1177"
+      inkscape:window-x="-8"
+      inkscape:window-y="34"
+      inkscape:window-maximized="1"
+      inkscape:current-layer="g1" />
+   <g
+      inkscape:groupmode="layer"
+      inkscape:label="Image"
+      id="g1"
+      clip-path="url(#clipPath24)">
+      <a
+         id="a21"
+         transform="translate(-1.498362)"
+         style="display:inline">
+         <text
+            xml:space="preserve"
+            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:106.667px;line-height:10.8;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;display:inline;fill:#FFD3D5"
+            x="768.27441"
+            y="673.88635"
+            id="text21"
+            inkscape:label="projectNotFound"><tspan
+           sodipodi:role="line"
+           id="tspan21"
+           x="768.27441"
+           y="673.88635">PROJECT NOT FOUND</tspan></text>
+         <text
+            xml:space="preserve"
+            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:311.907px;line-height:10.8;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;display:inline;fill:#FFD3D5;stroke-width:1.03969"
+            x="739.36841"
+            y="513.49225"
+            id="text20"
+            transform="matrix(1.0396881,0,0,0.96182691,1.498362,0)"
+            inkscape:label="404"><tspan
+           sodipodi:role="line"
+           id="tspan20"
+           x="739.36841"
+           y="513.49225"
+           style="font-size:311.907px;stroke-width:1.03969">404</tspan></text>
+      </a>
+   </g>
+</svg>

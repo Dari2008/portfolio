@@ -1,0 +1,18 @@
+@media(width < 800px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(3, auto) !important;
+
+        .info-wrapper {
+            grid-area: 1 / 1 / 2 / 2 !important;
+        }
+
+        .contact-form-wrapper {
+            grid-area: 2 / 1 / 3 / 2 !important;
+        }
+
+        .socials-wrapper {
+            grid-area: 3 / 1 / 4 / 2 !important;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+@use "../../utils/Variables.scss" as *;
+
+// #root:has(.backgroundAnimation.main).loaded :not(.backgroundAnimation):not(.backgroundAnimation__circle):not(.doNotAnimate) {
+//     animation: fadeOver 0.5s ease-in-out 0ms 1 forwards;
+// }
+
+// #root:not(:has(.backgroundAnimation.main)) :not(.backgroundAnimation):not(.backgroundAnimation__circle):not(.doNotAnimate) {
+//     animation: fadeOver 0.5s ease-in-out 0ms 1 reverse;
+// }
+
+.initialLoadingAnimation {
+    z-index: 100000000000 !important;
+}
+
+.initialLoadingAnimation,
+.loadingAnimation {
+    position: fixed;
+    --y-offset: 0px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    z-index: 1000000000;
+
+    background-color: $gray-950;
+    --logo-transition-time: 0.35s;
+
+    &__circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba($themeColor3, 0.5);
+        width: calc(1px * pow(var(--circle-size), 0.75));
+        height: calc(1px * pow(var(--circle-size), 0.75));
+        --circle-size: 3;
+        --box-shadow-color: #{$themeColor4};
+        --box-shadow-color-2: #{$themeColor2};
+        box-shadow: 0 0 calc((1px * var(--circle-size)) * 4) calc((1px * var(--circle-size)) / 3) var(--box-shadow-color);
+    }
+
+    &.animateToIcon &__circle {
+        animation: animateToIcon 0.5s ease-in-out 0ms 1 forwards;
+    }
+
+    &.animateToIcon {
+        animation: fadeOut 0.75s ease-in-out calc(0.5s + 1s) 1 forwards;
+        pointer-events: none;
+    }
+
+
+    &.warp &__circle {
+        animation: wrap 5s ease-in-out infinite;
+        animation-delay: calc(var(--index) * (5 / var(--numDots)) * 1s);
+        background-color: rgba($themeColor3, 0.5);
+        width: calc(1px * var(--circle-size));
+        height: calc(1px * var(--circle-size));
+        box-shadow: 0 0 6px 2px var(--box-shadow-color-2);
+    }
+
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        background-color: $gray-950;
+    }
+
+    100% {
+        opacity: 0;
+        background-color: $gray-800;
+    }
+}
+
+@keyframes animateToIcon {
+    0% {
+        top: var(--init-y);
+        left: var(--init-x);
+    }
+
+    100% {
+        top: var(--icon-y);
+        left: var(--icon-x);
+        opacity: 1;
+    }
+}
+
+
+@keyframes wrap {
+    0% {
+        top: var(--warp-y);
+        left: var(--warp-x);
+        box-shadow: 0 0 6px 2px var(--box-shadow-color-2);
+    }
+
+    50% {
+        top: calc(100vh - var(--warp-y));
+        left: calc(100vw - var(--warp-x));
+        box-shadow: 0 0 calc((1px * var(--circle-size)) * 4) calc((1px * var(--circle-size)) / 3) var(--box-shadow-color);
+    }
+
+    100% {
+        top: var(--warp-y);
+        left: var(--warp-x);
+        box-shadow: 0 0 6px 2px var(--box-shadow-color-2);
+    }
+}
+
+.loadingAnimation {
+    &__circle {
+        animation: wrap 5s ease-in-out infinite;
+        animation-delay: calc(var(--index) * (5 / var(--numDots)) * 1s);
+    }
+}
+
+.loadingAnimation.loading {
+    opacity: 1;
+    pointer-events: all;
+    transition: none;
+
+    .loadingAnimation__circle {
+        animation-play-state: running;
+        background-color: rgba($themeColor3, 0.5);
+        width: calc(1px * var(--circle-size));
+        height: calc(1px * var(--circle-size));
+        box-shadow: 0 0 6px 2px var(----box-shadow-color-2);
+    }
+}
+
+.loadingAnimation:not(.loading) {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
+
+    .loadingAnimation__circle {
+        animation-play-state: paused;
+    }
+}

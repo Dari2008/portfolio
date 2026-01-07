@@ -1,0 +1,13 @@
+{
+    "javascript": "https://developer.mozilla.org/de/docs/Web/JavaScript",
+    "java": "https://de.wikipedia.org/wiki/Java_(Programmiersprache)",
+    "json": "https://de.wikipedia.org/wiki/JSON",
+    "css": "https://developer.mozilla.org/de/docs/Web/CSS",
+    "sass": "https://sass-lang.com/",
+    "php": "https://www.php.net/",
+    "html5": "https://developer.mozilla.org/de/docs/Web/HTML",
+    "vite": "https://vite.dev/",
+    "mysql": "https://www.mysql.com/de/",
+    "typescript": "https://www.typescriptlang.org/",
+    "python": "https://www.python.org/"
+}

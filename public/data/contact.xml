@@ -1,0 +1,11 @@
+<root>
+    <name>Darius Frobeen</name>
+    <email>darius@frobeen.com</email>
+    <linkedIn>https://linkedin.com</linkedIn>
+    <phone>
+        <prefix>+49</prefix>
+        <number>1724067376</number>
+        <optionalZero>true</optionalZero>
+    </phone>
+    <github>https://github.com/Dari2008</github>
+</root>

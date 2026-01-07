@@ -1,0 +1,97 @@
+@use "../../utils/Variables.scss" as *;
+@use "sass:color";
+
+.project-card-small {
+    @include glass-gray-opacity();
+
+    .project-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 15%;
+            left: 0;
+            z-index: 5;
+        }
+
+        &::before {
+            top: 0;
+            background: linear-gradient(to bottom, rgba($themeColor1, 0.4), rgba($themeColor2, 0));
+        }
+
+        &::after {
+            bottom: 0;
+            background: linear-gradient(to top, rgba($themeColor1, 0.4), rgba($themeColor2, 0));
+        }
+    }
+
+    .project-image-wrapper,
+    .project-title,
+    .project-description {
+        cursor: pointer;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0.75rem 0;
+        color: $themeColor5;
+    }
+
+    .project-description {
+        padding: 0 1rem 1rem 1rem;
+        font-size: 0.95rem;
+        color: $themeColor5;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .project-technologies {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        // place-content: center;
+        gap: 0.5rem;
+        padding-bottom: 1rem;
+        max-width: 90%;
+        width: 90%;
+        margin-inline: auto;
+        height: min-content;
+
+        .technology {
+            padding: 5px;
+            border-radius: 50%;
+            background: $themeColor2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            flex-basis: 44px;
+            cursor: pointer;
+            position: relative;
+
+            &::after {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}

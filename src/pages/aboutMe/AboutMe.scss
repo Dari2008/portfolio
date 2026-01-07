@@ -1,0 +1,99 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+@use "./AboutMe-mobile.scss" as *;
+
+.about-me-section {
+    @include glass-themeColor-opacity(10);
+    width: calc($maxContentWidth - 40px);
+    margin-inline: auto;
+    padding: 20px;
+    margin-top: min(5%, 100px);
+    box-sizing: content-box;
+
+    h2 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $themeColor4;
+        font-size: clampW(0.7em, 2em, 200px, 2000px);
+        text-align: center;
+    }
+
+    p {
+        width: 90%;
+        max-width: 1000px;
+        margin-inline: auto;
+        color: $textColor;
+        font-size: clampW(0.6em, 1em, 200px, 2000px);
+    }
+
+    .techList {
+        width: 90%;
+        max-width: 1000px;
+        margin-inline: auto;
+        justify-content: center;
+
+        .technology::after {
+            font-size: 90%;
+        }
+    }
+
+    &.intro {
+        .image {
+            width: 100%;
+            min-height: 15vh;
+            margin-bottom: 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 20px;
+
+            picture {
+                height: inherit;
+                height: clamp(150px, calc((25vh + 25vw) / 2), 300px);
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                border: 5px solid $themeColor3;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                overflow: clip;
+                display: flex;
+            }
+
+            .subtitle {
+
+                h2,
+                span {
+                    font-size: clampW(0.8em, 1.2em, 200px, 2000px);
+                }
+            }
+        }
+    }
+
+}
+
+.about-me-actions {
+    width: $maxContentWidth;
+    margin-inline: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .btn {
+        font-size: 125%;
+        background-color: $themeColor2;
+        color: $themeColor5;
+        transition: background-color 0.3s ease-in-out;
+        font-size: clampW(0.4em, 2em, 200px, 2000px);
+
+        &:hover {
+            background-color: $themeColor3;
+        }
+    }
+}

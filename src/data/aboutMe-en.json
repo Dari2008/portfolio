@@ -1,0 +1,48 @@
+{
+    "name": "Darius",
+    "role": "Developer & Engineer",
+    "location": "Germany - Hamburg",
+    "currentlyWorkingOn": "Portfolio Website",
+    "hi": "Hi, I'm Darius",
+    "hero": {
+        "hi": "Hi, I'm Darius",
+        "slogan": "Code. Hardware. Performance.",
+        "subline": "Full-stack Web & Java developer – I create efficient, scalable, and maintainable applications for the web and desktop."
+    },
+    "whatIAm": "a Web-Developer & Embedded Systems Engineer",
+    "technologies": [
+        {
+            "category": "Frontend",
+            "tech": [
+                "typescript",
+                "vite",
+                "html",
+                "sass",
+                "react"
+            ]
+        },
+        {
+            "category": "Backend",
+            "tech": [
+                "php"
+            ]
+        },
+        {
+            "category": "Embedded",
+            "tech": [
+                "esp32",
+                "arduino"
+            ]
+        },
+        {
+            "category": "Tools",
+            "tech": [
+                "git",
+                "linux",
+                "docker"
+            ]
+        }
+    ],
+    "motiviation": "",
+    "whatILearnCurrently": ""
+}

@@ -1,0 +1,55 @@
+@use "../../../../utils/Variables.scss" as *;
+
+.numberRecognizer {
+    @include glass-themeColor-opacity(10);
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 20px;
+    width: $maxContentWidth;
+    margin-inline: auto;
+    border-radius: 20px;
+
+
+    .drawCanvas {
+        aspect-ratio: 1 / 1;
+        grid-area: 1 / 1 / 2 / 2;
+        max-height: 70vh;
+        max-width: 40vw;
+        width: 100%;
+        justify-self: center;
+        background-color: $themeColor2;
+        border-radius: 20px;
+    }
+
+    .outputs {
+        grid-area: 1 / 2 / 2 / 3;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-block: 1rem;
+
+        .output {
+            display: flex;
+            border-bottom: 1px solid $themeColor3;
+
+            .number {
+                margin-right: auto;
+                font-size: large;
+            }
+
+            .percentage {
+                margin-left: auto;
+                margin-right: 10px;
+            }
+
+
+            &::after {
+                content: "%";
+            }
+        }
+    }
+
+}

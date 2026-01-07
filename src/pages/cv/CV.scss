@@ -1,0 +1,600 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+@use "../../components/header/Header.scss" as header;
+@use "./CV-mobile.scss" as *;
+
+$offset: 26vh;
+$cvRestWidthPerSide: max(10vw, 125px);
+$cvWidth: calc(100vw - $cvRestWidthPerSide * 2);
+$cvTimeSpanWidth: calc($cvRestWidthPerSide - 6rem / 1.7);
+// 127,6
+
+.cv-wrapper {
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .infos-wrapper {
+        @include glass-themeColor-opacity(10);
+        width: calc($maxContentWidth - 20px*2);
+        margin-inline: auto;
+        border-radius: 24px;
+        padding: 20px;
+        display: grid;
+        gap: 30px;
+        backdrop-filter: blur(16px) saturate(160%);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        margin-bottom: 5%;
+        grid-template-columns: repeat(var(--grid-col-count, 2), 1fr);
+
+        .info-card {
+            @include glass-gray-opacity();
+            padding: 20px 26px;
+            display: grid;
+            grid-template-columns: min-content auto;
+            grid-template-rows: auto auto;
+            gap: 8px 20px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            z-index: 0;
+
+            &::before {
+                transition: transform 0.25s ease, opacity 0.25s ease;
+                content: "Click to Copy";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                opacity: 0;
+                z-index: -1;
+                pointer-events: none;
+                background-color: rgba($themeColor3, 0.4);
+                border-radius: 10px;
+                padding: 10px 20px;
+            }
+
+            &.copied {
+                &::before {
+                    content: "Copied" !important;
+                    transform: translate(-50%, calc(-100% - 20px));
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                transform: translateY(-4px) scale(1.02);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+                &::before {
+                    content: "Click to Copy";
+                    transform: translate(-50%, calc(-100% - 20px));
+                    opacity: 1;
+                }
+            }
+
+            .icon {
+                font-family: Fontawesome;
+                font-size: 260%;
+                grid-area: 1 / 1 / 3 / 2;
+                justify-self: center;
+                align-self: center;
+                color: $themeColor3;
+                text-shadow: 0 0 10px rgba($themeColor3, 0.5),
+                    0 0 20px rgba($themeColor3, 0.3);
+                transition: text-shadow 0.25s ease;
+
+                .statistic:hover & {
+                    text-shadow: 0 0 12px rgba($themeColor3, 0.8),
+                        0 0 24px rgba($themeColor3, 0.6);
+                }
+            }
+
+            .value {
+                grid-area: 1 / 2 / 2 / 3;
+                font-size: clampW(0.6em, 1.8em, 200px, 2000px);
+                font-weight: 600;
+                text-align: center;
+                align-self: end;
+                color: $themeColor4;
+                justify-content: center;
+            }
+
+            .title {
+                grid-area: 2 / 2 / 3 / 3;
+                padding-top: 6px;
+                font-size: clampW(0.4em, 1em, 200px, 2000px);
+                letter-spacing: 0.5px;
+                border-top: 2px solid rgba($themeColor3, 0.5);
+                opacity: 0.85;
+                line-height: 2em;
+                text-align: center;
+            }
+        }
+    }
+
+
+    .filter-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        .filter {
+            @include glass-gray-opacity-without-hover();
+            display: flex;
+            margin-inline: 20px;
+            padding: 20px;
+            flex-direction: column;
+
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            // backdrop-filter: blur(12px);
+
+
+            h3 {
+                margin: 0;
+                font-size: 1.2rem;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                text-align: center;
+                opacity: 0.85;
+                margin-bottom: 10px;
+                user-select: none;
+            }
+
+            .filterButtons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                align-items: center;
+                justify-content: center;
+                align-items: center;
+
+                .filterButton {
+                    padding: 10px;
+                    border-radius: 30px;
+                    transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
+                    background: rgba(255, 255, 255, 0.08);
+                    backdrop-filter: blur(8px);
+
+                    &.active {
+                        background-color: $themeColor3;
+                        color: #fff;
+                        box-shadow: 0 0 0 2px rgba($themeColor3, 0.4);
+                    }
+
+                    &:hover {
+                        transform: translateY(-1px);
+                    }
+
+                }
+
+                .clearButton {
+                    aspect-ratio: 1 / 1;
+                    height: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    vertical-align: center;
+                    margin-block: auto;
+                    transform: rotate(45deg);
+                    transition: transform 0.05s ease-in-out;
+                    font-size: 200%;
+                    padding: 10px;
+                    border-radius: 30px;
+
+                    background: rgba(255, 255, 255, 0.08);
+                    backdrop-filter: blur(8px);
+
+                    &:active {
+                        transform: rotate(135deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .cv {
+        width: $cvWidth;
+        margin-inline: auto;
+        min-height: 50vh;
+        --entry-count: 1;
+        --height-per-entry: 40vh;
+        --gap-between-entrys: 10vh;
+        --currentIndex: 0;
+        // height: calc((var(--height-per-entry) + var(--gap-between-entrys)) * (var(--entry-count) - 1) + $offset * 2); //Temporary
+
+        display: grid;
+        grid-template-columns: $cvRestWidthPerSide $cvWidth $cvRestWidthPerSide;
+        grid-template-rows: repeat(var(--entry-count), max-content min-content);
+        grid-column-gap: 0px;
+        grid-row-gap: 1rem;
+        width: 100%;
+
+        margin-top: 3rem;
+
+        $graphWidth: 5px;
+
+        .to-graph {
+            grid-area: 1 / 3 / calc(var(--entry-count) * 2 + 1) / 4;
+            justify-self: start;
+        }
+
+        .to-label {
+            width: $cvRestWidthPerSide;
+            top: calc(header.$headerHeight + 10px);
+            position: sticky;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+                @include glass-gray-opacity-without-hover();
+                padding: 5px 20px;
+                content: "To";
+                border-radius: 10px;
+                box-shadow:
+                    0 6px 20px rgba($themeColor2, 0.25),
+                    inset 0 0 0 1px rgba($themeColor5, 0.05);
+                border-width: 1px;
+                // transform: translate(calc(0% - #{$cvRestWidthPerSide} / 2), -100%);
+            }
+        }
+
+        .from-graph {
+            grid-area: 1 / 1 / calc(var(--entry-count) * 2 + 1) / 2;
+            justify-self: end;
+        }
+
+        .from-label {
+            width: $cvRestWidthPerSide;
+            right: 0;
+            top: calc(header.$headerHeight + 10px);
+            position: sticky;
+            transform: translate(-100%);
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+                @include glass-gray-opacity-without-hover();
+                padding: 5px 20px;
+                content: "From";
+                border-radius: 10px;
+                box-shadow:
+                    0 6px 20px rgba($themeColor2, 0.25),
+                    inset 0 0 0 1px rgba($themeColor5, 0.05);
+                border-width: 1px;
+                // transform: translate(calc(0% - #{$cvRestWidthPerSide} / 2), -100%);
+            }
+        }
+
+        .time-graph {
+            background-color: $themeColor3;
+            width: $graphWidth;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .from-graph-entry {
+            grid-area: calc(var(--index) * 2 + 1) / 1 / calc(var(--index) * 2 + 2) / 2;
+
+            &::after {
+                right: calc($graphWidth / 2);
+                transform: translate(50%, -50%);
+            }
+
+            &::before {
+                right: 0px;
+                transform: translate(-20px, -50%);
+            }
+        }
+
+        .to-graph-entry {
+            grid-area: calc(var(--index) * 2 + 1) / 3 / calc(var(--index) * 2 + 2) / 4;
+
+            &::after {
+                left: calc($graphWidth / 2);
+                transform: translate(-50%, -50%) !important;
+            }
+
+            &::before {
+                left: 0%;
+                transform: translate(20px, -50%);
+            }
+        }
+
+        .graphEntry {
+            z-index: 10000;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: $graphWidth * 2;
+                height: $graphWidth * 2;
+                border-radius: 50%;
+                background-color: $themeColor3;
+                top: 50%;
+            }
+
+            &::before {
+                content: attr(data-date);
+                position: absolute;
+                width: max-content;
+                top: 50%;
+                // left: 0%;
+                // transform: translate(calc(-100% - 20px), -50%);
+                color: $themeColor4;
+                // opacity: calc(abs(min(max(calc(var(--index) - var(--currentIndex)), -1), 1)) * 1);
+                // opacity: calc(abs(min(max(calc(var(--index) + 1 - var(--currentIndex)), -1), 1)) * 0.6);
+                // opacity: calc(abs(min(max(calc(var(--index) - 1 - var(--currentIndex)), -1), 1)) * 0.6);
+                // transition: opacity 0.3s ease-in-out;
+
+                // opacity: max(calc(1 - abs(var(--index) - var(--currentIndex)) / var(--entry-count) * 9), 0.2);
+                opacity: max(calc(1 - abs(var(--index) / var(--entry-count) - (var(--scrolled-y) - 10) / 100) * 10), 0.2);
+
+
+
+            }
+        }
+
+
+        .timeSpan {
+            // top: calc(var(--height-per-entry) + var(--position) + $offset - var(--height-per-entry) / 2 + var(--gap-between-entrys) / 2);
+            grid-area: calc(var(--index) * 2 + 2) / 2 / calc(var(--index) * 2 + 3) / 3;
+            width: max-content;
+            opacity: 0.4;
+            font-size: 1rem;
+            position: relative;
+            height: max-content;
+            justify-self: center;
+            align-self: center;
+            padding-block: 2.5rem;
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                border-left: 3px dotted $themeColor4;
+                height: calc((var(--gap-between-entrys) / 2) - 5px - 1rem);
+            }
+
+            &::before {
+                top: 1rem;
+                transform: translate(-50%, -50%);
+
+                mask-image: linear-gradient(0deg,
+                        black 50%,
+                        transparent);
+            }
+
+            &::after {
+                bottom: 1rem;
+                transform: translate(-50%, 50%);
+                mask-image: linear-gradient(180deg,
+                        black 50%,
+                        transparent);
+            }
+
+        }
+
+        .cv-entry {
+            grid-area: calc(var(--index) * 2 + 1) / 2 / calc(var(--index) * 2 + 2) / 3;
+            @include glass-themeColor-opacity(10);
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            justify-self: center;
+            align-self: center;
+            // max-height: var(--height-per-entry);
+
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: auto 1fr auto;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            margin-block: 2rem;
+            box-sizing: border-box;
+
+            .fromToDate {
+                display: none;
+            }
+
+            &.no-image {
+                grid-template-columns: repeat(1, auto);
+            }
+
+            .title {
+                grid-area: 1 / 1 / 2 / 2;
+                color: rgba($themeColor4, 0.8);
+                font-size: clampW(0.6em, 2em, 200px, 2000px);
+            }
+
+            a {
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                color: $themeColor3;
+
+                &:hover {
+                    color: rgba($themeColor4, 0.8);
+                }
+            }
+
+            .description {
+                grid-area: 2 / 1 / 3 / 2;
+                color: rgba($themeColor5, 0.8);
+                justify-self: center;
+                align-self: center;
+                text-align: center;
+            }
+
+            .downloadButtons {
+                grid-area: 3 / 1 / 4 / 2;
+                justify-self: center;
+                width: max-content;
+
+                .downloadBtn {
+                    background-color: $themeColor2;
+                    color: $themeColor5;
+                }
+            }
+
+            .image {
+                grid-area: 1 / 2 / 4 / 3;
+                max-width: 100%;
+                max-height: 100%;
+                max-height: calc(var(--height-per-entry) - 5vh);
+                border-radius: 10px;
+                justify-self: end;
+            }
+
+        }
+
+    }
+
+    :has(.documentViewer.open) .cv {
+        pointer-events: none;
+    }
+
+    .documentViewerWrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(5px) brightness(50%);
+        z-index: 100000;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        &:has(.documentViewer.open) {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+
+        .documentViewer {
+            @include glass-themeColor-opacity(10);
+            background-color: $gray-800;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80vw;
+            height: 80vh;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            overflow: clip;
+
+            embed {
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                display: block;
+            }
+
+            .close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+                color: $themeColor4;
+                padding: 0;
+                margin: 0;
+                background-color: transparent;
+                font-size: 200%;
+                border: none;
+                transition: transform 0.1s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    transform-origin: center center;
+                }
+            }
+
+            .downloadBtn {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%);
+                font-family: "Fontawesome";
+                color: $textColor;
+                $transitionTime: 0.2s;
+                $arrowSize: 15px;
+                $arrowBg: $themeColor2;
+
+                &[download]::after {
+                    padding: 10px;
+                    border-radius: 10px;
+                    content: attr(download);
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -100%);
+                    width: max-content;
+                    font-family: Dejavu;
+                    background-color: $arrowBg;
+                    opacity: 0;
+
+                    transition: transform $transitionTime ease-in-out,
+                        opacity $transitionTime ease-in-out;
+                    pointer-events: none;
+                }
+
+                &[download]::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -0%) scaleY(0);
+                    transform-origin: top center;
+                    opacity: 0;
+
+                    width: 0;
+                    height: 0;
+
+                    border-left: $arrowSize solid transparent;
+                    border-right: $arrowSize solid transparent;
+                    border-top: $arrowSize solid $arrowBg;
+                    transition: transform $transitionTime ease-in-out,
+                        opacity $transitionTime ease-in-out;
+                    pointer-events: none;
+                }
+
+                &:hover {
+                    &::after {
+                        transform: translate(-50%, calc(-100% - ($arrowSize - 1px))) scaleY(1);
+                        opacity: 1;
+                    }
+
+                    &::before {
+                        transform: translate(-50%, -100%) scaleY(1);
+                        opacity: 1;
+                    }
+
+                    z-index: 100;
+                }
+
+                &:hover {
+                    color: $themeColor3;
+                }
+            }
+
+        }
+    }
+
+}

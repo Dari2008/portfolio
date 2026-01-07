@@ -1,0 +1,79 @@
+[
+    {
+        "title": "Lines Coded",
+        "value": 312900,
+        "icon": "\uf1c9",
+        "importance": 1
+    },
+    {
+        "title": "Hours Coded",
+        "value": 7680,
+        "unit": "h",
+        "icon": "\uf2f2",
+        "importance": 1
+    },
+    {
+        "title": "Longest Coding Session",
+        "value": 15,
+        "unit": "h",
+        "icon": "\uf186",
+        "importance": 3
+    },
+    {
+        "title": "Languages used",
+        "value": 7,
+        "icon": "\uf1ab",
+        "importance": 4
+    },
+    {
+        "title": "Project count",
+        "value": 5,
+        "icon": "\uf1b3",
+        "importance": 2
+    },
+    {
+        "title": "Coding Streak",
+        "value": 42,
+        "unit": "d",
+        "icon": "\uf06d",
+        "importance": 4
+    },
+    {
+        "title": "Average Session Length",
+        "value": 3,
+        "unit": "h",
+        "icon": "\uf017",
+        "importance": 3
+    },
+    {
+        "title": "Most used IDE",
+        "value": "VS Code",
+        "icon": "\uf303",
+        "importance": 2
+    },
+    {
+        "title": "Skill Level",
+        "value": 8,
+        "icon": "\uf091",
+        "importance": 2
+    },
+    {
+        "title": "Average Tabs Open",
+        "value": 10,
+        "icon": "\uf24d",
+        "importance": 4
+    },
+    {
+        "title": "Bugs created",
+        "value": 3952,
+        "icon": "\uf188",
+        "importance": 4
+    },
+    {
+        "title": "Hours Listening to Music",
+        "value": 67410,
+        "unit": "min",
+        "icon": "\uf001",
+        "importance": 3
+    }
+]

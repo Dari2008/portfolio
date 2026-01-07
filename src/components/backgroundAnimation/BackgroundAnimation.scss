@@ -1,0 +1,167 @@
+@use "../../utils/Variables.scss" as *;
+
+// #root:has(.backgroundAnimation.main).loaded :not(.backgroundAnimation):not(.backgroundAnimation__circle):not(.doNotAnimate) {
+//     animation: fadeOver 0.5s ease-in-out 0ms 1 forwards;
+// }
+
+// #root:not(:has(.backgroundAnimation.main)) :not(.backgroundAnimation):not(.backgroundAnimation__circle):not(.doNotAnimate) {
+//     animation: fadeOver 0.5s ease-in-out 0ms 1 reverse;
+// }
+
+// #root>*:not(.backgroundAnimation) {
+//     display: none;
+// }
+
+
+.backgroundAnimation {
+    position: fixed;
+    --y-offset: 0px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // pointer-events: none;
+    overflow: hidden;
+
+    z-index: -1 !important;
+
+    background-color: $gray-800;
+    --logo-transition-time: 0.35s;
+
+    &__circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba($themeColor3, 0.5);
+        width: calc(1px * pow(var(--circle-size), 0.75));
+        height: calc(1px * pow(var(--circle-size), 0.75));
+        // --new-x: 0px;
+        // --new-y: 0px;
+        // --old-x: 0px;
+        // --old-y: 0px;
+        --time: 1s;
+        --circle-size: 3;
+        transition-timing-function: linear;
+        transition-duration: var(--time);
+        transition-property: left, top, box-shadow, width, height, background-color;
+
+        top: calc(var(--top) * 1%);
+        // top: calc(var(--top) / 100 * var(--body-height));
+        left: calc(var(--left) / 100 * var(--body-width));
+        --box-shadow-color-2: #{$themeColor2};
+        --box-shadow-color: #{$themeColor4};
+        box-shadow: 0 0 calc((1px * var(--circle-size)) * 4) calc((1px * var(--circle-size)) / 3) var(--box-shadow-color);
+
+        // animation: floatAnimation var(--time) linear forwards;
+        // animation-duration: var(--time);
+
+        transform: translateY(calc(0px - var(--y-offset)));
+    }
+
+    &__circle.move {
+        // animation: floatAnimation-logo var(--time) linear forwards;
+        // animation-duration: var(--time);
+        animation: none !important;
+    }
+
+    &.logoTransition &__circle {
+        width: calc(1px * var(--circle-size));
+        height: calc(1px * var(--circle-size));
+        --box-shadow-color: #{$themeColor2};
+        box-shadow: 0 0 6px 2px var(--box-shadow-color);
+        transition-duration: var(--logo-transition-time) !important;
+        transition-timing-function: ease-in-out !important;
+        transform: none;
+        transition-property: left, top !important;
+
+        will-change: left, top;
+    }
+
+
+    &.circleAnimation &__circle {
+        animation: wrap 5s ease-in-out infinite;
+        animation-delay: calc(var(--index) * (5 / var(--numDots)) * 1s);
+        background-color: rgba($themeColor3, 0.5);
+        width: calc(1px * var(--circle-size));
+        height: calc(1px * var(--circle-size));
+        --box-shadow-color: #{$themeColor2};
+        box-shadow: 0 0 6px 2px var(--box-shadow-color);
+        transition: var(--logo-transition-time) linear;
+        transition-property: left, top, box-shadow, width, height, background-color;
+
+        transform: none;
+    }
+
+    &.finished &__circle {
+        // animation: floatAnimation var(--time) linear forwards;
+        // animation-duration: var(--time);
+        background-color: rgba($themeColor3, 0.5);
+        width: calc(1px * var(--circle-size));
+        height: calc(1px * var(--circle-size));
+        --box-shadow-color: #{$themeColor2};
+        box-shadow: 0 0 6px 2px var(--box-shadow-color);
+        transition: var(--logo-transition-time) linear;
+        transition-property: left, top, box-shadow, width, height, background-color;
+        transform: none;
+    }
+
+}
+
+@keyframes fadeOver {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+
+
+
+// @keyframes floatToCenter {
+//     100% {
+//         top: calc(100vh - var(--new-y));
+//         left: calc(100vw - var(--new-x));
+//     }
+// }
+
+
+@keyframes wrap {
+    0% {
+        top: var(--wrap-y);
+        left: var(--wrap-x);
+        box-shadow: 0 0 6px 2px var(--box-shadow-color-2);
+    }
+
+    50% {
+        top: calc(100vh - var(--wrap-y));
+        left: calc(100vw - var(--wrap-x));
+        box-shadow: 0 0 calc((1px * var(--circle-size)) * 4) calc((1px * var(--circle-size)) / 3) var(--box-shadow-color);
+    }
+
+}
+
+// @keyframes floatAnimation {
+//     0% {
+//         top: var(--old-y);
+//         left: var(--old-x);
+//     }
+
+//     100% {
+//         top: var(--new-y);
+//         left: var(--new-x);
+//     }
+// }
+
+// @keyframes floatAnimation-logo {
+//     0% {
+//         top: var(--old-y);
+//         left: var(--old-x);
+//     }
+
+//     100% {
+//         top: var(--new-y);
+//         left: var(--new-x);
+//     }
+// }

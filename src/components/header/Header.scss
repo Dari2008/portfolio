@@ -1,0 +1,110 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+@use "./Header-mobile.scss" as *;
+
+$headerHeight: 6vh;
+
+@media(width >=750px) {
+    #header {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 2vw;
+        height: $headerHeight;
+        max-height: 80px;
+        // background: linear-gradient(90deg, $themeColor3, $themeColor2);
+        background: rgba($gray-800, 0.2);
+        backdrop-filter: blur(20px) saturate(60%) brightness(80%);
+        box-shadow: 0 0 10px 2px rgba($themeColor1, 0.8);
+        position: sticky;
+        top: 0;
+        z-index: 10000000;
+        padding-block: 5px;
+        pointer-events: none;
+
+        .share {
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70%;
+            min-height: 35px;
+            padding: 0;
+            cursor: pointer;
+            pointer-events: all;
+
+            &:hover {
+                &::before {
+                    color: $themeColor3;
+                }
+            }
+
+            &::before {
+                content: "\f064";
+                font-family: "Fontawesome";
+                aspect-ratio: 1 / 1;
+                color: rgba($themeColor3, 0.6);
+                font-size: clampW(0.3em, 1.5em, 200px, 2000px);
+            }
+        }
+
+        .openMenu {
+            display: none;
+        }
+
+        img {
+            margin-right: auto;
+            max-height: 65%;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        #navContent {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: end;
+            margin-right: auto;
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+            }
+
+            a.active {
+                transition: box-shadow 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+                box-shadow: 0 0 10px 3px $themeColor3;
+                background-color: $themeColor3;
+            }
+
+            a {
+                transition: backdrop-filter ease-in-out 0.3s;
+                background-color: transparent;
+                backdrop-filter: saturate(60%) brightness(100%);
+                box-shadow: 0 3px 15px 1px $themeColor2;
+                pointer-events: all;
+
+                color: $textColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .short {
+                    display: none;
+                }
+
+            }
+
+            a:hover {
+                backdrop-filter: saturate(60%) brightness(50%);
+                box-shadow: 0 3px 15px 6px $themeColor2;
+            }
+
+        }
+
+    }
+}

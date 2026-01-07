@@ -1,0 +1,76 @@
+[
+    {
+        "id": "untiscombiner",
+        "title": "Untis Combiner",
+        "date": "10.11.2025",
+        "description": "A web application that combines multiple Untis schedules into one unified schedule, allowing users to view all their classes in a single interface. It also offers features like grade tracking.",
+        "technologies": [
+            "typescript",
+            "sass",
+            "html5",
+            "php",
+            "mysql",
+            "vite",
+            "python"
+        ],
+        "features": [
+            "Notifications",
+            "Accounts",
+            "Mobile Web App",
+            "Multi-schedule merging",
+            "Grade tracking",
+            "Exam schedule management",
+            "Excuse system",
+            "Customizable appearance",
+            "Print-friendly schedule export",
+            "Responsive design"
+        ],
+        "liveLink": "https://untis.frobeen.com",
+        "sourceCodeLink": "https://github.com/Dari2008/WebUntis",
+        "projectImage": "/project-images/untis-combiner/preview.png",
+        "otherImages": [
+            "/project-images/untis-combiner/UntisCombiner_multi-lesson.png",
+            "/project-images/untis-combiner/UntisCombiner_1.png",
+            "/project-images/untis-combiner/UntisCombiner_2.png",
+            "/project-images/untis-combiner/UntisCombiner_appearance.png",
+            "/project-images/untis-combiner/UntisCombiner_exams.png",
+            "/project-images/untis-combiner/UntisCombiner_excuse-system.png",
+            "/project-images/untis-combiner/UntisCombiner_excuse-system-print.png",
+            "/project-images/untis-combiner/UntisCombiner_notifications.png",
+            "/project-images/untis-combiner/UntisCombiner_schedule.png"
+        ]
+    },
+    {
+        "id": "ascentwebsite",
+        "title": "Ascent Website",
+        "date": "20.09.2025",
+        "description": "A website I developed and programmed for our team competing at the World Finals in Singapore, showcasing our team identity, news, and our car.",
+        "technologies": [
+            "typescript",
+            "sass",
+            "html5",
+            "php",
+            "vite",
+            "python"
+        ],
+        "features": [
+            "News updates",
+            "Car showcase with animations",
+            "Image gallery",
+            "Contact form",
+            "Multiple informational pages",
+            "Responsive design",
+            "Easy navigation"
+        ],
+        "liveLink": "https://ascent-racing.com",
+        "sourceCodeLink": "https://github.com/Dari2008/Ascent-Website",
+        "projectImage": "/project-images/ascent-racing/preview.png",
+        "otherImages": [
+            "/project-images/ascent-racing/ascentRacing_car-animation.png",
+            "/project-images/ascent-racing/ascentRacing_contact.png",
+            "/project-images/ascent-racing/ascentRacing_gallery.png",
+            "/project-images/ascent-racing/ascentRacing_news.png",
+            "/project-images/ascent-racing/ascentRacing_pages.png"
+        ]
+    }
+]

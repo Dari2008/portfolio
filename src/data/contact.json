@@ -1,0 +1,11 @@
+{
+    "name": "Darius Frobeen",
+    "email": "darius@frobeen.com",
+    "linkedIn": "https://linkedin.com",
+    "phone": {
+        "prefix": "+49",
+        "number": "1724067376",
+        "optionalZero": true
+    },
+    "github": "https://github.com/Dari2008"
+}

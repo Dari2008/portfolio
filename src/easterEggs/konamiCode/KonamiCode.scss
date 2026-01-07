@@ -1,0 +1,16 @@
+body.konamiCodeActive {
+
+    .backgroundAnimation,
+    .loadingAnimation {
+        &__circle {
+            --h: calc(var(--index) / var(--numDots) * 360deg);
+            --s: 80%;
+            --l: 50%;
+            background-color: hsl(var(--h), var(--s), var(--l)) !important;
+            --box-shadow-color-2: hsl(var(--h), var(--s), var(--l));
+            --box-shadow-color: hsl(var(--h), 80%, var(--l));
+            transition-property: left, top, width, height;
+        }
+    }
+
+}

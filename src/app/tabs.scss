@@ -1,0 +1,50 @@
+@use "../utils/Variables.scss" as *;
+
+.react-tabs {
+    font-family: Arial, sans-serif;
+
+    &__tab-list {
+        display: flex;
+        list-style-type: none;
+        width: 90%;
+        margin-inline: auto;
+        padding-block: 10px;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 0;
+        margin-block: 0;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        li {
+            width: auto;
+            height: 100%;
+            padding: 5px 10px;
+            border-radius: 10px;
+            background-color: color-mix(in srgb, $themeColor2 40%, $gray-700 60%);
+            margin-inline: 10px;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            flex-grow: 1;
+            flex-shrink: 0;
+            width: max-content;
+
+            &:hover {
+                background-color: color-mix(in srgb, $themeColor2 80%, $gray-700 10%);
+            }
+
+            &[aria-selected="true"] {
+                border: 2px solid $themeColor3;
+                color: $gray-100;
+            }
+
+        }
+
+    }
+
+    &__tab-panel--selected {
+        padding: 5px;
+    }
+
+}

@@ -1,0 +1,33 @@
+.string-odometer {
+    display: flex;
+    gap: 4px;
+    font-size: inherit;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// .odometer-column {
+//     height: 60px;
+//     overflow: hidden;
+//     position: relative;
+// }
+
+.odometer-wheel {
+    display: flex;
+    flex-direction: column;
+    // transform: translateY(0);
+    position: absolute;
+    top: 10px;
+    width: 1rem;
+    left: calc(var(--index) * 1rem + 50% - ((var(--length) * 1rem) / 2));
+    transform: translateX(-50%);
+}
+
+.odometer-char {
+    // height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

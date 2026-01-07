@@ -1,0 +1,52 @@
+@use "../../utils/Variables.scss" as *;
+
+div:has(>.technologyImage),
+li:has(>.technologyImage) {
+
+    .technologyImage {
+        object-fit: contain;
+        // filter: grayscale(1);
+        transition: opacity 0.3s ease-in-out;
+        position: absolute;
+        scale: 0.8;
+        max-height: 10vh;
+
+        +.themeColor {
+            object-fit: contain;
+            // filter: grayscale(1);
+            transition: opacity 0.3s ease-in-out;
+            position: absolute;
+            scale: 0.8;
+        }
+
+        opacity: 0;
+        z-index: 20;
+
+        &:not(.hasThemeColoredImage) {
+            opacity: 1 !important;
+        }
+
+        +.themeColor {
+            opacity: 1;
+            z-index: 10;
+        }
+
+
+        +.themeColor {
+            max-height: 10vh;
+        }
+
+    }
+
+    &:hover {
+        transform: scale(1.2) translateY(-7.5px);
+
+        .technologyImage {
+            opacity: 1;
+        }
+
+        .themeColor {
+            opacity: 0;
+        }
+    }
+}

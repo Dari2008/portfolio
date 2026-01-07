@@ -1,0 +1,109 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+@use "../header/Header.scss" as header;
+@use "./AchievementWrapper-mobile.scss" as *;
+@use "sass:color";
+
+.achievement-wrapper {
+    position: fixed;
+    top: calc(20px + header.$headerHeight);
+    right: 20px;
+    // width: 20vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 90vw;
+
+    .achievement {
+        opacity: 1;
+        transition: opacity 1.3s ease-in-out, height 1.3s ease-in-out;
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto) min-content;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        box-shadow: 0 0 5px 1px color.mix($gray-800, gold, 60%);
+        border-radius: 20px;
+        $padding: 20px;
+        overflow: clip;
+        background-color: rgba($themeColor1, 0.4);
+        animation: fadeIn 0.3s ease-in-out 0ms 1 forwards;
+        backdrop-filter: blur(20px);
+
+        .genericTitle {
+            grid-area: 1 / 1 / 2 / 4;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fce28a;
+            margin: 0;
+            background-color: $gray-700;
+            padding-inline: $padding;
+            padding-block: calc($padding / 2);
+            box-shadow: 0 0 29px 1px rgba(gold, 0.2);
+        }
+
+        .icon {
+            grid-area: 2 / 1 / 4 / 2;
+            font-family: "Fontawesome";
+            color: gold;
+            font-size: clampW(1em, 3em, 200px, 2000px);
+            padding-left: $padding;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .atitle {
+            grid-area: 2 / 2 / 3 / 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            padding-right: $padding;
+            font-size: clampW(0.6em, 1.5em, 200px, 2000px);
+        }
+
+        .info {
+            grid-area: 3 / 2 / 4 / 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-inline: $padding;
+            padding-bottom: $padding;
+            font-size: clampW(0.4em, 0.7em, 200px, 2000px);
+        }
+
+        &.removing {
+            animation: removing 0.4s ease-in-out 0ms 1 forwards;
+        }
+    }
+}
+
+@keyframes removing {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

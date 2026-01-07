@@ -1,0 +1,63 @@
+@use "../../utils/Variables.scss" as *;
+
+.social-wrapper {
+
+    background-color: transparent !important;
+    border: none !important;
+    transition: transform 0.1s ease-in-out, color 0.2s ease-in-out !important;
+
+    .logo-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: calc(var(--socials-size, 55px) / 5.5);
+
+        .logo {
+            font-family: Fontawesome;
+
+            &.github-logo {
+                --logoText: "\f09b";
+                color: white;
+            }
+
+            &.linkedin-logo {
+                --logoText: "\f08c";
+                color: #0a66c2;
+            }
+
+            &.discord-logo {
+                --logoText: "\f392";
+                color: #5b6aee;
+            }
+
+            &::before {
+                content: var(--logoText);
+                font-size: 2rem;
+            }
+
+            width: var(--socials-size, 55px);
+            height: var(--socials-size, 55px);
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            background-color: $themeColor2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-name {
+            color: $themeColor4;
+        }
+
+    }
+
+    &:hover {
+        transform: scale(1.05);
+
+        .logo-name {
+            color: $themeColor3;
+        }
+    }
+
+}

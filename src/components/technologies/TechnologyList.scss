@@ -1,0 +1,29 @@
+@use "../../utils/Variables.scss" as *;
+
+.technologyList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+
+    li {
+        transition: transform 0.2s ease-in-out;
+        transform: scale(1) translateY(0px);
+        cursor: pointer;
+        padding: 5px;
+        background-color: rgba($themeColor2, 0.8) !important;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+}

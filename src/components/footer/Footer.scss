@@ -1,0 +1,365 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+@use "sass:color";
+@use "./Footer-mobile.scss" as *;
+
+.contact-card {
+    max-width: unset;
+    background: $gray-900;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: calc(90% - 4rem);
+    height: calc(90% - 2rem);
+    // width: 50%;
+
+
+    h2.title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clampW(1em, 2em, 200px, 2000px);
+        margin-top: 0;
+    }
+
+    .react-tabs {
+        width: 100%;
+        margin-bottom: auto;
+        height: 100%;
+
+        .react-tabs__tab-panel--selected {
+            height: 100%;
+        }
+
+    }
+
+    #panel_r_0_0 {
+        position: relative;
+        padding: 0;
+
+    }
+
+    .react-tabs__tab-panel {
+        height: unset !important;
+    }
+
+    .code {
+        font-family: 'Fira Code', monospace;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        white-space: pre; // preserves tabs and spacing
+        user-select: none;
+        color: $gray-100;
+        padding: 10px;
+        overflow-x: auto;
+
+        .copy {
+            position: absolute;
+            top: 0.5em;
+            right: 0.5em;
+            padding: 0.25rem 0.5rem; // slightly more readable
+            font-size: 0.85rem;
+            background-color: $themeColor4;
+            color: $gray-100;
+            border: none;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            box-shadow: 0 0 5px 2px $themeColor1;
+            transition: transform 0.1s ease, background-color 0.2s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: color.adjust($themeColor4, $lightness: -10%);
+            }
+
+            &::after,
+            &::before {
+                position: absolute;
+                top: -1.2em;
+                right: 50%;
+                font-size: 0.7rem;
+                background: $gray-700;
+                padding: 0.2rem 0.4rem;
+                border-radius: 0.3rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                transform: translateY(-5px) translateX(50%);
+            }
+
+            &.successfullyCopied::after {
+                opacity: 1;
+                transform: translateY(-10px) translateX(50%);
+            }
+
+            &::before {
+                content: "Failed!";
+            }
+
+            &::after {
+                content: "Copied!";
+            }
+
+            &.successfullyCopied::after,
+            &.failedToCopy::after {
+                opacity: 1;
+                transform: translateY(-10px) translateX(50%);
+            }
+        }
+
+
+        .key {
+            color: $themeColor3;
+            font-weight: 600;
+        }
+
+        .key-first,
+        .key-second {
+            color: $themeColor4;
+            font-weight: 500;
+        }
+
+        .value,
+        .value * {
+            color: $themeColor5;
+            font-weight: 400;
+            user-select: all;
+
+            &::selection {
+                background: rgba(255, 255, 255, 0.1);
+                color: color.adjust($themeColor4, $lightness: -10%);
+            }
+        }
+
+        .optional-zero {
+            color: rgba($themeColor5, 0.5);
+        }
+
+        .tab {
+            display: inline-block;
+            width: 2ch; // consistent tab size
+        }
+
+        .bracket,
+        .bracketAndSlash {
+            opacity: 0.6;
+            color: $gray-400;
+        }
+
+        // Optional: subtle hover highlight for better UX
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            transition: background 0.2s ease;
+        }
+    }
+
+    .key-value-pairs {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 0.5rem 1rem;
+        font-family: 'Fira Code', monospace;
+        font-size: 1rem;
+
+        .key-value-pair {
+            display: contents;
+        }
+
+        .key {
+            font-weight: 600;
+            color: $themeColor3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a.value {
+            color: $themeColor4;
+        }
+
+        a.value:hover {
+            color: color.adjust($themeColor4, $lightness: -10%);
+        }
+
+        a.value:active {
+            color: color.adjust($themeColor4, $lightness: 10%);
+        }
+
+        .value {
+            color: $themeColor5;
+            word-break: break-word;
+            text-align: end;
+        }
+    }
+}
+
+.footerMenu {
+    max-width: unset;
+    height: 30vh;
+    background: #171717;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: calc(90% - 4rem);
+    justify-self: center;
+    align-self: center;
+    height: calc(90% - 2rem);
+
+
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+
+        li {
+            flex-grow: 1;
+            flex-shrink: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                width: 100%;
+                height: 80%;
+                padding: 2.5px;
+                margin: 0;
+                transition: transform ease-in-out 0.1s;
+                color: $textColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    transform: scale(1.04);
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+
+            a.active {
+                box-shadow: 0 0 10px 3px $themeColor3;
+            }
+
+        }
+
+    }
+
+    a {
+        transition: backdrop-filter ease-in-out 0.3s;
+        background-color: $themeColor2;
+        box-shadow: 0 3px 15px 1px $themeColor1;
+        color: $textColor;
+    }
+
+    a:hover {
+        box-shadow: 0 3px 15px 6px $themeColor1;
+    }
+
+}
+
+footer {
+    @include glass-themeColor-opacity-w-color($themeColor1, 50);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border-top: 2px solid color.mix($themeColor3, $gray-600);
+    width: $maxContentWidth;
+    margin-inline: auto;
+    border-radius: 20px;
+    padding-block: 1rem;
+    margin-top: 5%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    .contact-card {
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .footerMenu {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .socials-footer {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-area: 3 / 1 / 4 / 3;
+        width: max-content;
+        // padding: 1rem 2rem;
+        margin-inline: auto;
+        max-width: 100%;
+
+        .rights-wrapper {
+            display: flex;
+            gap: 5px 20px;
+            flex-wrap: wrap;
+
+            a {
+                color: $themeColor3;
+                border: none;
+                background-color: transparent;
+                text-align: center;
+                width: 100%;
+                line-height: 1em;
+                font-size: clampW(0.5em, 1em, 200px, 2000px);
+            }
+
+            a:hover {
+                color: color.adjust($themeColor3, $lightness: -10%);
+            }
+
+            a:active {
+                color: color.adjust($themeColor3, $lightness: 10%);
+            }
+        }
+
+        .copyrightNotice {
+            text-wrap: wrap;
+            text-align: center;
+            font-size: clampW(0.3em, 1em, 200px, 2000px);
+        }
+    }
+
+
+
+}
+
+.socials-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .logo-wrapper {
+        &:not(:hover) {
+            .logo::before {
+                color: $themeColor3 !important;
+            }
+        }
+    }
+}

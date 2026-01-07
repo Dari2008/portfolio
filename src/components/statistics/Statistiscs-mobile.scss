@@ -1,0 +1,38 @@
+@use "../../utils/clamp.scss" as *;
+
+@media(width < 850px) {
+    .statistics {
+        --grid-col-count: 2;
+
+        .statistic {
+            .title {
+                font-size: clampW(0.3em, 0.8em, 300px, 850px) !important;
+            }
+
+            .value {
+                font-size: clampW(0.3em, 1.2em, 300px, 850px) !important;
+            }
+        }
+    }
+}
+
+@media(width < 600px) {
+    .statistics {
+        --grid-col-count: 1;
+
+        .statistic {
+
+            &:not([data-importance="1"]):not([data-importance="2"]) {
+                display: none;
+            }
+
+            .title {
+                font-size: clampW(0.3em, 0.8em, 300px, 850px) !important;
+            }
+
+            .value {
+                font-size: clampW(0.3em, 1.2em, 300px, 850px) !important;
+            }
+        }
+    }
+}

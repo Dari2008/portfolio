@@ -1,0 +1,40 @@
+@media (width < 560px) {
+    .aboutMeSmall {
+        flex-direction: column !important;
+
+        .me {
+            width: 50% !important;
+
+            &:hover {
+                scale: 1.1 !important;
+            }
+        }
+
+        .infoWrapper {
+            width: 100% !important;
+
+            .hello {
+                display: flex;
+                justify-content: center;
+            }
+
+            .subline {
+                text-align: center;
+            }
+
+            .skillsWrapper {
+                --technology-size: max(calc(var(--body-width) * 0.045), 15px) !important;
+            }
+
+            .skillsWrapper .skills {
+                justify-content: center !important;
+            }
+
+            .buttons {
+                width: 100%;
+                justify-content: center !important;
+            }
+        }
+
+    }
+}

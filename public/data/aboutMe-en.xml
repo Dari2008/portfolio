@@ -1,0 +1,110 @@
+<aboutMe>
+    <name>Darius</name>
+    <role>Developer &amp; Engineer</role>
+    <location>Germany - Hamburg</location>
+    <currentlyWorkingOn>Portfolio Website</currentlyWorkingOn>
+    <hi>Hi, I'm Darius</hi>
+    <hero>
+        <hi>Hi, I'm Darius</hi>
+        <slogan>Code. Hardware. Performance.</slogan>
+        <subline>Full-stack Web &amp; Java developer – I create efficient, scalable, and
+            maintainable applications for the web and desktop.</subline>
+    </hero>
+    <whatIAm>a Web-Developer &amp; Embedded Systems Engineer</whatIAm>
+    <technologies>
+        <technologies>
+            <category>Fullstack</category>
+            <tech>
+                <tech>java</tech>
+            </tech>
+        </technologies>
+        <technologies>
+            <category>Frontend</category>
+            <tech>
+                <tech>typescript</tech>
+                <tech>vite</tech>
+                <tech>html</tech>
+                <tech>sass</tech>
+                <tech>react</tech>
+            </tech>
+        </technologies>
+        <technologies>
+            <category>Backend</category>
+            <tech>
+                <tech>php</tech>
+            </tech>
+        </technologies>
+        <technologies>
+            <category>Embedded</category>
+            <tech>
+                <tech>esp32</tech>
+                <tech>arduino</tech>
+            </tech>
+        </technologies>
+        <technologies>
+            <category>Tools</category>
+            <tech>
+                <tech>git</tech>
+                <tech>linux</tech>
+                <tech>docker</tech>
+            </tech>
+        </technologies>
+    </technologies>
+    <motiviation></motiviation>
+    <whatILearnCurrently></whatILearnCurrently>
+    <texts>
+        <intro>
+            I’m a developer with a strong interest in building clean,
+            interactive, and technically well-structured applications.
+            My main focus is modern web development and Java-based
+            projects, with an emphasis on performance and maintainability.
+        </intro>
+        <techStack>
+            I primarily work with these technologies:
+        </techStack>
+        <origin>
+            <p>
+                I started programming with Fischertechnik at the age of ten. 
+                When the COVID pandemic began, my interest deepened further. 
+                Since my mother is a teacher and attended various online training 
+                sessions, one of which introduced the programming language Java, I 
+                followed along out of curiosity. I found the topic fascinating and 
+                soon began exploring Java on my own. Over time, this foundation led 
+                me to broaden my skill set, and I went on to learn HTML, CSS, JavaScript, 
+                and later TypeScript, with a growing focus on web development and interactive applications.
+            </p>
+        </origin>
+        <interests>
+            <p>
+                I enjoy working on projects where logic and creativity meet.
+                This includes canvas-based applications, small games, tools,
+                and systems that require thoughtful architecture rather than
+                just visual polish.
+            </p>
+            <p>
+                I particularly like projects where I can control the full
+                stack or the full rendering pipeline, as it allows me to
+                optimize performance and understand every part of the system.
+            </p>
+        </interests>
+        <learning>
+            <p>
+                I learn primarily by building real projects. Instead of
+                following tutorials step by step, I prefer to experiment,
+                research problems as they arise, and refine my solutions
+                through iteration.
+            </p>
+            <p>
+                I actively explore new technologies, read documentation,
+                analyze existing implementations, and apply what I learn
+                directly to my own projects.
+            </p>
+        </learning>
+        <goals>
+            My goal is to continue growing as a developer by working on
+            technically challenging projects and deepening my understanding
+            of software architecture, performance optimization, and
+            low-level concepts.
+        </goals>
+    </texts>
+</aboutMe>

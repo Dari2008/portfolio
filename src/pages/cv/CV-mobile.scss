@@ -1,0 +1,51 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+
+@media(width < 1375px) {
+    .cv-wrapper {
+        --grid-col-count: 1;
+    }
+}
+
+@media(width < 550px) {
+    .cv-wrapper {
+
+        .cv {
+            grid-template-columns: $maxContentWidth !important;
+            grid-template-rows: repeat(var(--entry-count), max-content min-content) !important;
+            margin-inline: auto;
+            width: $maxContentWidth !important;
+            row-gap: 0 !important;
+        }
+
+        .cv-entry {
+            grid-area: calc(var(--index) * 2 + 1) / 1 / calc(var(--index) * 2 + 2) / 2 !important;
+            grid-template-rows: auto 1fr auto auto auto;
+            row-gap: 10px !important;
+            width: 100% !important;
+            margin-block: 10px !important;
+        }
+
+        .timeSpan {
+            grid-area: calc(var(--index) * 2 + 2) / 1 / calc(var(--index) * 2 + 3) / 2 !important;
+        }
+
+        .fromToDate {
+            display: contents !important;
+            justify-self: center;
+            align-self: center;
+            color: rgba($themeColor5, 0.8);
+            text-align: center;
+        }
+
+        .graphEntry {
+            display: none;
+        }
+
+        .to-graph,
+        .from-graph {
+            display: none;
+        }
+
+    }
+}

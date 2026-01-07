@@ -1,0 +1,49 @@
+@use "../../utils/Variables.scss" as *;
+@use "../../utils/clamp.scss" as *;
+
+.typingSpanWrapper {
+
+    .typingSpan {
+        &.typing {}
+    }
+
+    .heightHolder {
+        user-select: none;
+    }
+
+    &:not(:has(.typing)) .typingPosition {
+        opacity: 0;
+    }
+
+    &:has(.typing) .typingPosition {
+        width: clampW(0.2em, 1.5em, 200px, 2000px);
+        --transparency: 1;
+        border-bottom: 3px solid rgba($themeColor4, var(--transparency));
+        display: inline-block;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:has(.typing.waiting) .typingPosition {
+        animation: flicker 1s linear 0ms infinite;
+    }
+
+}
+
+@keyframes flicker {
+    0% {
+        --transparency: 1;
+    }
+
+    1% {
+        --transparency: 1;
+    }
+
+    50% {
+        --transparency: 0;
+    }
+
+    51% {
+        --transparency: 0;
+    }
+}

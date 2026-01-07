@@ -1,0 +1,78 @@
+@use "../../utils/Variables.scss" as *;
+@use "sass:color";
+@use "./CommandOutputs-mobile.scss" as *;
+
+.console-table {
+    min-width: 50%;
+
+    thead td {
+        text-decoration: underline $themeColor3 2px;
+    }
+
+    tbody tr td {
+        padding-bottom: 20px;
+    }
+
+    tbody tr td:not(:last-of-type) {
+        padding-right: 20px;
+    }
+}
+
+.notFound {
+    .suggestion-commands {
+        margin: 0;
+    }
+}
+
+.notFoundName {
+    color: color.mix(red, $gray-400, 60%);
+}
+
+.aboutMe {
+    min-width: 50%;
+
+    .aboutMe-table {
+        tbody tr td:nth-child(2) {
+            padding-left: 20px;
+        }
+    }
+}
+
+.projects {
+    width: 100%;
+
+    .projects-table {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.project {
+    table tbody tr td:nth-child(2) {
+        padding-left: 20px;
+    }
+}
+
+.theme-set-successfully {
+    color: $themeColor4;
+}
+
+
+.whatToDoNext {
+    .command {
+        color: $themeColor3;
+        cursor: pointer;
+    }
+}
+
+.consoleLink {
+    color: $themeColor3;
+
+    &:hover {
+        color: color.adjust($themeColor3, $lightness: 15%);
+    }
+}
+
+.downloadTable {
+    min-width: 50%;
+}
