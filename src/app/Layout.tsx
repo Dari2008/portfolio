@@ -5,22 +5,25 @@ import { Console, ConsoleButton } from "../components/console/Console";
 import { KonamiCode } from "../easterEggs";
 import { ScrollRestoration } from "./ScrollRestoration";
 import LanguageChangeButton from "../components/languageChange/LanguageChangeButton";
+import AchievementWrapper from "../components/achievements/AchievementWrapper";
 
 const Layout: React.FC = () => {
     return (
         <>
-            <ScrollRestoration />
-            <KonamiCode />
-            <Header />
-            <main>
-                <Outlet />
-            </main>
-            <Footer />
-            <Console />
-            <ConsoleButton />
-            <BackgroundAnimation />
-            <IntitalLoadingAnimation />
-            <LanguageChangeButton />
+            <AchievementWrapper>
+                <ScrollRestoration />
+                <KonamiCode />
+                <Header />
+                <main>
+                    <Outlet />
+                </main>
+                <Footer />
+                <Console />
+                <ConsoleButton />
+                <BackgroundAnimation />
+                <IntitalLoadingAnimation />
+                <LanguageChangeButton />
+            </AchievementWrapper>
         </>
     );
 };

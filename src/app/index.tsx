@@ -9,40 +9,37 @@ import { StrictMode } from 'react'
 import LoadingAnimation from '../components/backgroundAnimation/LoadingAnimation'
 import { StemRacing } from '../pages/specials/stemRacing/StemRacing'
 import { TitleManager, VisitorManager } from '../components'
-import AchievementWrapper from '../components/achievements/AchievementWrapper'
 import LanguageManagerProvider from '../lang/LanguageManager'
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <LanguageManagerProvider>
             <TitleManager>
-                <AchievementWrapper>
-                    <LoadingAnimation>
-                        <BrowserRouter>
-                            <Routes>
-                                <Route element={<Layout />} caseSensitive={false}>
-                                    {
-                                        MENU_ITEMS.map(item => {
-                                            return (<Route key={item.path} index={item.index} path={item.path} element={<item.element />} />);
-                                        })
-                                    }
+                <LoadingAnimation>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route element={<Layout />} caseSensitive={false}>
+                                {
+                                    MENU_ITEMS.map(item => {
+                                        return (<Route key={item.path} index={item.index} path={item.path} element={<item.element />} />);
+                                    })
+                                }
 
-                                    <Route path="/imprint" element={<Imprint />}></Route>
-                                    <Route path="/privacyPolicy" element={<PrivacyPolicy />}></Route>
-                                    <Route path="/projects/:projectId" element={<ProjectViewerWrapper />}></Route>
-                                    <Route path="/projects" element={<ProjectViewerWrapper />}></Route>
-                                    <Route path="/playground/:playgroundName" element={<PlaygroundWrapper />}></Route>
-                                    <Route path="/playground" element={<PlaygroundWrapper />}></Route>
-                                    <Route path="/achievements" element={<Achievements />}></Route>
+                                <Route path="/imprint" element={<Imprint />}></Route>
+                                <Route path="/privacyPolicy" element={<PrivacyPolicy />}></Route>
+                                <Route path="/projects/:projectId" element={<ProjectViewerWrapper />}></Route>
+                                <Route path="/projects" element={<ProjectViewerWrapper />}></Route>
+                                <Route path="/playground/:playgroundName" element={<PlaygroundWrapper />}></Route>
+                                <Route path="/playground" element={<PlaygroundWrapper />}></Route>
+                                <Route path="/achievements" element={<Achievements />}></Route>
 
-                                    <Route path='specials'>
-                                        <Route path='stemracing' element={<StemRacing />}></Route>
-                                    </Route>
+                                <Route path='specials'>
+                                    <Route path='stemracing' element={<StemRacing />}></Route>
                                 </Route>
-                            </Routes>
-                        </BrowserRouter>
-                    </LoadingAnimation>
-                </AchievementWrapper>
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
+                </LoadingAnimation>
             </TitleManager>
         </LanguageManagerProvider>
     </StrictMode>
