@@ -9,11 +9,26 @@ Visit the live version at:
 **[https://darius.frobeen.com](https://darius.frobeen.com)**
 
 ## Screenshots
+
 ![Homepage Screenshot](./imgs/home.png)
+Vitit **[https://darius.frobeen.com/](Home)**
+
+
 ![Projects](./imgs/projects.png)
+Vitit **[https://darius.frobeen.com/](Projects)**
+
+
 ![About Me](./imgs/aboutMe.png)
+Vitit **[https://darius.frobeen.com/](About Me)**
+
+
 ![Contact](./imgs/contact.png)
+Vitit **[https://darius.frobeen.com/](Contact)**
+
+
 ![Console](./imgs/console.png)
+To open the Console go to any Page of my portfolio and click on the console button in the bottom right corner.
+
 
 ## Features
 
