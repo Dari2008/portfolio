@@ -67,6 +67,30 @@
     </infos>
 
     <entrys>
+
+        <entrys>
+            <title>
+                <en>Internship at Dataport</en>
+                <de>Praktikum bei Dataport</de>
+            </title>
+            <description>
+                <en>
+                    Internship at #(Dataport,https://dataport.de/)#, a public IT service provider
+                    for government institutions in northern Germany.
+                </en>
+                <de>
+                    Praktikum bei #(Dataport,https://dataport.de/)#, einem öffentlichen IT-Dienstleister
+                    für Regierungsinstitutionen in Norddeutschland.
+                </de>
+            </description>
+            <category>
+                <en>Internship</en>
+                <de>Praktikum</de>
+            </category>
+            <from>01.07.2024</from>
+            <to>12.07.2024</to>
+        </entrys>
+
         <entrys>
             <title>
                 <en>STEM Racing World Finals</en>

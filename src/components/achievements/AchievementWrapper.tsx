@@ -3,12 +3,14 @@ import { AchievementContext } from "./AchievementContext";
 import AchievementManager, { type Achievement } from "./AchievementManager";
 import "./AchievementWrapper.scss";
 import { LangElement, useLanguage } from "../../lang";
+import { useNavigate } from "react-router";
 
 let manager = (globalThis as any).sdfsldjfsd;
 
 export default function AchievementWrapper({ children }: { children: ReactNode }) {
     const [achievements, setAchievements] = useState<RecentAchievement[]>([]);
     const [language,] = useLanguage();
+    const navigate = useNavigate();
 
     if (!manager) {
         manager = new AchievementManager();
@@ -40,7 +42,7 @@ export default function AchievementWrapper({ children }: { children: ReactNode }
         <div className="achievement-wrapper">
             {
                 achievements.map(achievement => {
-                    return <div key={achievement.title.en} className={"achievement" + (achievement.isRemoving ? " removing" : "")}>
+                    return <div key={achievement.title.en} onClick={() => navigate("/achievements")} className={"achievement" + (achievement.isRemoving ? " removing" : "")}>
                         <h3 className="genericTitle">
                             <LangElement
                                 en="Achievement Unlocked"
