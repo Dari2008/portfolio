@@ -374,7 +374,7 @@ export const PROJECTS: Command = {
                                 projects.map((project) => {
                                     return (
                                         <tr key={project.id}>
-                                            <td data-key-to-display-when-screen-too-small="Title">{project.title}</td>
+                                            <td data-key-to-display-when-screen-too-small="Title">{project.title.en}</td>
                                             <td data-key-to-display-when-screen-too-small="Id">{project.id}</td>
                                             <td data-key-to-display-when-screen-too-small="Technologies">{project.technologies.join(", ")}</td>
                                         </tr>
@@ -423,7 +423,7 @@ export const PROJECT: Command = {
         return {
             outValue: (
                 <div className="project">
-                    <h2 className="title">{project.title}</h2>
+                    <h2 className="title">{project.title.en}</h2>
                     <table>
                         <tbody>
                             <tr key={"date"}>
@@ -449,7 +449,7 @@ export const PROJECT: Command = {
                             {
                                 project.shortDescription && <tr key={"shortDescription"}>
                                     <td>Short Description: </td>
-                                    <td>{project.shortDescription}</td>
+                                    <td>{project.shortDescription.en}</td>
                                 </tr>
                             }
                             <tr key={"features"}>
@@ -457,7 +457,7 @@ export const PROJECT: Command = {
                                 <td>
                                     <ul>
                                         {
-                                            project.features.map((feature, index) => <li key={feature + index}>{feature}</li>)
+                                            project.features.map((feature, index) => <li key={feature.en + index}>{feature.en}</li>)
                                         }
                                     </ul>
                                 </td>
@@ -737,10 +737,10 @@ export const DOWNLOAD: Command = {
                                         return e.downloadItems && <>
                                             {
                                                 e.downloadItems.map(download => {
-                                                    return <tr key={download.name}>
-                                                        <td>{`${download.name.replaceAll(" ", "-")}_${e.title.replaceAll(" ", "-")}`}</td>
-                                                        <td>{download.name}</td>
-                                                        <td>{e.title}</td>
+                                                    return <tr key={download.name.en}>
+                                                        <td>{`${download.name.en.replaceAll(" ", "-")}_${e.title.en.replaceAll(" ", "-")}`}</td>
+                                                        <td>{download.name.en}</td>
+                                                        <td>{e.title.en}</td>
                                                     </tr>
                                                 })
                                             }
@@ -758,7 +758,7 @@ export const DOWNLOAD: Command = {
 
                 const finds = cv.entrys.map(e => {
                     return e.downloadItems && e.downloadItems.find(download => {
-                        return `${download.name.replaceAll(" ", "-")}_${e.title.replaceAll(" ", "-")}`.toLowerCase() == (args.file.value as string).toLowerCase();
+                        return `${download.name.en.replaceAll(" ", "-")}_${e.title.en.replaceAll(" ", "-")}`.toLowerCase() == (args.file.value as string).toLowerCase();
                     });
                 }).filter(e => !!e);
 

@@ -4,7 +4,7 @@ import { loadProjects } from '../../data/Data'
 import './Home.scss'
 import { type Project as ProjectType } from '../../components/project/Project';
 import { useTitle } from '../../components/titleManager/TitleManager';
-import { LangElement, useLanguage } from '../../lang';
+import { LangElement } from '../../lang';
 
 export default function Home() {
     useTitle().setTitle("Darius Portfolio");

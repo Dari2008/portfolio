@@ -12,3 +12,4 @@ export { useLoadingAnimation, LoadingAnimationContext } from "./backgroundAnimat
 export { useAchievements, AchievementContext } from "./achievements/AchievementContext.ts"
 
 export { TitleManager } from "./titleManager/TitleManager.tsx"
+export { default as VisitorManager } from "./visitorManager/VisitorManager.tsx"

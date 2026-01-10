@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from "react";
-import type { LanguageCode, LanguageManager } from "./LanguageManager";
+import { createContext, useContext } from "react";
+import type { LanguageCode } from "./LanguageManager";
 
 export type LangContextVal = [LanguageCode, (l: LanguageCode) => void];
 

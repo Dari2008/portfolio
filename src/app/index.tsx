@@ -8,7 +8,7 @@ import ProjectViewerWrapper from '../pages/projectViewer/ProjectViewerWrapper'
 import { StrictMode } from 'react'
 import LoadingAnimation from '../components/backgroundAnimation/LoadingAnimation'
 import { StemRacing } from '../pages/specials/stemRacing/StemRacing'
-import { TitleManager } from '../components'
+import { TitleManager, VisitorManager } from '../components'
 import AchievementWrapper from '../components/achievements/AchievementWrapper'
 import LanguageManagerProvider from '../lang/LanguageManager'
 
@@ -47,3 +47,5 @@ createRoot(document.getElementById('root')!).render(
         </LanguageManagerProvider>
     </StrictMode>
 )
+
+VisitorManager();

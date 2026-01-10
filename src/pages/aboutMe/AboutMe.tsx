@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ABOUT_ME, loadAboutMe, type AboutMe, type LanguageString } from "../../data/Data";
+import { ABOUT_ME, loadAboutMe, type AboutMe } from "../../data/Data";
 import "./AboutMe.scss";
 import { useAchievements, useLoadingAnimation } from "../../components";
 import TechnologyList from "../../components/technologies/TechnologyList";
@@ -9,7 +9,6 @@ import { MultiResImage } from "../../components/image/MultiResImage";
 import { useTitle } from "../../components/titleManager/TitleManager";
 import { ImageLoadManager, Statics } from "../../utils";
 import { LangElement, useLanguage } from "../../lang";
-import type { LanguageCode } from "../../lang/LanguageManager";
 
 export default function AboutMe() {
 

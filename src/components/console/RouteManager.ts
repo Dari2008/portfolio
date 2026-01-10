@@ -32,7 +32,7 @@ export const ROOT_ROUTE: RouteDef = {
 for (const menuItem of MENU_ITEMS) {
     ROOT_ROUTE.children.unshift({
         name: menuItem.path.replace("/", ""),
-        desc: menuItem.name,
+        desc: menuItem.name.en,
         children: [],
         priority: menuItem.priority
     });
@@ -75,7 +75,7 @@ export function updateRouteDefs() {
         for (const project of PROJECTS) {
             PROJECTS_ROUTE.children.push({
                 name: project.id.replace("/", ""),
-                desc: project.shortDescription ?? "",
+                desc: project.shortDescription?.en ?? "",
                 children: [],
                 priority: 1
             });
