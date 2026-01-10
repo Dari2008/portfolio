@@ -9,13 +9,11 @@ Visit the live version at:
 **[https://darius.frobeen.com](https://darius.frobeen.com)**
 
 ## Screenshots
-```
 ![Homepage Screenshot](./imgs/home.png)
 ![Projects](./imgs/projects.png)
 ![About Me](./imgs/aboutMe.png)
 ![Contact](./imgs/contact.png)
 ![Console](./imgs/console.png)
-```
 
 ## Features
 
