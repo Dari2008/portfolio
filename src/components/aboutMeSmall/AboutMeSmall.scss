@@ -44,7 +44,7 @@
         .hello {
             grid-area: 1 / 1 / 2 / 2;
             // font-size: 6rem;
-            font-size: clampW(0.2em, 6em, 100px, 2000px);
+            font-size: clampW(0.1em, 4em, 100px, 2000px);
             // background: linear-gradient(90deg, $themeColor3, $themeColor4);
             // background-clip: text;
             // color: transparent;
