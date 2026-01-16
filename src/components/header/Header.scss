@@ -4,6 +4,18 @@
 
 $headerHeight: 6vh;
 
+@media (width <=950px) and (width >=750px) {
+    #header {
+        .share {
+
+            &.big,
+            &.small {
+                display: none !important;
+            }
+        }
+    }
+}
+
 @media(width >=750px) {
     #header {
         display: flex;
@@ -25,7 +37,6 @@ $headerHeight: 6vh;
 
         .share {
             aspect-ratio: 1 / 1;
-            display: flex;
             justify-content: center;
             align-items: center;
             height: 70%;
@@ -46,6 +57,14 @@ $headerHeight: 6vh;
                 aspect-ratio: 1 / 1;
                 color: rgba($themeColor3, 0.6);
                 font-size: clampW(0.3em, 1.5em, 200px, 2000px);
+            }
+
+            &.big {
+                display: flex;
+            }
+
+            &.small {
+                display: none;
             }
         }
 

@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 import './index.scss'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { MENU_ITEMS } from './Menu'
-import { Achievements, Imprint, PlaygroundWrapper, PrivacyPolicy } from '../pages'
+import { Achievements, Imprint, PlaygroundWrapper, PrivacyPolicy, VisitorsPage } from '../pages'
 import Layout from './Layout'
 import ProjectViewerWrapper from '../pages/projectViewer/ProjectViewerWrapper'
 import { StrictMode } from 'react'
@@ -19,6 +19,9 @@ createRoot(document.getElementById('root')!).render(
                     <BrowserRouter>
                         <Routes>
                             <Route element={<Layout />} caseSensitive={false}>
+
+                                <Route path="/visitors" element={<VisitorsPage />} />
+
                                 {
                                     MENU_ITEMS.map(item => {
                                         return (<Route key={item.path} index={item.index} path={item.path} element={<item.element />} />);

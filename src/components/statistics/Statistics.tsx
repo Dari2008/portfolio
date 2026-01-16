@@ -57,10 +57,13 @@ const StatisticElement = ({ statistic }: { statistic: Statistic }) => {
             ref: ref,
             start: 0,
             suffix: statistic.unit ? " " + statistic.unit : "",
-            duration: 2
+            duration: 2,
+            separator: language == "en" ? "," : ".",
         });
         countUps.push(countUp);
     }
+
+    console.log(statistic);
 
     return <div className="statistic" key={statistic.title.en} data-importance={statistic.importance}>
         <div className="icon">{statistic.icon}</div>

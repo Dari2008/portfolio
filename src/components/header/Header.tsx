@@ -33,6 +33,9 @@ export default function Header(): JSX.Element {
     return (
         <>
             <header id="header" className={`${isMobileNavOpen ? "open" : ""}`} onClick={handleMobileCloseEvent}>
+                {
+                    navigator.share && navigator.canShare({ title: "Darius Portfolio", url: location.href }) && <button className="share big" onClick={() => navigator.share({ title: "Darius Portfolio", url: location.href })}></button> //navigator.share && navigator.canShare({ title: "Darius Portfolio", url: location.href }) && 
+                }
                 <div id="navContent">
                     <ul>
                         {
@@ -63,7 +66,7 @@ export default function Header(): JSX.Element {
                     </ul>
                 </div>
                 {
-                    navigator.share && navigator.canShare({ title: "Darius Portfolio", url: location.href }) && <button className="share" onClick={() => navigator.share({ title: "Darius Portfolio", url: location.href })}></button>
+                    navigator.share && navigator.canShare({ title: "Darius Portfolio", url: location.href }) && <button className="share small" onClick={() => navigator.share({ title: "Darius Portfolio", url: location.href })}></button>
                 }
                 <button className="openMenu" onClick={onMenuClick}>
                     <div className="icon-1"></div>

@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@gsap/react": "^2.1.2",
+    "@mui/material": "^7.3.7",
+    "@mui/x-charts": "^8.25.0",
     "@react-three/fiber": "^9.4.2",
     "@tailwindcss/vite": "^4.1.17",
     "@types/bowser": "^1.0.31",

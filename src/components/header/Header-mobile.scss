@@ -48,6 +48,11 @@ $mobileNavWidth: max(40vw, 180px);
                 transform: scaleX(0);
             }
 
+            .share {
+                transform: translateX(calc(-50% - #{$mobileNavWidth} / 2)) scaleX(0);
+                pointer-events: none;
+            }
+
         }
 
         &.open {
@@ -58,7 +63,6 @@ $mobileNavWidth: max(40vw, 180px);
 
         .share {
             aspect-ratio: 1 / 1;
-            display: flex;
             justify-content: center;
             align-items: center;
             width: 12%;
@@ -72,6 +76,8 @@ $mobileNavWidth: max(40vw, 180px);
             bottom: 20px;
             left: calc($mobileNavWidth / 2);
             transform: translateX(-50%);
+            pointer-events: all;
+            transition: transform 0.3s ease-in-out;
 
             &:hover {
                 &::before {
@@ -85,6 +91,14 @@ $mobileNavWidth: max(40vw, 180px);
                 aspect-ratio: 1 / 1;
                 color: rgba($themeColor3, 0.6);
                 font-size: clampW(1em, 2em, 200px, 2000px);
+            }
+
+            &.big {
+                display: none;
+            }
+
+            &.small {
+                display: flex;
             }
         }
 

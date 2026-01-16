@@ -8,6 +8,9 @@ import { Statics } from "../../utils";
 import { useTitle } from "../../components/titleManager/TitleManager";
 import { LangElement, useLanguage } from "../../lang";
 
+const HOST = "/php/";
+// const HOST = "http://localhost:2222/portfolio/";
+
 export default function Contact() {
     const achievements = useAchievements();
     useTitle().setTitle(Statics.TITLE_SUFFIX + "Contact");
@@ -29,7 +32,7 @@ export default function Contact() {
     const errorEmail = useRef<HTMLSpanElement>(null);
     const errorMessage = useRef<HTMLSpanElement>(null);
 
-    const checkName = () => {
+    const checkName = (): false | string => {
 
         const name = nameRef.current?.value;
 
@@ -41,17 +44,26 @@ export default function Contact() {
             return false;
         }
 
-        if (name.length <= 3) {
+        if (name.length <= 2) {
             if (errorName.current) {
-                errorName.current.innerHTML = "Your Name has to be longer than 3 Charcacters!";
+                errorName.current.innerHTML = "Your Name has to be longer than 2 Charcacters!";
                 errorName.current.classList.add("visible");
             }
+            return false;
+        }
+
+        if (name.length >= 100) {
+            if (errorName.current) {
+                errorName.current.innerHTML = "Your Name can't be longer than 100 characters!";
+                errorName.current.classList.add("visible");
+            }
+
             return false;
         }
         return name;
     }
 
-    const checkEmail = () => {
+    const checkEmail = (): false | string => {
         const email = emailElement.current?.value;
 
         if (!email) {
@@ -69,10 +81,19 @@ export default function Contact() {
             }
             return false;
         }
+
+        if (email.length >= 254) {
+            if (errorEmail.current) {
+                errorEmail.current.innerHTML = "Email can't be longer than 254 characters!";
+                errorEmail.current.classList.add("visible");
+            }
+            return false;
+        }
+
         return email;
     }
 
-    const checkMessage = () => {
+    const checkMessage = (): false | string => {
         const message = messageElement.current?.value;
 
         if (!message) {
@@ -83,24 +104,47 @@ export default function Contact() {
             return false;
         }
 
-        if (message.length <= 5) {
+        if (message.length <= 10) {
             if (errorMessage.current) {
-                errorMessage.current.innerHTML = "Message has to be longer than 5 characters!";
+                errorMessage.current.innerHTML = "Message has to be longer than 10 characters!";
                 errorMessage.current.classList.add("visible");
             }
             return false;
         }
+
+        if (message.length >= 20000) {
+            if (errorMessage.current) {
+                errorMessage.current.innerHTML = "Message can't be longer than 20000 characters!";
+                errorMessage.current.classList.add("visible");
+            }
+            return false;
+        }
+
         return message;
     };
 
-    const sendMessage = () => {
-
+    const sendMessage = async (email: string, name: string, message: string) => {
         achievements.achievementFinished().submittedContactForm();
 
+        const result = await (await fetch(`${HOST}/contactForm/contactSent.php`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, name, message })
+        })).json();
+
+        if (result.status == "error") {
+            if (errorMessage.current) {
+                errorMessage.current.innerHTML = "There was an error sending your message. Please try again later.";
+                errorMessage.current.classList.add("visible");
+            }
+            return false;
+        }
         return true;
     };
 
-    const handleMessageSendClick = () => {
+    const handleMessageSendClick = async () => {
 
         const name = checkName();
         const email = checkEmail();
@@ -116,7 +160,7 @@ export default function Contact() {
 
         console.log(name, email, message);
 
-        const successSendingMessage = sendMessage();
+        const successSendingMessage = await sendMessage(email, name, message);
         if (!successSendingMessage) return;
 
         if (contactFormRef.current) showSendAnimation(contactFormRef.current);

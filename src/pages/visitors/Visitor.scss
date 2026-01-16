@@ -1,0 +1,61 @@
+@use "../../utils/Variables.scss" as *;
+
+
+.visitors {
+    h1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    div:has(>.MuiChartsSurface-root) {
+        width: 100% !important;
+    }
+
+    .MuiChartsSurface-root {
+        width: 100% !important;
+
+        .MuiChartsAxis-line {
+            stroke: #ffffff !important;
+        }
+
+        .MuiChartsAxis-tick {
+            stroke: #ffffff !important;
+        }
+
+        .MuiChartsAxis-tickLabel {
+            fill: #ffffff !important;
+        }
+
+        .MuiChartsGrid-line {
+            stroke: rgba(255, 255, 255, 0.22) !important;
+        }
+
+        .MuiChartsAxis-label {
+            fill: #ffffff !important;
+        }
+
+        .MuiChartsTooltip-root {
+            background-color: #a1a1a1 !important;
+            color: #ffffff !important;
+            border: 1px solid #c5c5c5 !important;
+        }
+    }
+
+    .visitor-statistic {
+        @include glass-themeColor-opacity(10);
+        padding: 16px;
+        margin-bottom: 16px;
+        width: $maxContentWidth;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-inline: auto;
+    }
+}

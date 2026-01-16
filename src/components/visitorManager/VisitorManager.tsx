@@ -53,7 +53,10 @@ export default function VisitorManager() {
                 },
                 body: JSON.stringify({
                     visitorID: ID,
-                    visitDuration: duration
+                    path: location.pathname,
+                    visitDuration: duration,
+                    userAgent: userAgent,
+                    achievementsFinished: JSON.parse(localStorage.getItem('achievements') || '[]')
                 })
             });
             localStorage.removeItem('visitTimeLast');
@@ -69,7 +72,7 @@ export default function VisitorManager() {
         checkForPathChange();
     });
 
-    setInterval(checkForPathChange, 1000 * 5); // Every 5 minutes
+    setInterval(checkForPathChange, 1000 * 5);
 
     sendData();
 

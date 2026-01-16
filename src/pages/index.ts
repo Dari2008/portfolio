@@ -11,3 +11,5 @@ export { default as PrivacyPolicy } from './privacyPolicy/PrivacyPolicy'
 export { default as ProjectViewer } from './projectViewer/ProjectViewer'
 
 export { default as Achievements } from "./achievements/Achievements"
+
+export { default as VisitorsPage } from './visitors/Visitors'

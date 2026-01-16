@@ -23,6 +23,8 @@ export default function StringOdometer({
         value.split("").map(() => "\u00A0") // start with non-breaking spaces
     );
 
+    const [isFinished, setFinished] = useState<boolean>(false);
+
     const indexes = useState<number[]>(() =>
         value.split("").map(() => 0)
     )[0];
@@ -65,6 +67,7 @@ export default function StringOdometer({
                 clearInterval(interval);
                 // snap final characters
                 setDisplayChars(chars.map((c) => (c === " " ? "\u00A0" : c)));
+                setFinished(true);
                 return;
             }
 
@@ -77,8 +80,8 @@ export default function StringOdometer({
         }, TICKER_SPEED);
     };
 
+    setOnLoad(onLoad);
     useEffect(() => {
-        setOnLoad(onLoad);
 
         return () => {
             clearInterval(interval);
@@ -94,11 +97,19 @@ export default function StringOdometer({
 
     return (
         <div className={"string-odometer " + className} onClick={onClick}>
-            {displayChars.map((char, i) => (
-                <span key={i} className="character-odometer">
-                    {char}
-                </span>
-            ))}
+            {
+                !isFinished && displayChars.map((char, i) => (
+                    <span key={i} className="character-odometer">
+                        {char}
+                    </span>
+                ))}
+            {
+                isFinished && value.split("").map((char, i) => (
+                    <span key={i} className="character-odometer">
+                        {char === " " ? "\u00A0" : char}
+                    </span>
+                ))
+            }
         </div>
     );
 }

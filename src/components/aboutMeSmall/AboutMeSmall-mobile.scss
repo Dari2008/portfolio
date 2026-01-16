@@ -3,7 +3,8 @@
         flex-direction: column !important;
 
         .me {
-            width: 50% !important;
+            width: calc(var(--body-width) * 0.5) !important;
+            height: calc(var(--body-width) * 0.5) !important;
 
             &:hover {
                 scale: 1.1 !important;

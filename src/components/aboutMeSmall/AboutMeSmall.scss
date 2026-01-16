@@ -15,7 +15,9 @@
 
     .me {
         max-width: 300px;
-        width: calc(30% - 15px);
+        max-height: 300px;
+        width: calc(var(--body-width) * 0.3 - 15px) !important;
+        height: calc(var(--body-width) * 0.3 - 15px) !important;
         aspect-ratio: 1/1;
         overflow: clip;
         border-radius: 50%;

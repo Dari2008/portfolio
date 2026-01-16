@@ -74,7 +74,7 @@ $maxContentWidth: 90vw;
     background: linear-gradient(-45deg, rgba(255, 255, 255, 0.06), rgba($themeColor5, 0.06));
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    backdrop-filter: blur(8px);
+    // backdrop-filter: blur(8px);
 
     &:hover {
         transform: translateY(-4px) scale(1.02);
@@ -87,7 +87,7 @@ $maxContentWidth: 90vw;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.06), rgba($themeColor5, 0.06));
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    backdrop-filter: blur(8px);
+    // backdrop-filter: blur(8px);
 }
 
 

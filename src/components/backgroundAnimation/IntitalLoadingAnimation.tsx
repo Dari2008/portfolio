@@ -1,9 +1,12 @@
 import { useRef, useState } from "react";
 import "./LoadingAnimation.scss";
 import { generateRandomPosition, setCallbackOnLoad } from "./Utils";
-import IMAGE_JSON_RAW from "./data/image.json";
+import IMAGE_JSON_BIG_RAW from "./data/image-big.json";
+import IMAGE_JSON_SMALL_RAW from "./data/image-small.json";
 
-const IMAGE: DotImage = IMAGE_JSON_RAW;
+const isSmall = window.innerWidth <= 800;
+
+const IMAGE: DotImage = isSmall ? IMAGE_JSON_SMALL_RAW : IMAGE_JSON_BIG_RAW;
 
 type DotImage = {
     points: number[][],
@@ -48,7 +51,6 @@ export default function InitialLoadingAnimation() {
             style={{ "--index": i, ...generateRandomPosition() } as React.CSSProperties}
         ></div>
     ));
-
     return !isFinishedAnimating && <div className={`initialLoadingAnimation warp`} style={{ "--numDots": DOT_COUNT } as any} ref={bgAnimationRef}>
         {
             allCircles
@@ -175,7 +177,7 @@ function updateCircleForImage(circle: HTMLDivElement, point: Point, currentLogo:
         width = height * aspectRatio;
     }
 
-    const size = min / 2;
+    const size = min / 4;
 
 
     width = width - size;
