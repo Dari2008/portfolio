@@ -51,7 +51,7 @@ Start /B /Wait cmd /C npm run build
 @REM cd ./gallery
 
 @REM copy "./galleryImagesWEB.json" "../dist/gallery/galleryImages.json"
-copy "./sitemap.xml" "../dist/sitemap.xml"
+copy ".\sitemap.xml" ".\dist\sitemap.xml"
 
 @REM cd ..
 

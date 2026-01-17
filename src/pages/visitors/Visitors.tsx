@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { AchievementType } from "../../components/achievements/AchievementManager";
 import { LineChart } from '@mui/x-charts/LineChart';
 import "./Visitor.scss";
+import { BarChart } from "@mui/x-charts";
 
 // const HOST = "http://localhost:2222/portfolio";
 const HOST = "/php";
@@ -114,6 +115,66 @@ export default function VisitorsPage() {
             <div className="visitor-statistic averageTimeSpent">
                 <h2>Average time spent on site</h2>
                 <p>{averageTimeOnSite.toFixed(2)} minutes</p>
+            </div>
+
+            <div className="visitor-statistic browsersUsed">
+                <h2>Most Used Browsers</h2>
+                <BarChart
+                    height={400}
+                    series={[{
+                        data: sortedBrowsers.map(e => e[1]),
+                        label: undefined,
+                        color: '#420061',
+                    }]}
+                    grid={{ vertical: true, horizontal: true }}
+                    xAxis={[{ scaleType: "band", data: sortedBrowsers.map(e => e[0]) }]}
+                    yAxis={[{ scaleType: "linear", data: sortedBrowsers.map(e => e[1]) }]}
+                />
+            </div>
+
+            <div className="visitor-statistic pathsVisited">
+                <h2>Most Visited Paths</h2>
+                <BarChart
+                    height={400}
+                    series={[{
+                        data: sortedPaths.map(e => e[1]),
+                        label: undefined,
+                        color: '#420061',
+                    }]}
+                    grid={{ vertical: true, horizontal: true }}
+                    xAxis={[{ scaleType: "band", data: sortedPaths.map(e => e[0]) }]}
+                    yAxis={[{ scaleType: "linear", data: sortedPaths.map(e => e[1]) }]}
+                />
+            </div>
+
+            <div className="visitor-statistic ossUsed">
+                <h2>Operating Systems Used</h2>
+                <BarChart
+                    height={400}
+                    series={[{
+                        data: sortedOS.map(e => e[1]),
+                        label: undefined,
+                        color: '#420061',
+                    }]}
+                    grid={{ vertical: true, horizontal: true }}
+                    xAxis={[{ scaleType: "band", data: sortedOS.map(e => e[0]) }]}
+                    yAxis={[{ scaleType: "linear", data: sortedOS.map(e => e[1]) }]}
+                />
+            </div>
+
+            <div className="visitor-statistic devicesUsed">
+                <h2>Devices Used</h2>
+                <BarChart
+                    height={400}
+                    series={[{
+                        data: sortedDevices.map(e => e[1]),
+                        label: undefined,
+                        color: '#420061',
+                    }]}
+                    grid={{ vertical: true, horizontal: true }}
+                    xAxis={[{ scaleType: "band", data: sortedDevices.map(e => e[0]) }]}
+                    yAxis={[{ scaleType: "linear", data: sortedDevices.map(e => e[1]) }]}
+                />
             </div>
 
             <div className="visitor-statistic vititorCountOverTime">

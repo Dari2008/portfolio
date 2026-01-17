@@ -261,4 +261,71 @@
             <otherImages>/project-images/led-matrix/led-matrix_3.png</otherImages>
         </otherImages>
     </projects>
+
+    <projects>
+        <id>sourcemanager</id>
+        <title>
+            <en>Source Manager</en>
+            <de>Quellen Manager</de>
+        </title>
+        <date>17.01.2026</date>
+        <description>
+            <en>
+                A web application to manage and organize research sources, allowing users
+                to store their references efficiently. It automatically loads the title, author, 
+                publication date and more other relevant information from the provided source links.
+            </en>
+            <de>
+                Eine Webanwendung zur Verwaltung und Organisation von
+                Recherchequellen, die es Benutzern ermöglicht, ihre
+                Referenzen effizient zu speichern. Sie lädt automatisch
+                den Titel, Autor, das Veröffentlichungsdatum und weitere
+                relevante Informationen von den bereitgestellten Quellenlinks.
+            </de>
+        </description>
+        <timeTakenToCreate>
+            <time>10</time>
+            <unit>
+                <en>hours</en>
+                <de>Stunden</de>
+            </unit>
+        </timeTakenToCreate>
+        <technologies>
+            <technologies>typescript</technologies>
+            <technologies>sass</technologies>
+            <technologies>html5</technologies>
+            <technologies>php</technologies>
+            <technologies>vite</technologies>
+        </technologies>
+        <features>
+            <feature>
+                <en>Source organization</en>
+                <de>Quellenorganisation</de>
+            </feature>
+            <feature>
+                <en>Automatic Information scraping</en>
+                <de>Automatisches Informationsscraping</de>
+            </feature>
+            <feature>
+                <en>export as most source formats</en>
+                <de>Export in gängige Quellenformate</de>
+            </feature>
+            <feature>
+                <en>Custom Export Format</en>
+                <de>Benutzerdefiniertes Exportformat</de>
+            </feature>
+            <feature>
+                <en>export as CSV, JSON, Markdown</en>
+                <de>Export als CSV, JSON, Markdown</de>
+            </feature>
+        </features>
+        <liveLink>https://tools.frobeen.com/sourcesManager/</liveLink>
+        <sourceCodeLink>https://github.com/Dari2008/sourcesManager</sourceCodeLink>
+        <projectImage>/project-images/sourcemanager/preview.png</projectImage>
+        <otherImages>
+            <otherImages>/project-images/sourcemanager/exportDialog.png</otherImages>
+            <otherImages>/project-images/sourcemanager/exports.png</otherImages>
+        </otherImages>
+        
+    </projects>
 </projects>
